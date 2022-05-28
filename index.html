@@ -1,0 +1,118 @@
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+	body {
+		margin: 0;
+		background: rgb(49, 49, 49);
+		font-family: 'Work Sans', sans-serif;
+		font-weight: 100;
+		text-align: center;
+	}
+
+	.container {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.navbar-header {
+		background: #ffa200;
+	}
+
+	.navbar-header::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	.logo {
+		height: 55px;
+		width: 55px;
+		float: left;
+		padding: 5px 0;
+	}
+
+	nav {
+		float: right;
+	}
+
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	nav li {
+		display: inline-block;
+		margin-left: 70px;
+		padding-top: 23px;
+
+		position: relative;
+	}
+
+	nav a {
+		color: #444;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+
+	nav a:hover {
+		color: #000;
+	}
+
+	nav a::before {
+		content: '';
+		display: block;
+		height: 5px;
+		background-color: #444;
+
+		position: absolute;
+		top: 0;
+		width: 0%;
+
+		transition: all ease-in-out 250ms;
+	}
+
+	nav a:hover::before {
+		width: 100%;
+	}
+
+	.logo-header {
+		float: left;
+	}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="#">
+    <title>Document</title>
+</head>
+<body>
+    <header class="navbar-header">
+        <div class="container">
+			<div class="logo-container">
+				<a class="logo-header" href="2.html">
+					<img class="logo" src="temp-logo.png">
+				</a>
+			</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Not set</a></li>
+                    <li><a href="#">Not set</a></li>
+                    <li><a href="#">Not set</a></li>
+                    <li><a href="#">Not set</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+		
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
