@@ -7,6 +7,7 @@
 		font-family: 'Work Sans', sans-serif;
 		font-weight: 100;
 		text-align: center;
+		color: white;
 	}
 
 	.container {
@@ -29,6 +30,7 @@
 		width: 55px;
 		float: left;
 		padding: 5px 0;
+		margin-left: -50px;
 	}
 
 	nav {
@@ -78,7 +80,35 @@
 	}
 
 	.logo-header {
-		float: left;
+		
+	}
+
+	.cert-img {
+		height: 210px;
+		width: 280px;
+		transition: width 1s;
+		transition: height 1s;
+	}
+	.cert-img:hover {
+  		height: 400px;
+		width: 580px;
+	}
+	#cert-1 {
+		margin-left: -680px;
+		margin-top: 20px;
+	}
+	#cert-2 {
+		margin-left: -680px;
+		margin-top: 50px;
+	}
+	#cert-3 {
+		margin-left: 200px;
+		margin-top: -472px;
+	}
+	#cert-header {
+		margin-top: 10px;
+		font-size: 26px;
+		color: orange;
 	}
 </style>
 <!DOCTYPE html>
@@ -88,7 +118,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="#">
-    <title>Document</title>
+    <title>g4o2 website</title>
 </head>
 <body>
     <header class="navbar-header">
@@ -100,16 +130,32 @@
 			</div>
             <nav>
                 <ul>
-                    <li><a href="#">Not set</a></li>
-                    <li><a href="#">Not set</a></li>
-                    <li><a href="#">Not set</a></li>
-                    <li><a href="#">Not set</a></li>
+                    <li><a href="walle.html">Wallee</a></li>
+                    <li><a href="2.html">Page 2</a></li>
+                    <li><a href="ghostface.php">Ghostface</a></li>
+                    <li><a href="trolling.html">Troll</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-		
+		<div id="my-certifications">
+			<header id="cert-header">CERTIFICATIONS I HAVE EARNED SO FAR</header>
+			<div d="certs">
+				<div id="cert-1">
+					<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img" src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
+					 alt="programming-for-everybody-python-certification"></a>
+				</div>
+				<div id="cert-2">
+					<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img" src="/g4o2-website/certifications/python-data-stuctures.png"
+					 alt="python-data-structure-certification"></a>
+				</div>
+				<div id="cert-3">
+					<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img" src="/g4o2-website/certifications/FCC_responsive_web_design_certification.png" 
+					alt="web-design-certification"></a>
+				</div>
+			</div>
+		</div>
     </main>
     <footer>
 
