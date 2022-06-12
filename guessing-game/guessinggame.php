@@ -1,4 +1,26 @@
 <html>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+    body {
+        margin: 0;
+        background: rgb(49, 49, 49);
+        font-family: 'Work Sans', sans-serif;
+        font-weight: 100;
+        text-align: center;
+        color: white;
+    }
+
+    a {
+        color: orange;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    h1 {
+        font-family: monospace;
+    }
+</style>
 
 <head>
     <title>Guessing Game for Charles Severance</title>

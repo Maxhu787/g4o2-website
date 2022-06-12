@@ -15,6 +15,12 @@
 		text-transform: uppercase;
 		font-size: 14px;
 	}
+    a:hover {
+        color: white;
+    }
+    #link {
+        font-size: 18px;
+    }
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,8 +41,12 @@
     <script>
         function myFunction() {
             var guess = document.getElementById('guess').value;
-            window.open(`guessinggame.php?guess=${guess}`, '_parent');
+            window.open(`guessinggame.php?guess=${guess}`);
         }
     </script>
 </body>
+<footer>
+    <br>
+    <a id="link" href="../index.html">Go back to main page</a><br>
+</footer>
 </html>

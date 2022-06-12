@@ -19,6 +19,9 @@
         font-size: 14px;
         color: orange;
     }
+    a:hover {
+        color: white;
+    }
 
     pre {
         animation-name: anim;
@@ -31,7 +34,7 @@
     #php {
         color: black;
         background-color: grey;
-        border-radius: 230px;
+        border-radius: 20px;
         width: 50%;
         margin-left: 330px;
     }
@@ -130,5 +133,3 @@
         ?>
     </div>
 </body>
-
-</html>
