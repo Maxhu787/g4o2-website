@@ -1,4 +1,3 @@
-<title>c8ba147f</title>
 <?php
 
 // Demand a GET parameter
@@ -46,7 +45,7 @@ $result = check($computer, $human);
 <html>
 
 <head>
-    <title>Dr. Chuck's Rock, Paper, Scissors Game</title>
+    <title>g4o2's Rock, Paper, Scissors Game</title>
     <?php require_once "bootstrap.php"; ?>
 </head>
 

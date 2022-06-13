@@ -1,4 +1,3 @@
-<title>c8ba147f</title>
 <?php // Do not put any HTML above this line
 
 if (isset($_POST['cancel'])) {
@@ -35,7 +34,7 @@ if (isset($_POST['who']) && isset($_POST['pass'])) {
 
 <head>
     <?php require_once "bootstrap.php"; ?>
-    <title>Chuck Severance's Login Page</title>
+    <title>g4o2's Login Page</title>
 </head>
 
 <body>

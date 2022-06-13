@@ -23,7 +23,7 @@
 </style>
 
 <head>
-    <title>Guessing Game for Charles Severance</title>
+    <title>Guessing Game for g4o2</title>
 </head>
 
 <body>
