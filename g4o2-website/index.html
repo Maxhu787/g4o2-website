@@ -1,0 +1,347 @@
+<style>
+	@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+	body {
+		margin: 0;
+		background: rgb(49, 49, 49);
+		font-family: 'Work Sans', sans-serif;
+		font-weight: 100;
+		text-align: center;
+		color: white;
+		background: url(../g4o2-website/media/0000001.jpg);
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: 100% 100%;
+	}
+
+	a {
+		color: orange;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+
+	
+    ::-moz-selection {
+        color: lightblue;
+        /*background: black;*/
+    }
+
+    ::selection {
+       color: lightblue;
+        /*background: black;*/
+    }
+
+	.container {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.navbar-header {
+		background: #ffa200;
+		position: fixed;
+		width: 100%;
+		margin-top: -95.5px;
+	}
+
+	.navbar-header::after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+
+	.logo {
+		height: 55px;
+		width: 55px;
+		float: left;
+		padding: 5px 0;
+		margin-left: -80px;
+	}
+
+	nav {
+		float: right;
+		text-transform: uppercase;
+	}
+
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	nav li {
+		display: inline-block;
+		margin-left: 70px;
+		padding-top: 23px;
+		position: relative;
+	}
+
+	nav > ul li a {
+		color: #444;
+		text-decoration: none;
+		text-transform: uppercase;
+		font-size: 14px;
+	}
+
+	nav > ul li a:hover {
+		color: #000;
+	}
+
+	nav > ul li a::before {
+		content: '';
+		display: block;
+		height: 5px;
+		background-color: #444;
+		position: absolute;
+		top: 0;
+		width: 0%;
+		transition: all ease-in-out 250ms;
+	}
+
+	nav > ul li a:hover::before {
+		width: 100%;
+	}
+
+	.dropbtn {
+		background-color: #ffa200;
+		padding: 16px;
+		font-size: 12px;
+		font-weight: 100;
+		border: none;
+		margin-left: 48px;
+		height: 63px;
+		width: 95px;
+	}
+
+	.dropdown {
+		position: relative;
+		display: inline-block;
+	}
+
+	.dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #f1f1f1;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+		z-index: 1;
+	}
+
+	.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+	}
+
+	.dropdown-content a:hover {
+		background-color: #ddd;
+	}
+
+	.dropdown:hover .dropdown-content {
+		display: block;
+	}
+
+	.dropdown:hover .dropbtn {
+		background-color: #ffbf00;
+	}
+
+	#content-wrapper {
+		margin-top: 95px;
+	}
+
+	.cert-img {
+		height: 220px;
+		width: 280px;
+		transition: width .8s;
+		transition: height .8s;
+	}
+
+	.cert-img:hover {
+		height: 400px;
+		width: 580px;
+	}
+
+	#certs {
+		position: absolute;
+	}
+
+	#cert-1 {
+		/*margin-left: -680px;*/
+		margin-top: 80px;
+	}
+
+	#cert-2 {
+		/*margin-left: -680px;*/
+		margin-top: 90px;
+	}
+
+	#cert-3 {
+		margin-top: 95px;
+	}
+	#cert-4 {
+		margin-top: 105;
+	}
+
+	#cert-header {
+		margin-top: 30px;
+		font-size: 26px;
+		color: orange;
+		font-family: monospace;
+		font-weight: 100;
+	}
+
+	#about {
+		margin: 100 300;
+	}
+
+	.header {
+		color: orange;
+	}
+
+	#about-header {
+		margin-left: 6px;
+		font-size: 20px;
+	}
+
+	#contact-header {
+		margin-left: -0px;
+		font-family: monospace;
+		font-weight: 100;
+		font-size: 20px;
+		color: black;
+		padding: 15px;
+	}
+
+	footer {
+		background-color: white;
+		height: 200px;
+		display: flex;
+		flex-direction: column;
+		opacity: 0.8;
+		width: 100%;
+	}
+
+	footer:hover {
+		opacity: 0.85;
+	}
+
+	.contact-img {
+		height: 55px;
+		width: 55px;
+		transition: width .5s;
+		transition: height .5s;
+	}
+
+	.contact-img:hover {
+		height: 70px;
+		width: 70px;
+	}
+
+	#copyright-text {
+		color: black;
+		text-align: center;
+	}
+</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="#">
+	<title>g4o2 website</title>
+</head>
+
+<body>
+	<header class="navbar-header">
+		<div class="container">
+			<div class="logo-container">
+				<a class="logo-header" href="2.html">
+					<img class="logo" src="/g4o2-website/media/temp-logo.png">
+				</a>
+			</div>
+			<nav>
+				<ul id="main-nav">
+					<li><a href="#about">About & Contact</a></li>
+					<li><a href="#certifications">Certifications</a></li>
+					<div class="dropdown">
+						<button class="dropbtn">PAGES</button>
+						<div class="dropdown-content">
+							<a href="/g4o2-website/guessing-game/guessinggame.html">guessing game</a>
+							<a href="/g4o2-website/crack/index.php" title="cracking (kind of)">MD5 cracking</a>
+							<a href="/g4o2-website/videoplayer/index.html">Video playing</a>
+							<a href="ghostface.php">Random stuff</a>
+							<a href="/g4o2-website/rps/index.php">rock paper scissors</a>
+							<a href="/g4o2-website/wallee/walle.html">Wallee</a>
+							<a href="2.html">Page 2</a>
+						</div>
+					</div>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<main>
+		<div id="content-wrapper">
+			<section id="certifications">
+				<header id="cert-header">CERTIFICATIONS I HAVE EARNED SO FAR</header>
+				<section d="certs">
+					<div id="cert-1">
+						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img"
+								src="/g4o2-website/certifications/FCC_responsive_web_design_certification.png" alt="certification"></a>
+					</div>
+					<div id="cert-2">
+						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img"
+								src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
+					</div>
+					<div id="cert-3">
+						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img"
+								src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
+								alt="certification"></a>
+					</div>
+					<div id="cert-4">
+						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img"
+								src="/g4o2-website/certifications/building-web-applications-in-php.png" alt="certification"></a>
+					</div>
+				</section>
+			</section>
+			<article id="about">
+				<header id="about-header" class="header">MORE ABOUT ME</header>
+				<p>Im&nbsp;a thirteen&#8209;year&#8209;old&nbsp;kid that&nbsp;is&nbsp;intrested in&nbsp;programming
+					and&nbsp;computer&nbsp;sience</p>
+			</article>
+		</div>
+	</main>
+	<footer>
+		<section id="contact">
+			<header id="contact-header" class="header">Contact and Social Media</header>
+			<a href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/" target="_blank" title="Linkedin Profile"><img
+					src="/g4o2-website/media/linkedin-img.png" id="linkedin-img" class="contact-img" alt="linkedin"></a>
+			<a href="https://github.com/Maxhu787" target="_blank" title="GitHub Profile"><img
+					src="/g4o2-website/media/github-img.png" id="github-img" class="contact-img" alt="github"></a>
+			<a href="https://www.instagram.com/hukaixiang1024/" target="_blank" title="Ingstagram Profile"><img
+					src="/g4o2-website/media/ig.png" id="ig-img" class="contact-img" alt="ig"></a>
+			<a href="https://discord.gg/ukGJWgWu" target="_blank" title="Discord Server"><img
+					src="/g4o2-website/media/discord-img.png" id="discord-img" class="contact-img" alt="discord"></a>
+			<a href="https://twitter.com/Maxhu787" target="_blank" title="Twitter Account"><img
+					src="/g4o2-website/media/twitter-img.png" id="twitter-img" class="contact-img" alt="twitter"></a>
+		</section>
+		<section id="copyright">
+			<p id="copyright-text">g4o2 2022 &copy; Copyright</p>
+		</section>
+	</footer>
+	<script>
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
+
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
+				});
+			});
+		});
+	</script>
+</body>
+
+</html>
