@@ -171,27 +171,32 @@
 			height: 400px;
 			width: 580px;
 		}
+
+		main {
+			height: 2000px;
+		}
 	
 		#certs {
 			position: absolute;
 		}
 	
 		#cert-1 {
-			/*margin-left: -680px;*/
 			margin-top: 80px;
 		}
 	
 		#cert-2 {
-			/*margin-left: -680px;*/
 			margin-top: 90px;
 		}
 	
 		#cert-3 {
-			margin-top: 95px;
+			margin-top: 100px;
 		}
 	
 		#cert-4 {
-			margin-top: 105;
+			margin-top: 110px;
+		}
+		#cert-5 {
+			margin-top: 120px;
 		}
 	
 		#cert-header {
@@ -203,7 +208,7 @@
 		}
 	
 		#about {
-			margin: 100 300;
+			margin-top: 100px;
 		}
 	
 		.header {
@@ -349,6 +354,12 @@
 				});
 			});
 		});
+
+		window.onscroll = function () {
+			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
+				/*alert('At the bottom!');*/
+			}
+		}
 	</script>
 </body>
 
