@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+	<script src="https://kit.fontawesome.com/b60596f9d0.js" crossorigin="anonymous"></script>
+	<link rel="icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="shortcut icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="apple-touch-icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="stylesheet" href="#">
@@ -62,7 +64,8 @@
 	
 		.logo {
 			height: 55px;
-			width: 55px;
+			width: 53px;
+			border-radius: 200px;
 			float: left;
 			padding: 5px 0;
 			margin-left: -80px;
@@ -119,7 +122,7 @@
 			font-weight: 100;
 			border: none;
 			margin-left: 48px;
-			height: 63px;
+			height: 67px;
 			width: 95px;
 		}
 	
@@ -221,7 +224,6 @@
 		}
 	
 		#contact-header {
-			margin-left: -0px;
 			font-family: monospace;
 			font-weight: 100;
 			font-size: 20px;
@@ -231,7 +233,7 @@
 	
 		footer {
 			background-color: white;
-			height: 200px;
+			height: 250px;
 			display: flex;
 			flex-direction: column;
 			opacity: 0.8;
@@ -242,21 +244,23 @@
 			opacity: 0.85;
 		}
 	
-		.contact-img {
-			height: 55px;
-			width: 55px;
-			transition: width .5s;
-			transition: height .5s;
+
+		.fa-brands {
+			color: orange;
+			padding: 10px;
+			transition: all 0.35s ease-in-out;
 		}
 	
-		.contact-img:hover {
-			height: 70px;
-			width: 70px;
+		.fa-brands:hover {
+			font-size: 5em;
+  			transition: 0.35s ease-out;
 		}
+
 	
 		#copyright-text {
 			color: black;
 			text-align: center;
+			padding: 15px;
 		}
 	</style>
 	<title>g4o2 website</title>
@@ -267,7 +271,7 @@
 		<div class="container">
 			<div class="logo-container">
 				<a class="logo-header" href="2.html">
-					<img class="logo" src="/g4o2-website/media/temp-logo.png">
+					<img class="logo" src="/g4o2-website/media/111.jpeg">
 				</a>
 			</div>
 			<nav>
@@ -321,25 +325,31 @@
 			</section>
 			<article id="about">
 				<header id="about-header" class="header">MORE ABOUT ME</header>
-				<p>Im&nbsp;a thirteen&#8209;year&#8209;old&nbsp;kid that&nbsp;is&nbsp;intrested in&nbsp;programming
-					and&nbsp;computer&nbsp;sience</p>
+				<p>Random text here</p>
+				<!--<p>Im&nbsp;a thirteen&#8209;year&#8209;old&nbsp;kid that&nbsp;is&nbsp;intrested in&nbsp;programming
+					and&nbsp;computer&nbsp;sience</p>-->
 			</article>
 		</div>
 	</main>
 	<footer>
 		<section id="contact">
 			<header id="contact-header" class="header">Contact and Social Media</header>
-			<a href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/" target="_blank" title="Linkedin Profile"><img
-					src="/g4o2-website/media/linkedin-img.png" id="linkedin-img" class="contact-img" alt="linkedin"></a>
-			<a href="https://github.com/Maxhu787" target="_blank" title="GitHub Profile"><img
-					src="/g4o2-website/media/github-img.png" id="github-img" class="contact-img" alt="github"></a>
-			<a href="https://www.instagram.com/hukaixiang1024/" target="_blank" title="Ingstagram Profile"><img
-					src="/g4o2-website/media/ig.png" id="ig-img" class="contact-img" alt="ig"></a>
-			<a href="https://discord.gg/ukGJWgWu" target="_blank" title="Discord Server"><img
-					src="/g4o2-website/media/discord-img.png" id="discord-img" class="contact-img" alt="discord"></a>
-			<a href="https://twitter.com/Maxhu787" target="_blank" title="Twitter Account"><img
-					src="/g4o2-website/media/twitter-img.png" id="twitter-img" class="contact-img" alt="twitter"></a>
-		</section>
+			<a href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/" target="_blank" title="Linkedin Profile">
+				<i id="linkedin-img" alt="linkedin" class="fa-brands fa-linkedin fa-3x"></i>
+			</a>
+			<a href="https://github.com/Maxhu787" target="_blank" title="GitHub Profile">
+				<i id="github-img" alt="github" class="fa-brands fa-github-square fa-3x"></i>
+			</a>
+			<a href="https://www.instagram.com/hukaixiang1024/" target="_blank" title="Ingstagram Profile">
+				<i id="ig-img" alt="ig" class="fa-brands fa-instagram-square fa-3x"></i>
+			</a>
+			<a href="https://twitter.com/Maxhu787" target="_blank" title="Twitter Account">
+				<i id="twitter-img" alt="twitter" class="fa-brands fa-twitter-square fa-3x"></i>
+			</a>
+			<a href="https://discord.gg/ukGJWgWu" target="_blank" title="Discord Server">
+				<i id="discord-img" alt="discord" class="fa-brands fa-discord fa-3x"></i>
+			</a>
+		</section><br>
 		<section id="copyright">
 			<p id="copyright-text">g4o2 2022 &copy; Copyright</p>
 		</section>
