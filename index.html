@@ -300,6 +300,7 @@
 			</div>
 			<nav>
 				<ul id="main-nav">
+					<li><a id="hover-stat">Welcome</a></li>
 					<li><a href="#about">About & Contact</a></li>
 					<li><a href="#certifications">Certifications</a></li>
 					<div class="dropdown">
@@ -394,6 +395,8 @@
 		</section>
 	</footer>
 	<script>
+		const hoverText = document.querySelectorAll('hover-stat');
+		let hoverStat = 0;
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
 				e.preventDefault();
@@ -421,35 +424,35 @@
 			for (const cert of images) {
 				if (cert.matches(':hover')) {
 					if(cert.className == "cert-img cert-img-1") {
-						console.log('cert-img-1 hover');
+						hoverStat = 'Certifications - cert-img-1';
 							window.scrollTo({
 							top: 80,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-2") {
-						console.log('cert-img-2 hover');
+						hoverStat = 'Certifications - cert-img-2';
 						window.scrollTo({
 							top: 390,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-3") {
-						console.log('cert-img-3 hover');
+						hoverStat = 'Certifications - cert-img-3';
 						window.scrollTo({
 							top: 720,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-4") {
-						console.log('cert-img-4 hover');
+						hoverStat = 'Certifications - cert-img-4';
 						window.scrollTo({
 							top: 1060,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-5") {
-						console.log('cert-img-5 hover');
+						hoverStat = 'Certifications - cert-img-5';
 						window.scrollTo({
 							top: 1380,
 							left: 0,
@@ -459,6 +462,9 @@
 				}
 			}
 			
+		}
+		while(true) {
+			hoverText.innerHTML = ("bruh");
 		}
 
 	</script>
