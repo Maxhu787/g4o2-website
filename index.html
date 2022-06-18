@@ -36,12 +36,12 @@
 	
 		::-moz-selection {
 			color: lightblue;
-			/*background: black;*/
+			background: orange;
 		}
 	
 		::selection {
 			color: lightblue;
-			/*background: black;*/
+			background: orange;
 		}
 	
 		.container {
@@ -172,14 +172,13 @@
 	
 		.cert-img {
 			height: 220px;
-			width: 280px;
 			transition: width .8s;
 			transition: height .8s;
 		}
 	
 		.cert-img:hover {
 			height: 400px;
-			width: 580px;
+			transition: all 0.35s ease-in-out;
 		}
 
 		main {
@@ -220,14 +219,25 @@
 		#about {
 			margin-top: 100px;
 		}
-	
-		.header {
-			color: orange;
-		}
-	
+
 		#about-header {
 			margin-left: 6px;
 			font-size: 20px;
+		}
+		.about-img {
+			color: lightslategray;
+			font-size: 4em;
+			padding: 10px;
+			transition: all 0.35s ease-in-out;
+		}
+	
+		.about-img:hover {
+			color: lightblue;
+  			transition: 0.35s ease-out;
+		}
+		
+		.header {
+			color: orange;
 		}
 	
 		#contact-header {
@@ -252,13 +262,13 @@
 		}
 	
 
-		.fa-brands {
+		.contact-img {
 			color: orange;
 			padding: 10px;
 			transition: all 0.35s ease-in-out;
 		}
 	
-		.fa-brands:hover {
+		.contact-img:hover {
 			font-size: 5em;
   			transition: 0.35s ease-out;
 		}
@@ -332,9 +342,15 @@
 			</section>
 			<article id="about">
 				<header id="about-header" class="header">MORE ABOUT ME</header>
-				<p>Random text here</p>
-				<!--<p>Im&nbsp;a thirteen&#8209;year&#8209;old&nbsp;kid that&nbsp;is&nbsp;intrested in&nbsp;programming
-					and&nbsp;computer&nbsp;sience</p>-->
+				<p>Im&nbsp;a thirteen&#8209;year&#8209;old&nbsp;kid that&nbsp;is&nbsp;intrested in&nbsp;programming
+					and&nbsp;computer&nbsp;sience</p>
+				<p>So far I have learned
+					<i class="about-img fa-brands fa-html5 fa-2x"></i>
+					<i class="about-img fa-brands fa-css3-alt fa-2x"></i>
+					<i class="about-img fa-brands fa-js-square fa-2x"></i>
+					<i class="about-img fa-brands fa-python fa-2x"></i>
+					<i class="about-img fa-brands fa-php fa-2x"></i>
+				</p>
 			</article>
 		</div>
 	</main>
@@ -342,21 +358,21 @@
 		<section id="contact">
 			<header id="contact-header" class="header">Contact and Social Media</header>
 			<a href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/" target="_blank" title="Linkedin Profile">
-				<i id="linkedin-img" alt="linkedin" class="fa-brands fa-linkedin fa-3x"></i>
+				<i id="linkedin-img" alt="linkedin" class="contact-img fa-brands fa-linkedin fa-3x"></i>
 			</a>
 			<a href="https://github.com/Maxhu787" target="_blank" title="GitHub Profile">
-				<i id="github-img" alt="github" class="fa-brands fa-github-square fa-3x"></i>
+				<i id="github-img" alt="github" class="contact-img fa-brands fa-github-square fa-3x"></i>
 			</a>
 			<a href="https://www.instagram.com/hukaixiang1024/" target="_blank" title="Ingstagram Profile">
-				<i id="ig-img" alt="ig" class="fa-brands fa-instagram-square fa-3x"></i>
+				<i id="ig-img" alt="ig" class="contact-img fa-brands fa-instagram-square fa-3x"></i>
 			</a>
 			<a href="https://twitter.com/Maxhu787" target="_blank" title="Twitter Account">
-				<i id="twitter-img" alt="twitter" class="fa-brands fa-twitter-square fa-3x"></i>
+				<i id="twitter-img" alt="twitter" class="contact-img fa-brands fa-twitter-square fa-3x"></i>
 			</a>
 			<a href="https://discord.gg/ukGJWgWu" target="_blank" title="Discord Server">
-				<i id="discord-img" alt="discord" class="fa-brands fa-discord fa-3x"></i>
+				<i id="discord-img" alt="discord" class="contact-img fa-brands fa-discord fa-3x"></i>
 			</a>
-		</section><br>
+		</section>
 		<section id="copyright">
 			<p id="copyright-text">g4o2 2022 &copy; Copyright</p>
 		</section>
