@@ -6,7 +6,7 @@
 	<link rel="icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="shortcut icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="apple-touch-icon" href="/g4o2-website/media/111.jpeg">
-	<link rel="stylesheet" href="#">
+	<link rel="stylesheet" href="/g4o2-website/style.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -303,6 +303,7 @@
 			</div>
 			<nav>
 				<ul id="main-nav">
+					<li><a id="hover-stat-text">Welcome</a></li>
 					<li><a id="hover-stat">Welcome</a></li>
 					<li><a href="#about">About & Contact</a></li>
 					<li><a href="#certifications">Certifications</a></li>
@@ -407,9 +408,9 @@
 	</footer>
 	<script>
 		const hoverText = document.getElementById('hover-stat');
-		hoverText.innerHTML = "Welcome";
-		hoverStat = 0;
-
+		const hoverStatText = document.getElementById('hover-stat-text');
+		hoverStat = false;
+		/*smooth scrolling*/
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
 				e.preventDefault();
@@ -420,64 +421,66 @@
 			});
 		});
 
-		window.onscroll = function () {
+		window.onscroll = function() {
+			hoverText.innerHTML = Math.round(window.pageYOffset);
+			console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
 			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-				alert('At the bottom!');
+				hoverStatText.innerHTML = ('Bottom');
+			} else if (window.pageYOffset <= 1) {
+				hoverStatText.innerHTML = ('Top');
 			}
 		}
-		window.scrollTo({
-				top: 1,
-				left: 0,
-				behavior: 'smooth'
-			});
 
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		});
+		
 		function certScroll(x) {
 			const images = document.querySelectorAll('img');
 			for (const cert of images) {
 				if (cert.matches(':hover')) {
 					if (cert.className == "cert-img cert-img-1") {
-						hoverText.innerHTML = ('Certifications - cert-img-1');
+						hoverStatText.innerHTML = ('Certifications - cert-img-1');
 						window.scrollTo({
 							top: 80,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-2") {
-						hoverText.innerHTML = ('Certifications - cert-img-2');
+						hoverStatText.innerHTML = ('Certifications - cert-img-2');
 						window.scrollTo({
 							top: 390,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-3") {
-						hoverText.innerHTML = ('Certifications - cert-img-3');
+						hoverStatText.innerHTML = ('Certifications - cert-img-3');
 						window.scrollTo({
 							top: 720,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-4") {
-						hoverText.innerHTML = ('Certifications - cert-img-4');
+						hoverStatText.innerHTML = ('Certifications - cert-img-4');
 						window.scrollTo({
 							top: 1060,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-5") {
-						hoverText.innerHTML = ('Certifications - cert-img-5');
+						hoverStatText.innerHTML = ('Certifications - cert-img-5');
 						window.scrollTo({
 							top: 1380,
 							left: 0,
 							behavior: 'auto'
 						});
-					} 
+					}
 				}
 			}
 
 		}
-
-
-
 	</script>
 </body>
 
