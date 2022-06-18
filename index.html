@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
-	
+
 		body {
 			margin: 0;
 			background: rgb(49, 49, 49);
@@ -25,43 +25,43 @@
 			background-attachment: fixed;
 			background-size: 100% 100%;
 		}
-	
+
 		a {
 			color: orange;
 			text-decoration: none;
 			text-transform: uppercase;
 			font-size: 14px;
 		}
-	
-	
+
+
 		::-moz-selection {
 			color: lightblue;
 			background: orange;
 		}
-	
+
 		::selection {
 			color: lightblue;
 			background: orange;
 		}
-	
+
 		.container {
 			width: 80%;
 			margin: 0 auto;
 		}
-	
+
 		.navbar-header {
 			background: #ffa200;
 			position: fixed;
 			width: 100%;
 			margin-top: -95.5px;
 		}
-	
+
 		.navbar-header::after {
 			content: '';
 			display: table;
 			clear: both;
 		}
-	
+
 		.logo {
 			height: 55px;
 			width: 54px;
@@ -71,42 +71,43 @@
 			transition: all 0.35s ease-in-out;
 			border: solid rgb(255, 195, 91) 3px;
 			margin-top: 4px;
-			transition: border 0.35s ease-out; 
+			transition: border 0.35s ease-out;
 		}
+
 		.logo:hover {
 			padding: 3px;
 			border: none;
 		}
-	
+
 		nav {
 			float: right;
 			text-transform: uppercase;
 		}
-	
+
 		nav ul {
 			margin: 0;
 			padding: 0;
 			list-style: none;
 		}
-	
+
 		nav li {
 			display: inline-block;
 			margin-left: 70px;
 			padding-top: 23px;
 			position: relative;
 		}
-	
+
 		nav>ul li a {
 			color: #444;
 			text-decoration: none;
 			text-transform: uppercase;
 			font-size: 14px;
 		}
-	
+
 		nav>ul li a:hover {
 			color: #000;
 		}
-	
+
 		nav>ul li a::before {
 			content: '';
 			display: block;
@@ -117,11 +118,11 @@
 			width: 0%;
 			transition: all ease-in-out 250ms;
 		}
-	
+
 		nav>ul li a:hover::before {
 			width: 100%;
 		}
-	
+
 		.dropbtn {
 			background-color: #ffa200;
 			padding: 16px;
@@ -132,12 +133,12 @@
 			height: 67px;
 			width: 95px;
 		}
-	
+
 		.dropdown {
 			position: relative;
 			display: inline-block;
 		}
-	
+
 		.dropdown-content {
 			display: none;
 			position: absolute;
@@ -146,36 +147,36 @@
 			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 			z-index: 1;
 		}
-	
+
 		.dropdown-content a {
 			color: black;
 			padding: 12px 16px;
 			text-decoration: none;
 			display: block;
 		}
-	
+
 		.dropdown-content a:hover {
 			background-color: #ddd;
 		}
-	
+
 		.dropdown:hover .dropdown-content {
 			display: block;
 		}
-	
+
 		.dropdown:hover .dropbtn {
 			background-color: #ffbf00;
 		}
-	
+
 		#content-wrapper {
 			margin-top: 95px;
 		}
-	
+
 		.cert-img {
 			height: 220px;
 			transition: width .8s;
 			transition: height .8s;
 		}
-	
+
 		.cert-img:hover {
 			height: 400px;
 			transition: all 0.35s ease-in-out;
@@ -184,30 +185,31 @@
 		main {
 			height: 2000px;
 		}
-	
+
 		#certs {
 			position: absolute;
 		}
-	
+
 		#cert-1 {
 			margin-top: 80px;
 		}
-	
+
 		#cert-2 {
 			margin-top: 90px;
 		}
-	
+
 		#cert-3 {
 			margin-top: 100px;
 		}
-	
+
 		#cert-4 {
 			margin-top: 110px;
 		}
+
 		#cert-5 {
 			margin-top: 120px;
 		}
-	
+
 		#cert-header {
 			margin-top: 30px;
 			font-size: 26px;
@@ -215,7 +217,7 @@
 			font-family: monospace;
 			font-weight: 100;
 		}
-	
+
 		#about {
 			margin-top: 100px;
 		}
@@ -224,22 +226,23 @@
 			margin-left: 6px;
 			font-size: 20px;
 		}
+
 		.about-img {
 			color: lightslategray;
 			font-size: 4em;
 			padding: 10px;
 			transition: all 0.35s ease-in-out;
 		}
-	
+
 		.about-img:hover {
 			color: lightblue;
-  			transition: 0.35s ease-out;
+			transition: 0.35s ease-out;
 		}
-		
+
 		.header {
 			color: orange;
 		}
-	
+
 		#contact-header {
 			font-family: monospace;
 			font-weight: 100;
@@ -247,7 +250,7 @@
 			color: black;
 			padding: 15px;
 		}
-	
+
 		footer {
 			background-color: white;
 			height: 250px;
@@ -256,28 +259,28 @@
 			opacity: 0.8;
 			width: 100%;
 		}
-	
+
 		footer:hover {
 			opacity: 0.85;
 		}
-	
+
 
 		.contact-img {
 			color: orange;
 			padding: 10px;
 			transition: all 0.35s ease-in-out;
 		}
-	
+
 		.contact-img:hover {
 			font-size: 5em;
-  			transition: 0.35s ease-out;
+			transition: 0.35s ease-out;
 		}
 
 		.fa-jsfiddle {
 			font-weight: bold;
 		}
 
-		.fa-free-code-camp  {
+		.fa-free-code-camp {
 			font-weight: 600;
 		}
 
@@ -327,24 +330,32 @@
 				<section d="certs">
 					<div id="cert-1">
 						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1"
-								onmouseover="certScroll(this)" src="/g4o2-website/certifications/FCC_responsive_web_design_certification.png" alt="certification"></a>
+								onmouseover="certScroll(this)"
+								src="/g4o2-website/certifications/FCC_responsive_web_design_certification.png"
+								alt="certification"></a>
 					</div>
 					<div id="cert-2">
 						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img cert-img-2"
-								onmouseover="certScroll(this)" src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
+								onmouseover="certScroll(this)"
+								src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
 					</div>
 					<div id="cert-3">
 						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3"
-								onmouseover="certScroll(this)" src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
+								onmouseover="certScroll(this)"
+								src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-4">
 						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4"
-								onmouseover="certScroll(this)" src="/g4o2-website/certifications/building-web-applications-in-php.png" alt="certification"></a>
+								onmouseover="certScroll(this)"
+								src="/g4o2-website/certifications/building-web-applications-in-php.png"
+								alt="certification"></a>
 					</div>
 					<div id="cert-4">
 						<a href="/g4o2-website/certifications/cert-5.html"><img class="cert-img cert-img-5"
-								onmouseover="certScroll(this)" src="/g4o2-website/certifications/Introduction to Structured Query Language (SQL).png" alt="certification"></a>
+								onmouseover="certScroll(this)"
+								src="/g4o2-website/certifications/Introduction to Structured Query Language (SQL).png"
+								alt="certification"></a>
 					</div>
 				</section>
 			</section>
@@ -395,8 +406,10 @@
 		</section>
 	</footer>
 	<script>
-		const hoverText = document.querySelectorAll('hover-stat');
-		let hoverStat = 0;
+		const hoverText = document.getElementById('hover-stat');
+		hoverText.innerHTML = "Welcome";
+		hoverStat = 0;
+
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
 				e.preventDefault();
@@ -409,63 +422,61 @@
 
 		window.onscroll = function () {
 			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
-				/*alert('At the bottom!');*/
+				alert('At the bottom!');
 			}
 		}
-		//scrols to top at start
 		window.scrollTo({
-			top: 1,
-			left: 0,
-			behavior: 'auto'
-		});
+				top: 1,
+				left: 0,
+				behavior: 'smooth'
+			});
 
 		function certScroll(x) {
 			const images = document.querySelectorAll('img');
 			for (const cert of images) {
 				if (cert.matches(':hover')) {
-					if(cert.className == "cert-img cert-img-1") {
-						hoverStat = 'Certifications - cert-img-1';
-							window.scrollTo({
+					if (cert.className == "cert-img cert-img-1") {
+						hoverText.innerHTML = ('Certifications - cert-img-1');
+						window.scrollTo({
 							top: 80,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-2") {
-						hoverStat = 'Certifications - cert-img-2';
+						hoverText.innerHTML = ('Certifications - cert-img-2');
 						window.scrollTo({
 							top: 390,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-3") {
-						hoverStat = 'Certifications - cert-img-3';
+						hoverText.innerHTML = ('Certifications - cert-img-3');
 						window.scrollTo({
 							top: 720,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-4") {
-						hoverStat = 'Certifications - cert-img-4';
+						hoverText.innerHTML = ('Certifications - cert-img-4');
 						window.scrollTo({
 							top: 1060,
 							left: 0,
 							behavior: 'auto'
 						});
 					} else if (cert.className == "cert-img cert-img-5") {
-						hoverStat = 'Certifications - cert-img-5';
+						hoverText.innerHTML = ('Certifications - cert-img-5');
 						window.scrollTo({
 							top: 1380,
 							left: 0,
 							behavior: 'auto'
 						});
-					}
+					} 
 				}
 			}
-			
+
 		}
-		while(true) {
-			hoverText.innerHTML = ("bruh");
-		}
+
+
 
 	</script>
 </body>
