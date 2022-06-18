@@ -273,7 +273,14 @@
   			transition: 0.35s ease-out;
 		}
 
-	
+		.fa-jsfiddle {
+			font-weight: bold;
+		}
+
+		.fa-free-code-camp  {
+			font-weight: 600;
+		}
+
 		#copyright-text {
 			color: black;
 			text-align: center;
@@ -318,25 +325,25 @@
 				<header id="cert-header">CERTIFICATIONS I HAVE EARNED SO FAR</header>
 				<section d="certs">
 					<div id="cert-1">
-						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img"
-								src="/g4o2-website/certifications/FCC_responsive_web_design_certification.png" alt="certification"></a>
+						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1"
+								onmouseover="certScroll(this)" src="/g4o2-website/certifications/FCC_responsive_web_design_certification.png" alt="certification"></a>
 					</div>
 					<div id="cert-2">
-						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img"
-								src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
+						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img cert-img-2"
+								onmouseover="certScroll(this)" src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
 					</div>
 					<div id="cert-3">
-						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img"
-								src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
+						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3"
+								onmouseover="certScroll(this)" src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-4">
-						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img"
-								src="/g4o2-website/certifications/building-web-applications-in-php.png" alt="certification"></a>
+						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4"
+								onmouseover="certScroll(this)" src="/g4o2-website/certifications/building-web-applications-in-php.png" alt="certification"></a>
 					</div>
 					<div id="cert-4">
-						<a href="/g4o2-website/certifications/cert-5.html"><img class="cert-img"
-								src="/g4o2-website/certifications/Introduction to Structured Query Language (SQL).png" alt="certification"></a>
+						<a href="/g4o2-website/certifications/cert-5.html"><img class="cert-img cert-img-5"
+								onmouseover="certScroll(this)" src="/g4o2-website/certifications/Introduction to Structured Query Language (SQL).png" alt="certification"></a>
 					</div>
 				</section>
 			</section>
@@ -358,19 +365,28 @@
 		<section id="contact">
 			<header id="contact-header" class="header">Contact and Social Media</header>
 			<a href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/" target="_blank" title="Linkedin Profile">
-				<i id="linkedin-img" alt="linkedin" class="contact-img fa-brands fa-linkedin fa-3x"></i>
+				<i alt="linkedin" class="contact-img fa-brands fa-linkedin fa-3x"></i>
 			</a>
 			<a href="https://github.com/Maxhu787" target="_blank" title="GitHub Profile">
-				<i id="github-img" alt="github" class="contact-img fa-brands fa-github-square fa-3x"></i>
+				<i alt="github" class="contact-img fa-brands fa-github-square fa-3x"></i>
 			</a>
 			<a href="https://www.instagram.com/hukaixiang1024/" target="_blank" title="Ingstagram Profile">
-				<i id="ig-img" alt="ig" class="contact-img fa-brands fa-instagram-square fa-3x"></i>
+				<i alt="ig" class="contact-img fa-brands fa-instagram-square fa-3x"></i>
 			</a>
 			<a href="https://twitter.com/Maxhu787" target="_blank" title="Twitter Account">
-				<i id="twitter-img" alt="twitter" class="contact-img fa-brands fa-twitter-square fa-3x"></i>
+				<i alt="twitter" class="contact-img fa-brands fa-twitter-square fa-3x"></i>
 			</a>
-			<a href="https://discord.gg/ukGJWgWu" target="_blank" title="Discord Server">
-				<i id="discord-img" alt="discord" class="contact-img fa-brands fa-discord fa-3x"></i>
+			<a href="https://discord.gg/8XkBy6SRDJ" target="_blank" title="Discord Server">
+				<i alt="discord" class="contact-img fa-brands fa-discord fa-3x"></i>
+			</a>
+			<a href="https://www.freecodecamp.org/Maxhu" target="_blank" title="Freecodcamp Profile">
+				<i alt="FCC" class="contact-img fa-brands fa-free-code-camp fa-3x"></i>
+			</a>
+			<a href="https://codepen.io/g4o2" target="_blank" title="CodePen Profile">
+				<i class="contact-img fa-brands fa-codepen fa-3x"></i>
+			</a>
+			<a href="https://jsfiddle.net/user/maxhu787/" target="_blank" title="Jsfiddle Profile">
+				<i class="contact-img fa-brands fa-jsfiddle fa-3x"></i>
 			</a>
 		</section>
 		<section id="copyright">
@@ -383,7 +399,7 @@
 				e.preventDefault();
 
 				document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'smooth'
+					behavior: 'auto'
 				});
 			});
 		});
@@ -393,6 +409,58 @@
 				/*alert('At the bottom!');*/
 			}
 		}
+		//scrols to top at start
+		window.scrollTo({
+			top: 1,
+			left: 0,
+			behavior: 'auto'
+		});
+
+		function certScroll(x) {
+			const images = document.querySelectorAll('img');
+			for (const cert of images) {
+				if (cert.matches(':hover')) {
+					if(cert.className == "cert-img cert-img-1") {
+						console.log('cert-img-1 hover');
+							window.scrollTo({
+							top: 80,
+							left: 0,
+							behavior: 'auto'
+						});
+					} else if (cert.className == "cert-img cert-img-2") {
+						console.log('cert-img-2 hover');
+						window.scrollTo({
+							top: 390,
+							left: 0,
+							behavior: 'auto'
+						});
+					} else if (cert.className == "cert-img cert-img-3") {
+						console.log('cert-img-3 hover');
+						window.scrollTo({
+							top: 720,
+							left: 0,
+							behavior: 'auto'
+						});
+					} else if (cert.className == "cert-img cert-img-4") {
+						console.log('cert-img-4 hover');
+						window.scrollTo({
+							top: 1060,
+							left: 0,
+							behavior: 'auto'
+						});
+					} else if (cert.className == "cert-img cert-img-5") {
+						console.log('cert-img-5 hover');
+						window.scrollTo({
+							top: 1380,
+							left: 0,
+							behavior: 'auto'
+						});
+					}
+				}
+			}
+			
+		}
+
 	</script>
 </body>
 
