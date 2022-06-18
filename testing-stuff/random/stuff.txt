@@ -2,3 +2,5 @@ avent
 store cryp
 data 
 chart 
+
+win + tab 
