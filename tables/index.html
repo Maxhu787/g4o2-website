@@ -109,7 +109,14 @@
             <area shape="rect" coords="0,0, 0,0, 0,0, 0,0" alt="test" href="../index.html">
         </map>
         <br>
+        <p id="hover-stat"></p>
         <a href="../index.html">Go back to main page</a><br>
     </main>
+    <script>
+        hoverText = document.getElementById('hover-stat');
+        window.onscroll = function () {
+                hoverText.innerHTML = Math.round(window.pageYOffset);
+        }
+    </script>
 </body>
 </html>
