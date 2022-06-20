@@ -183,7 +183,7 @@
 		}
 
 		main {
-			height: 2000px;
+			height: 2100px;
 		}
 
 		#certs {
@@ -283,12 +283,13 @@
 		.fa-free-code-camp {
 			font-weight: 600;
 		}
+
 		#contact {
 			background-color: white;
 			position: relative;
 		}
 		#copyright-text {
-			font-size: 20px;
+			font-size: 30px;
 			color:rgb(49, 49, 49);
 			text-align: center;
 		}
@@ -414,6 +415,7 @@
 					<i class="about-img fa-brands fa-js-square fa-2x"></i>
 					<i class="about-img fa-brands fa-python fa-2x"></i>
 					<i class="about-img fa-brands fa-php fa-2x"></i>
+					<object id="sql-logo" data="/g4o2-website/media/MySQL-Logo.svg" width="85" height="85"></object>
 				</p>
 				<p>And I have used the things I have learned so far to create this page</p>
 			</article>
@@ -488,35 +490,35 @@
 			for (const cert of images) {
 				if (cert.matches(':hover')) {
 					if (cert.className == "cert-img cert-img-1") {
-						hoverStatText.innerHTML = ('Certifications - cert-img-1');
+						hoverStatText.innerHTML = ('Responsive web design certification');
 						window.scrollTo({
 							top: 80,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-2") {
-						hoverStatText.innerHTML = ('Certifications - cert-img-2');
+						hoverStatText.innerHTML = ('Python data stuctures');
 						window.scrollTo({
 							top: 390,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-3") {
-						hoverStatText.innerHTML = ('Certifications - cert-img-3');
+						hoverStatText.innerHTML = ('python programming for everybody');
 						window.scrollTo({
 							top: 720,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-4") {
-						hoverStatText.innerHTML = ('Certifications - cert-img-4');
+						hoverStatText.innerHTML = ('building web applications in php');
 						window.scrollTo({
 							top: 1060,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-5") {
-						hoverStatText.innerHTML = ('Certifications - cert-img-5');
+						hoverStatText.innerHTML = ('Introduction to SQL');
 						window.scrollTo({
 							top: 1380,
 							left: 0,
