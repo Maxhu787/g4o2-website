@@ -4,22 +4,31 @@
 	body {
 		margin: 0;
 		background: rgb(49, 49, 49);
-		font-family: 'Work Sans', sans-serif;
+		font-family: monospace;
 		font-weight: 100;
 		text-align: center;
 		color: white;
+        font-size: 24px;
 	}
 	a {
 		color: orange;
 		text-decoration: none;
 		text-transform: uppercase;
-		font-size: 14px;
+        font-family: 'Work Sans';
+        transition: 0.2s ease-in;
 	}
     a:hover {
         color: white;
     }
     #link {
-        font-size: 18px;
+        font-size: 30px;
+    }
+    p {
+        transition: 0.3s ease-in;
+    }
+    form:focus-within p {
+        font-size: 30px;
+        color: orange;
     }
 </style>
 <!DOCTYPE html>
@@ -33,7 +42,7 @@
 <body>
     <main>Welcome</main>
     <form>
-        Guess the number:<br>
+        <p>Guess the number:</p>
         <input type="text" id="guess" value="100">
         <br><br>
         <input type="submit" value="Submit" onclick="myFunction()">

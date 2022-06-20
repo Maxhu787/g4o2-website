@@ -261,7 +261,7 @@
 		}
 
 		footer:hover {
-			opacity: 0.85;
+			opacity: 0.9;
 		}
 
 
@@ -299,10 +299,7 @@
 			height: 100px;
 			display: fixed;
 			position: fixed;
-  			bottom: 0;/*
-			animation-name: myAnimation;
-    		animation-duration: 2000ms;
-    		animation-fill-mode: forwards;*/
+  			bottom: 0;
 		}
 
 		@keyframes myAnimation{
@@ -324,6 +321,7 @@
 			color:rgb(49, 49, 49);
 			cursor: pointer;
 			position: absolute;
+			font-size: 28px;
 			top: 50%;
 			right: 0%;
 			padding: 12px 16px;
@@ -408,8 +406,8 @@
 			</section>
 			<article id="about">
 				<header id="about-header" class="header">MORE ABOUT ME</header>
-				<!--<p>Im&nbsp;a thirteen&#8209;year&#8209;old&nbsp;kid that&nbsp;is&nbsp;intrested in&nbsp;programming
-					and&nbsp;computer&nbsp;sience</p>-->
+				<p>Im&nbsp;a thirteen&#8209;year&#8209;old&nbsp;kid that&nbsp;is&nbsp;intrested in&nbsp;programming
+					and&nbsp;computer&nbsp;sience</p>
 				<p>So far I have learned some
 					<i class="about-img fa-brands fa-html5 fa-2x"></i>
 					<i class="about-img fa-brands fa-css3-alt fa-2x"></i>
@@ -417,6 +415,7 @@
 					<i class="about-img fa-brands fa-python fa-2x"></i>
 					<i class="about-img fa-brands fa-php fa-2x"></i>
 				</p>
+				<p>And I have used the things I have learned so far to create this page</p>
 			</article>
 		</div>
 	</main>
@@ -450,26 +449,13 @@
 			<div id="copyright">
 				<p id="copyright-text">g4o2 2022 &copy; Copyright</p><span onclick="loadAnimation()" class="close">&times;</span>
 			</div>
-			<style>
-				
-			</style>
 		</section>
 	</footer>
 	<script>
 		const hoverText = document.getElementById('hover-stat');
 		const hoverStatText = document.getElementById('hover-stat-text');
 		hoverStat = false;
-		/*smooth scrolling*/
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-			anchor.addEventListener('click', function (e) {
-				e.preventDefault();
-
-				document.querySelector(this.getAttribute('href')).scrollIntoView({
-					behavior: 'auto'
-				});
-			});
-		});
-
+		//top bottom detect
 		window.onscroll = function() {
 			hoverText.innerHTML = Math.round(window.pageYOffset);
 			console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
@@ -480,13 +466,23 @@
 				hoverStatText.innerHTML = ('Top');
 			}
 		}
+		//smooth scrolling
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+				anchor.addEventListener('click', function (e) {
+					e.preventDefault();
 
-		/*window.scrollTo({
+					document.querySelector(this.getAttribute('href')).scrollIntoView({
+						behavior: 'auto'
+					});
+				});
+			});
+		//scroll to top at refresh/ start 
+		window.scrollTo({
 			top: 0,
 			left: 0,
 			behavior: 'smooth'
-		});*/
-		
+		});
+		//detect which img hoverd on and positions it not finished yet 
 		function certScroll(x) {
 			const images = document.querySelectorAll('img');
 			for (const cert of images) {
@@ -531,32 +527,33 @@
 			}
 
 		}
+		//change color on scroll directions
 		const copyright = document.getElementById('copyright');
+		const copyrightText = document.getElementById('copyright-text');
 		let oldValue = 0
-			let newValue = 0
-			window.addEventListener('scroll', (e) => {
-				newValue = window.pageYOffset;
+		let newValue = 0
+		window.addEventListener('scroll', (e) => {
+			newValue = window.pageYOffset;
 				if (oldValue < newValue) {
 					console.log("Up");
 					copyright.style.backgroundColor = "white";
 					/*copyright.style.visibility = "visible";*/
 				} else if (oldValue > newValue) {
 					console.log("Down");
-					copyright.style.backgroundColor = "orange";
+					copyrightText.style.fontSize = "30px";
 				}
-				oldValue = newValue;
+			oldValue = newValue;
+		});
+		//detect close button click and loads animation
+		var closebtns = document.getElementsByClassName("close");
+		for (let i = 0; i < closebtns.length; i++) {
+			closebtns[i].addEventListener("click", function () {
+				/*this.parentElement.style.display = 'none';*/
 			});
-			var closebtns = document.getElementsByClassName("close");
-
-
-			for (let i = 0; i < closebtns.length; i++) {
-				closebtns[i].addEventListener("click", function () {
-					/*this.parentElement.style.display = 'none';*/
-				});
-			}
-			function loadAnimation() {
-				copyright.className = 'classname';
-			}	
+		}
+		function loadAnimation() {
+			copyright.className = 'classname';
+		}	
 			
 	</script>
 </body>
