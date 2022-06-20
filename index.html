@@ -20,7 +20,6 @@
 			font-family: 'Work Sans', sans-serif;
 			font-weight: 100;
 			text-align: center;
-			color: white;
 			background: url(../g4o2-website/media/0000001.jpg);
 			background-repeat: no-repeat;
 			background-attachment: fixed;
@@ -28,6 +27,7 @@
 			/*filter: blur(8px);
 			-webkit-filter: blur(8px);
 			backdrop-filter: blur(5px);*/
+			box-sizing: border-box;
 		}
 
 		a {
@@ -262,9 +262,9 @@
 		}
 
 		footer {
-			background-color: white;
+			background-color: rgb(71, 71, 71);
 			height: 250px;
-		 	display: table;
+			display: table;
 			flex-direction: column;
 			opacity: 0.8;
 			width: 100%;
@@ -295,41 +295,50 @@
 		}
 
 		#contact {
-			background-color: white;
+			background-color: rgb(71, 71, 71);
 			position: relative;
 		}
+
+		#contact-header {
+			color: white;
+		}
+
 		#copyright-text {
 			font-size: 30px;
-			color:rgb(49, 49, 49);
+			color: white;
 			text-align: center;
 		}
+
 		#copyright {
 			height: 8%;
 			width: 100%;
-			background-color: white;
+			background-color: rgb(71, 71, 71);
 			height: 100px;
 			display: fixed;
 			position: fixed;
-  			bottom: 0;
+			bottom: 0;
 		}
 
-		@keyframes myAnimation{
-			0%{
+		@keyframes myAnimation {
+			0% {
 				opacity: 1;
 				transform: rotateX(90deg);
 			}
-			50%{
+
+			50% {
 				opacity: 0.5;
 				transform: rotateX(0deg);
 			}
-			100%{
+
+			100% {
 				display: none;
 				opacity: 0;
 				transform: rotateX(90deg);
 			}
 		}
+
 		.close {
-			color:rgb(49, 49, 49);
+			color: rgb(49, 49, 49);
 			cursor: pointer;
 			position: absolute;
 			font-size: 28px;
@@ -338,11 +347,28 @@
 			padding: 12px 16px;
 			transform: translate(0%, -50%);
 		}
-		.close:hover {background: #bbb;}	
+
+		.close:hover {
+			background: #bbb;
+		}
+
 		.classname {
 			animation-name: myAnimation;
-    		animation-duration: 2000ms;
-    		animation-fill-mode: forwards;
+			animation-duration: 2000ms;
+			animation-fill-mode: forwards;
+		}
+
+		#announcement {
+			top: 67px;
+			width: 300px;
+			height: 50%;
+			right: 0;
+			bottom: 0;
+			background: rgb(71, 71, 71);
+			opacity: 0.8;
+			position: absolute;
+			text-transform: uppercase;
+			padding: 20px;
 		}
 	</style>
 	<title>g4o2 website</title>
@@ -415,6 +441,10 @@
 					</div>
 				</section>
 			</section>
+			<section id="announcements">
+				<div id="announcement">Announcements</div>
+			</section>
+			</section>
 			<article id="about">
 				<header id="about-header" class="header">MORE ABOUT ME</header>
 				<p>Im&nbsp;a thirteen&#8209;year&#8209;old&nbsp;kid that&nbsp;is&nbsp;intrested in&nbsp;programming
@@ -459,7 +489,8 @@
 				<i class="contact-img fa-brands fa-jsfiddle fa-3x"></i>
 			</a>
 			<div id="copyright">
-				<p id="copyright-text">g4o2 2022 &copy; Copyright</p><span onclick="loadAnimation()" class="close">&times;</span>
+				<p id="copyright-text">g4o2 2022 &copy; Copyright</p><span onclick="loadAnimation()"
+					class="close">&times;</span>
 			</div>
 		</section>
 	</footer>
@@ -468,7 +499,7 @@
 		const hoverStatText = document.getElementById('hover-stat-text');
 		hoverStat = false;
 		//top bottom detect
-		window.onscroll = function() {
+		window.onscroll = function () {
 			hoverText.innerHTML = Math.round(window.pageYOffset);
 			console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
 			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
@@ -480,14 +511,14 @@
 		}
 		//smooth scrolling
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-				anchor.addEventListener('click', function (e) {
-					e.preventDefault();
+			anchor.addEventListener('click', function (e) {
+				e.preventDefault();
 
-					document.querySelector(this.getAttribute('href')).scrollIntoView({
-						behavior: 'auto'
-					});
+				document.querySelector(this.getAttribute('href')).scrollIntoView({
+					behavior: 'smooth'
 				});
 			});
+		});
 		//scroll to top at refresh/ start 
 		window.scrollTo({
 			top: 0,
@@ -537,7 +568,6 @@
 					}
 				}
 			}
-
 		}
 		//change color on scroll directions
 		const copyright = document.getElementById('copyright');
@@ -546,14 +576,14 @@
 		let newValue = 0
 		window.addEventListener('scroll', (e) => {
 			newValue = window.pageYOffset;
-				if (oldValue < newValue) {
-					console.log("Up");
-					copyright.style.backgroundColor = "white";
-					/*copyright.style.visibility = "visible";*/
-				} else if (oldValue > newValue) {
-					console.log("Down");
-					copyrightText.style.fontSize = "30px";
-				}
+			if (oldValue < newValue) {
+				console.log("Up");
+				/*copyright.style.backgroundColor = "white";
+				/*copyright.style.visibility = "visible";*/
+			} else if (oldValue > newValue) {
+				console.log("Down");
+				/*copyrightText.style.fontSize = "30px";*/
+			}
 			oldValue = newValue;
 		});
 		//detect close button click and loads animation
@@ -565,8 +595,8 @@
 		}
 		function loadAnimation() {
 			copyright.className = 'classname';
-		}	
-			
+		}
+
 	</script>
 </body>
 
