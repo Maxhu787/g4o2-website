@@ -254,7 +254,7 @@
 		footer {
 			background-color: white;
 			height: 250px;
-			display: flex;
+		 	display: table;
 			flex-direction: column;
 			opacity: 0.8;
 			width: 100%;
@@ -283,12 +283,23 @@
 		.fa-free-code-camp {
 			font-weight: 600;
 		}
-
+		#contact {
+			background-color: white;
+			position: relative;
+		}
 		#copyright-text {
-			color: black;
+			font-size: 20px;
+			color:rgb(49, 49, 49);
 			text-align: center;
-			padding: 15px;
+		}
+		#copyright {
+			height: 8%;
+			width: 100%;
+			background-color: white;
+			height: 100px;
+			display: fixed;
 			position: fixed;
+  			bottom: 0;
 		}
 	</style>
 	<title>g4o2 website</title>
@@ -402,9 +413,9 @@
 			<a href="https://jsfiddle.net/user/maxhu787/" target="_blank" title="Jsfiddle Profile">
 				<i class="contact-img fa-brands fa-jsfiddle fa-3x"></i>
 			</a>
-		</section>
-		<section id="copyright">
-			<p id="copyright-text">g4o2 2022 &copy; Copyright</p>
+			<div id="copyright">
+				<p id="copyright-text">g4o2 2022 &copy; Copyright</p>
+			</div>
 		</section>
 	</footer>
 	<script>
@@ -427,17 +438,17 @@
 			console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
 			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
 				hoverStatText.innerHTML = ('Bottom');
-				alert ("Wallee")
+				/*alert ("Wallee");*/
 			} else if (window.pageYOffset <= 1) {
 				hoverStatText.innerHTML = ('Top');
 			}
 		}
 
-		window.scrollTo({
+		/*window.scrollTo({
 			top: 0,
 			left: 0,
 			behavior: 'smooth'
-		});
+		});*/
 		
 		function certScroll(x) {
 			const images = document.querySelectorAll('img');
