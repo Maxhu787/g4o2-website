@@ -24,6 +24,9 @@
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-size: 100% 100%;
+			/*filter: blur(8px);
+			-webkit-filter: blur(8px);
+			backdrop-filter: blur(5px);*/
 		}
 
 		a {
@@ -175,10 +178,15 @@
 			height: 220px;
 			transition: width .8s;
 			transition: height .8s;
+			z-index: -1;
+			filter: blur(5px);
+			-webkit-filter: blur(5px)
 		}
 
 		.cert-img:hover {
 			height: 400px;
+			filter: blur(0px);
+			-webkit-filter: blur(0px);
 			transition: all 0.35s ease-in-out;
 		}
 
