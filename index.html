@@ -171,6 +171,10 @@
 			background-color: #ffbf00;
 		}
 
+		main {
+			height: 2100px;
+		}
+
 		#content-wrapper {
 			margin-top: 95px;
 		}
@@ -179,20 +183,15 @@
 			height: 220px;
 			transition: width .8s;
 			transition: height .8s;
-			z-index: -1;
-			filter: blur(5px);
-			-webkit-filter: blur(5px)
+			/*filter: blur(5px);
+			-webkit-filter: blur(5px)*/
 		}
 
 		.cert-img:hover {
 			height: 400px;
-			filter: blur(0px);
-			-webkit-filter: blur(0px);
+			/*filter: blur(0px);
+			-webkit-filter: blur(0px);*/
 			transition: all 0.35s ease-in-out;
-		}
-
-		main {
-			height: 2100px;
 		}
 
 		#certs {
@@ -441,7 +440,7 @@
 					</div>
 				</section>
 			</section>
-			<section id="announcements">
+			<section hidden id="announcements">
 				<div id="announcement">Announcements</div>
 			</section>
 			</section>
