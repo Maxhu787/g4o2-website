@@ -288,6 +288,7 @@
 			color: black;
 			text-align: center;
 			padding: 15px;
+			position: fixed;
 		}
 	</style>
 	<title>g4o2 website</title>
@@ -426,6 +427,7 @@
 			console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
 			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
 				hoverStatText.innerHTML = ('Bottom');
+				alert ("Wallee")
 			} else if (window.pageYOffset <= 1) {
 				hoverStatText.innerHTML = ('Top');
 			}
