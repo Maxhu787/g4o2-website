@@ -299,7 +299,41 @@
 			height: 100px;
 			display: fixed;
 			position: fixed;
-  			bottom: 0;
+  			bottom: 0;/*
+			animation-name: myAnimation;
+    		animation-duration: 2000ms;
+    		animation-fill-mode: forwards;*/
+		}
+
+		@keyframes myAnimation{
+			0%{
+				opacity: 1;
+				transform: rotateX(90deg);
+			}
+			50%{
+				opacity: 0.5;
+				transform: rotateX(0deg);
+			}
+			100%{
+				display: none;
+				opacity: 0;
+				transform: rotateX(90deg);
+			}
+		}
+		.close {
+			color:rgb(49, 49, 49);
+			cursor: pointer;
+			position: absolute;
+			top: 50%;
+			right: 0%;
+			padding: 12px 16px;
+			transform: translate(0%, -50%);
+		}
+		.close:hover {background: #bbb;}	
+		.classname {
+			animation-name: myAnimation;
+    		animation-duration: 2000ms;
+    		animation-fill-mode: forwards;
 		}
 	</style>
 	<title>g4o2 website</title>
@@ -414,8 +448,11 @@
 				<i class="contact-img fa-brands fa-jsfiddle fa-3x"></i>
 			</a>
 			<div id="copyright">
-				<p id="copyright-text">g4o2 2022 &copy; Copyright</p>
+				<p id="copyright-text">g4o2 2022 &copy; Copyright</p><span onclick="loadAnimation()" class="close">&times;</span>
 			</div>
+			<style>
+				
+			</style>
 		</section>
 	</footer>
 	<script>
@@ -494,6 +531,33 @@
 			}
 
 		}
+		const copyright = document.getElementById('copyright');
+		let oldValue = 0
+			let newValue = 0
+			window.addEventListener('scroll', (e) => {
+				newValue = window.pageYOffset;
+				if (oldValue < newValue) {
+					console.log("Up");
+					copyright.style.backgroundColor = "white";
+					/*copyright.style.visibility = "visible";*/
+				} else if (oldValue > newValue) {
+					console.log("Down");
+					copyright.style.backgroundColor = "orange";
+				}
+				oldValue = newValue;
+			});
+			var closebtns = document.getElementsByClassName("close");
+
+
+			for (let i = 0; i < closebtns.length; i++) {
+				closebtns[i].addEventListener("click", function () {
+					/*this.parentElement.style.display = 'none';*/
+				});
+			}
+			function loadAnimation() {
+				copyright.className = 'classname';
+			}	
+			
 	</script>
 </body>
 
