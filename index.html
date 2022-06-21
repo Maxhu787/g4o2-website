@@ -181,6 +181,7 @@
 		}
 
 		.cert-img {
+			/*opacity: 0.5;*/
 			height: 220px;
 			transition: width .8s;
 			transition: height .8s;
@@ -198,30 +199,10 @@
 		#certs {
 			position: absolute;
 		}
-
-		#cert-1 {
-			margin-top: 80px;
-		}
-
-		#cert-2 {
-			margin-top: 90px;
-		}
-
-		#cert-3 {
-			margin-top: 100px;
-		}
-
-		#cert-4 {
-			margin-top: 110px;
-		}
-
-		#cert-5 {
-			margin-top: 120px;
-		}
-
-		#cert-6 {
-			margin-top: 130px;
-		}
+		
+		.cert-wrapper {
+			padding: 50px;
+		}		
 
 		#cert-header {
 			margin-top: 30px;
@@ -330,7 +311,7 @@
 			}
 
 			50% {
-				opacity: 0.5;
+				opacity: 0.8;
 				transform: rotateX(0deg);
 			}
 
@@ -414,36 +395,35 @@
 			<section id="certifications">
 				<header id="cert-header">CERTIFICATIONS I HAVE EARNED SO FAR</header>
 				<section d="certs">
-					<div id="cert-1">
+					<div id="cert-1" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1"
 								onmouseover="certScroll(this)"
-								src="/g4o2-website/certifications/FCC_responsive_web_design_certification.png"
-								alt="certification"></a>
+								src="/g4o2-website/certifications/FCC_responsive_web_design_certification.png" alt="certification"></a>
 					</div>
-					<div id="cert-2">
+					<div id="cert-2" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img cert-img-2"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
 					</div>
-					<div id="cert-3">
+					<div id="cert-3" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
 								alt="certification"></a>
 					</div>
-					<div id="cert-4">
+					<div id="cert-4" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/building-web-applications-in-php.png"
 								alt="certification"></a>
 					</div>
-					<div id="cert-5">
+					<div id="cert-5" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-5.html"><img class="cert-img cert-img-5"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/Introduction to Structured Query Language (SQL).png"
 								alt="certification"></a>
 					</div>
-					<div id="cert-6">
+					<div id="cert-6" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-6.html"><img class="cert-img cert-img-6" 
 								onmouseover="certScroll(this)"
 								src="/g4o2-website//certifications/Introduction to HTML5.png"
@@ -499,8 +479,8 @@
 				<i class="contact-img fa-brands fa-jsfiddle fa-3x"></i>
 			</a>
 			<div id="copyright">
-				<p id="copyright-text">g4o2 2022 &copy; Copyright</p><span onclick="loadAnimation()"
-					class="close">&times;</span>
+				<p id="copyright-text"><!--g4o2 2022 &copy; Copyright--> Since php doesn't work on github pages, some pages won't function properly</p>
+				<span onclick="loadAnimation()" class="close">&times;</span>
 			</div>
 		</section>
 	</footer>
@@ -543,42 +523,42 @@
 					if (cert.className == "cert-img cert-img-1") {
 						hoverStatText.innerHTML = ('Responsive web design certification');
 						window.scrollTo({
-							top: 80,
+							top: 65,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-2") {
 						hoverStatText.innerHTML = ('Python data stuctures');
 						window.scrollTo({
-							top: 390,
+							top: 389,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-3") {
 						hoverStatText.innerHTML = ('python programming for everybody');
 						window.scrollTo({
-							top: 720,
+							top: 714,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-4") {
 						hoverStatText.innerHTML = ('building web applications in php');
 						window.scrollTo({
-							top: 1060,
+							top: 1036,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-5") {
 						hoverStatText.innerHTML = ('Introduction to SQL');
 						window.scrollTo({
-							top: 1380,
+							top: 1360,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-6") {
 						hoverStatText.innerHTML = ('Introduction to HTML5');
 						window.scrollTo({
-							top: 1750,
+							top: 1685,
 							left: 0,
 							behavior: 'smooth'
 						});

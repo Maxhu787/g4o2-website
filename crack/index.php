@@ -39,10 +39,12 @@
     }
 
     a {
+        margin-top: 100px;
         color: orange;
         text-decoration: none;
         text-transform: uppercase;
-        font-size: 20px;
+        font-size: 30px;
+        transition: color 0.2s ease-in-out;
     }
 
     a:hover {
@@ -106,9 +108,10 @@ if (isset($_GET['md5'])) {
 </pre>
         <p id="output">PIN: <?= htmlentities($goodtext); ?></p>
         <form>
-            <input type="text" name="md5" size="40" value="Enter something in" style="margin-right:10px;border-radius:10px;padding:10px;font-size:14px;background-color:rgb(49, 49, 49);color:orange;border:4px solid orange;}">
+            <input type="text" name="md5" size="40" type="text" placeholder="Enter something" style="margin-right:10px;border-radius:10px;padding:10px;font-size:14px;background-color:rgb(49, 49, 49);color:orange;border:4px solid orange;}">
             <input id="submit" type="submit" value="Crack MD5">
         </form>
+        <div style="color: lightblue; margin-top: 5px;">Example: 0bd65e799153554726820ca639514029</div>
     </main>
 </body>
 <footer>
