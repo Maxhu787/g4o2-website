@@ -1,27 +1,30 @@
 <head>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/g4o2-website/js/jquery-3.6.0.min.js"></script>
-    <!--Bootstrap library-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        
     </head>
 </head>
-<script>
-    import bootstrap from 'bootstrap'
+<script type="text/javascript" src="/g4o2-website/js/jquery-3.6.0.js"></script>
+<script type="text/javascript">
     $(document).ready(function () {
-        $("button").addClass("animated bounce");
-        $("well").addClass("animated shake");
-    });
+            $("a").click(function () {
+                alert("Hello world!");
+            });
+            $("#target1").css("color", "red");
+            $("#target1").prop("disabled", true);
+            $("#target4").remove();
+            $("#target2").appendTo("#right-well");
+            $("#target5").clone().appendTo("#left-well");
+            $("#target1").parent().css("background-color", "red");
+            $("#right-well").children().css("color", "orange");
+            $("#left-well").children().css("color", "green");
+            $(".target:nth-child(2)").addClass("animated bounce");
+            $(".target:even").addClass("animated shake");
+            $("body").addClass("animated hinge");
+        });
 </script>
-
 <!-- Only change code above this line -->
 <div class="container-fluid">
+    <a href="#">Test</a>
     <h1 class="animate__animated animate__hinge">An animated element</h1>
     <h3 class="text-primary text-center">jQuery Playground</h3>
     <div class="row">
