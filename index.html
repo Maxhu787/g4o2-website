@@ -8,7 +8,6 @@
 	<link rel="icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="shortcut icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="apple-touch-icon" href="/g4o2-website/media/111.jpeg">
-	<link rel="stylesheet" href="/g4o2-website/style.css">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +16,7 @@
 
 		body {
 			margin: 0;
-			background: rgb(49, 49, 49);
+			background: rgb(71, 71, 71);
 			font-family: 'Work Sans', sans-serif;
 			font-weight: 100;
 			text-align: center;
@@ -216,6 +215,7 @@
 
 		#about {
 			margin-top: 100px;
+			color: white;
 		}
 
 		#about-header {
@@ -231,9 +231,8 @@
 		}
 
 		.about-img:hover {
-			color: rgb(0, 191, 255);
+			color: rgb(0, 153, 204);
 			transition: 0.35s ease-out;
-			cursor: pointer;
 		}
 
 		.header {
@@ -393,8 +392,8 @@
 			</div>
 			<nav>
 				<ul id="main-nav">
-					<li><a id="hover-stat-text">Welcome</a></li>
-					<li><a id="hover-stat">Stats</a></li>
+					<li><a href="#" id="hover-stat-text">Welcome</a></li>
+					<li><a href="#" id="hover-stat">Stats</a></li>
 					<li><a href="#about">About & Contact</a></li>
 					<div class="dropdown">
 						<button class="dropbtn">PAGES</button>
@@ -516,6 +515,8 @@
 	<script>
 		const hoverText = document.getElementById('hover-stat');
 		const hoverStatText = document.getElementById('hover-stat-text');
+		//scrool to top btn
+		let mybutton = document.getElementById("topBtn");
 		hoverStat = false;
 		//top bottom detect
 		window.onscroll = function () {
@@ -527,7 +528,21 @@
 			} else if (window.pageYOffset <= 1) {
 				hoverStatText.innerHTML = ('Top');
 			}
+			//top btn detects when to show and hide
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				mybutton.style.display = "none"/*"block"*/; //top btn temp disabled 
+			} else {
+				mybutton.style.display = "none";
+			}
 		}
+		//scroll top btn onclick function
+		function topFunction() {
+				window.scrollTo({
+					top: 0,
+					left: 0,
+					behavior: 'smooth'
+				});
+			}
 		//smooth scrolling
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
@@ -629,31 +644,6 @@
 		function loadAnimation() {
 			copyright.className = 'classname';
 		}
-
-		//scrool to top btn
-		//Get the button
-			let mybutton = document.getElementById("topBtn");
-
-			// When the user scrolls down 20px from the top of the document, show the button
-			window.onscroll = function () { scrollFunction() };
-
-			function scrollFunction() {
-				if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-					mybutton.style.display = "block";
-				} else {
-					mybutton.style.display = "none";
-				}
-			}
-
-			// When the user clicks on the button, scroll to the top of the document
-			function topFunction() {
-				window.scrollTo({
-					top: 0,
-					left: 0,
-					behavior: 'smooth'
-				});
-			}
-
 	</script>
 </body>
 
