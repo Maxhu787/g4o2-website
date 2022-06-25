@@ -13,7 +13,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
-
+		:root {
+ 			--page-theme: orange /*orange*/;
+			--page-theme-second: #ffc200/*#ffc200*/;
+			--page-bg: rgb(71, 71, 71)/*rgb(71, 71, 71)*/;
+			--text-color: white;
+		}
 		body {
 			margin: 0;
 			background: rgb(71, 71, 71);
@@ -55,7 +60,7 @@
 		}
 
 		.navbar-header {
-			background: #ffa200;
+			background: var(--page-theme);
 			position: fixed;
 			width: 100%;
 			margin-top: -95.5px;
@@ -74,7 +79,7 @@
 			float: left;
 			margin-left: -90px;
 			transition: all 0.35s ease-in-out;
-			border: solid rgb(255, 195, 91) 3px;
+			border: solid var(--page-theme-second) 3px;
 			margin-top: 6px;
 			transition: border 0.35s ease-out;
 		}
@@ -129,7 +134,7 @@
 		}
 
 		.dropbtn {
-			background-color: #ffa200;
+			background-color: var(--page-theme);
 			padding: 16px;
 			font-size: 12px;
 			font-weight: 100;
@@ -170,7 +175,7 @@
 		}
 
 		.dropdown:hover .dropbtn {
-			background-color: #ffbf00;
+			background-color: var(--page-theme-second);
 		}
 
 		main {
@@ -208,14 +213,14 @@
 		#cert-header {
 			margin-top: 30px;
 			font-size: 26px;
-			color: orange;
+			color: var(--page-theme);
 			font-family: monospace;
 			font-weight: 100;
 		}
 
 		#about {
 			margin-top: 100px;
-			color: white;
+			color: var(--text-color);
 		}
 
 		#about-header {
@@ -224,7 +229,7 @@
 		}
 
 		.about-img {
-			color: white;
+			color: var(--text-color);
 			font-size: 4em;
 			padding: 10px;
 			transition: all 0.35s ease-in-out;
@@ -236,7 +241,7 @@
 		}
 
 		.header {
-			color: orange;
+			color: var(--page-theme);
 		}
 
 		#contact-header {
@@ -248,7 +253,7 @@
 		}
 
 		footer {
-			background-color: rgb(71, 71, 71);
+			background-color: var(--page-bg);
 			height: 250px;
 			display: table;
 			flex-direction: column;
@@ -262,7 +267,7 @@
 
 
 		.contact-img {
-			color: orange;
+			color: var(--page-theme);
 			padding: 10px;
 			transition: all 0.35s ease-in-out;
 		}
@@ -281,24 +286,24 @@
 		}
 
 		#contact {
-			background-color: rgb(71, 71, 71);
+			background-color: var(--page-bg);
 			position: relative;
 		}
 
 		#contact-header {
-			color: white;
+			color: var(--text-color);
 		}
 
 		#copyright-text {
 			font-size: 30px;
-			color: white;
+			color: var(--text-color);
 			text-align: center;
 		}
 
 		#copyright {
 			height: 8%;
 			width: 100%;
-			background-color: rgb(71, 71, 71);
+			background-color: var(--page-bg);
 			height: 100px;
 			display: fixed;
 			position: fixed;
@@ -324,7 +329,7 @@
 		}
 
 		.close {
-			color: white;
+			color: var(--text-color);
 			cursor: pointer;
 			position: absolute;
 			font-size: 28px;
@@ -350,7 +355,7 @@
 			height: 50%;
 			right: 0;
 			bottom: 0;
-			background: rgb(71, 71, 71);
+			background: var(--page-bg);
 			opacity: 0.8;
 			position: absolute;
 			text-transform: uppercase;
@@ -365,8 +370,8 @@
 			font-size: 18px;
 			border: none;
 			outline: none;
-			background-color: orange;
-			color: white;
+			background-color: var(--page-theme);
+			color: var(--text-color);
 			cursor: pointer;
 			padding: 15px;
 			border-radius: 100px;
@@ -376,7 +381,7 @@
 		}
 
 		#topBtn:hover {
-			background-color: rgb(255, 198, 92);
+			background-color: var(--page-theme-second);
 		}
 	</style>
 	<title>g4o2 website</title>
