@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,44 +8,54 @@
     <title>Sub Count</title>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
-		body {
-			margin: 0;
-			background: rgb(41, 41, 41);
-			font-family: 'Work Sans', sans-serif;
-			font-weight: 100;
-			text-align: center;
+
+        body {
+            margin: 0;
+            background: rgb(41, 41, 41);
+            font-family: 'Work Sans', sans-serif;
+            font-weight: 100;
+            text-align: center;
             color: rgb(210, 210, 210);
         }
+
         header {
             color: orange;
             font-size: 19px;
         }
-		a {
-			color: orange;
-			text-decoration: none;
-			text-transform: uppercase;
-			font-size: 14px;
-		} 
+
+        a {
+            color: orange;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
         section {
             margin-top: 20px;
         }
+
         div {
             margin-top: 2px;
         }
     </style>
 </head>
+
 </html>
+
 <body>
     <section>
         <header>YouTube Subscribers</header>
+        <p>Last update: 51400000</p>
         <div id="subscriberCount"></div>
     </section>
     <section>
         <header>YouTube Video Views</header>
+        <p>Last update: 21917537369</p>
         <div id="viewCount"></div>
     </section>
     <section>
         <header>YouTube Video Count</header>
+        <p>Last update: 146</p>
         <div id="videoCount"></div>
     </section>
     <script>
@@ -56,7 +67,6 @@
         const viewCount = document.getElementById('viewCount');
         const videoCount = document.getElementById('videoCount');
         const delay = 1000;
-
 
         let getdata = () => {
 
@@ -73,17 +83,10 @@
                 })
 
         }
-        /*test
-        YouTube Subscribers
-        51400000
-        YouTube Video Views
-        21917537369
-        YouTube Video Count
-        146
-        */
         setInterval(() => {
-               getdata()
+            getdata()
         }, delay);
+
     </script>
 </body>
 

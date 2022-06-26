@@ -1,0 +1,42 @@
+{
+    "kind": "youtube#channelListResponse",
+    "etag": "HsHrBF2IJT1W-Kh-bX7qaOAlB_Y",
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+            "kind": "youtube#channel",
+            "etag": "6sTPG-bACO9FSUgRqd0Fq7MpXLo",
+            "id": "UC9CoOnJkIBMdeijd9qYoT_g",
+            "statistics": {
+                "viewCount": "21917537369",
+                "subscriberCount": "51400000",
+                "hiddenSubscriberCount": false,
+                "videoCount": "146"
+            }
+        }
+    ]
+}
+{
+    "kind": "youtube#channelListResponse",
+    "etag": "HsHrBF2IJT1W-Kh-bX7qaOAlB_Y",
+    "pageInfo": {
+        "totalResults": 1,
+        "resultsPerPage": 5
+    },
+    "items": [
+        {
+            "kind": "youtube#channel",
+            "etag": "6sTPG-bACO9FSUgRqd0Fq7MpXLo",
+            "id": "UC9CoOnJkIBMdeijd9qYoT_g",
+            "statistics": {
+                "viewCount": "21920356118",
+                "subscriberCount": "51400000",
+                "hiddenSubscriberCount": false,
+                "videoCount": "146"
+            }
+        }
+    ]
+}
