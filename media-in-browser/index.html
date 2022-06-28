@@ -34,8 +34,15 @@
 <body>
     <main>
         <video src="/g4o2-website//media/2022-06-09 18-39-50.mp4" muted loop controls autoplay></video>
-        <audio src="/g4o2-website/media/1.mp3#t=01:00" type="audio/mp3" controls></audio>
+        <audio id="audio" src="/g4o2-website/media/1.mp3#t=01:00" type="audio/mp3" controls></audio><br>
         <a href="../index.html">Go back to main page</a>
-    <main>
+		<script>
+			let audio = document.getElementById("audio");
+			function setHalfVolume() {
+				audio.volume = 0.2;
+			} 
+			setHalfVolume();
+		</script>
+	<main>
 </body>
 </html>

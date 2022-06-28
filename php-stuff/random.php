@@ -121,7 +121,7 @@
 ████████████████████████████████████████
 
     </pre>
-    <a href="index.html" id="mainPageLink">Go back to main page</a><br>
+    <a href="../index.html" id="mainPageLink">Go back to main page</a><br>
     <a href="fail.php">Click here for fail.php | </a>
     <a href="check.php">Click here for check.php</a><br>
     <hr>

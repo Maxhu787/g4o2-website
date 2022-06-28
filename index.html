@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+<!--
+	Note right here
+	plan on recreating this page using bootstrap stuff or maybe react 
+	this summber break I will try remaking this page in bootstrap or when i finished
+	learning react I can make thie page in react 
+-->
 
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -13,12 +19,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
 		:root {
- 			--page-theme: orange /*orange*/;
-			--page-theme-second: #ffc200/*#ffc200*/;
-			--page-bg: rgb(71, 71, 71)/*rgb(71, 71, 71)*/;
-			--text-color: white /*white*/;
+			--page-theme: orange
+				/*orange*/
+			;
+			--page-theme-second: #ffc200
+				/*#ffc200*/
+			;
+			--page-bg: rgb(71, 71, 71)
+				/*rgb(71, 71, 71)*/
+			;
+			--text-color: white
+				/*white*/
+			;
 		}
+
 		body {
 			margin: 0;
 			background: rgb(71, 71, 71);
@@ -33,9 +49,11 @@
 			-webkit-filter: blur(8px);
 			backdrop-filter: blur(5px);*/
 		}
+
 		* {
 			box-sizing: border-box;
 		}
+
 		a {
 			color: orange;
 			text-decoration: none;
@@ -205,10 +223,10 @@
 		#certs {
 			position: absolute;
 		}
-		
+
 		.cert-wrapper {
 			padding: 50px;
-		}		
+		}
 
 		#cert-header {
 			margin-top: 30px;
@@ -361,6 +379,7 @@
 			text-transform: uppercase;
 			padding: 20px;
 		}
+
 		#topBtn {
 			display: none;
 			position: fixed;
@@ -405,12 +424,13 @@
 						<div class="dropdown-content">
 							<a href="/g4o2-website/guessing-game/guessinggame.html">guessing game</a>
 							<a href="/g4o2-website/crack/index.php" title="cracking (kind of)">MD5 cracking</a>
-							<a href="/g4o2-website/videoplayer/index.html">Video playing</a>
-							<a href="ghostface.php">Random stuff</a>
+							<a href="/g4o2-website/media-in-browser/video-playing.html">Video playing</a>
+							<a href="/g4o2-website/media-in-browser/index.html">Video html tag</a>
+							<a href="/g4o2-website/php-stuff/random.php">Random stuff</a>
 							<a href="/g4o2-website/random-word-gen/index.html">Random symbol generator</a>
 							<a href="/g4o2-website/rps/index.php">rock paper scissors</a>
+							<a href="/g4o2-website/test/yt-api.html">YouTube api</a>
 							<a href="/g4o2-website/wallee/walle.html">Wallee</a>
-							<a href="2.html">Page 2</a>
 							<a href="vid.html">Test vid</a>
 						</div>
 					</div>
@@ -426,12 +446,14 @@
 					<div id="cert-1" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1"
 								onmouseover="certScroll(this)"
-								src="/g4o2-website/certifications/Responsive web design certification.png" alt="certification"></a>
+								src="/g4o2-website/certifications/Responsive web design certification.png"
+								alt="certification"></a>
 					</div>
 					<div id="cert-2" class="cert-wrapper">
-						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img cert-img-2" 
+						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img cert-img-2"
 								onmouseover="certScroll(this)"
-								src="/g4o2-website/certifications/JavaScript-Algorithms-and-Data-Structures.png" alt="certification"></a>
+								src="/g4o2-website/certifications/JavaScript-Algorithms-and-Data-Structures.png"
+								alt="certification"></a>
 					</div>
 					<div id="cert-3" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3"
@@ -457,10 +479,9 @@
 								alt="certification"></a>
 					</div>
 					<div id="cert-7" class="cert-wrapper">
-						<a href="/g4o2-website/certifications/cert-7.html"><img class="cert-img cert-img-7" 
+						<a href="/g4o2-website/certifications/cert-7.html"><img class="cert-img cert-img-7"
 								onmouseover="certScroll(this)"
-								src="/g4o2-website//certifications/Introduction to HTML5.png"
-								alt="certification"></a>
+								src="/g4o2-website//certifications/Introduction to HTML5.png" alt="certification"></a>
 					</div>
 				</section>
 			</section>
@@ -512,7 +533,10 @@
 				<i class="contact-img fa-brands fa-jsfiddle fa-3x"></i>
 			</a>
 			<div id="copyright">
-				<p id="copyright-text"><!--g4o2 2022 &copy; Copyright--> Since php doesn't work on github pages, some pages won't function properly</p>
+				<p id="copyright-text">
+					<!--g4o2 2022 &copy; Copyright--> Since php doesn't work on github pages, some pages won't function
+					properly
+				</p>
 				<span onclick="loadAnimation()" class="close">&times;</span>
 			</div>
 		</section>
@@ -544,12 +568,12 @@
 		}
 		//scroll top btn onclick function
 		function topFunction() {
-				window.scrollTo({
-					top: 0,
-					left: 0,
-					behavior: 'smooth'
-				});
-			}
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			});
+		}
 		//smooth scrolling
 		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 			anchor.addEventListener('click', function (e) {
@@ -654,4 +678,5 @@
 	</script>
 </body>
 <!--add cookies save stuff like loing shit -->
+
 </html>
