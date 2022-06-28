@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,7 @@
     <script type="text/javascript" src="/g4o2-website/js/jquery-3.6.0.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
-    
+
         body {
             margin: 0;
             background: rgb(49, 49, 49);
@@ -16,7 +17,7 @@
             text-align: center;
             color: white;
         }
-    
+
         a {
             color: white;
             text-decoration: none;
@@ -25,46 +26,27 @@
             margin-top: 100px;
             transition: 0.2s ease-in;
         }
-    
+
         a:hover {
             color: orange;
         }
-    
+
         header {
             font-size: 50px;
         }
-    
-        main {
-            padding: 10px;
-        }
-        #myAge {
-            color: orange;
-            margin-top: 100px;
-            font-size: 24px;
+        iframe {
+            margin-top: 70px;
+            padding: 30px;
         }
     </style>
-    <title>Page 2</title>
 </head>
 <body>
     <main>
-        <header>Welcome to page 2</header><br>
-        <a href="index.html">Go back to main page</a><br>
-        <div id="myAge"></div>
-        <script>
-            var age, daysBetweenDates;
-            daysBetweenDates = function (d1, d2) {
-                var diffDays, oneDay;
-                oneDay = 24 * 60 * 60 * 1000;
-                diffDays = (d2 - Date.parse(d1)) / oneDay;
-                return diffDays;
-            };
-
-            age = function () {
-                $('#myAge').text((daysBetweenDates('Feb 7, 2008 00:00:00', new Date()) / 365).toFixed(8) + " years old");
-            };
-
-
-            setInterval(age, 500);
-        </script>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/s37x2VSZrLw?start=144" title="YouTube video player"
+            frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <div id="link-wrapper">
+            <a id="link" href="index.html">Go back to main page</a><br>
+        </div>
     </main>
 </body>
