@@ -1,5 +1,6 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;port=3306;dbname=people', "root", "aS77785/");
+$pw = $_GET['pw'];
+$pdo = new PDO('mysql:host=localhost;port=3306;dbname=people', "root", $pw);
 $stmt = $pdo->query("SELECT name, email FROM users");
 echo '<table border="1">'."\n";
 while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -9,5 +10,5 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo($row['email']);
     echo("</td><tr>\n");
 }
-echo "</table>\n"
+echo "</table>\n";
 ?>
