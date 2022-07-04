@@ -62,9 +62,18 @@
             age = function () {
                 $('#myAge').text((daysBetweenDates('Feb 7, 2008 00:00:00', new Date()) / 365).toFixed(8) + " years old");
             };
-
-
             setInterval(age, 500);
+        </script>
+        <progress id="random" value="0" max="100"></progress>
+        <button>Test</button>
+        <script>
+            document.addEventListener("DOMContentLoaded", function (event) {
+                var dragonHealth = document.getElementById("random").value;
+                
+                document.querySelector('button').addEventListener("click", function (event) {
+                    document.getElementById("random").value += 5;
+                });
+            })
         </script>
     </main>
 </body>
