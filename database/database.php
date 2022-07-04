@@ -9,6 +9,8 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo($row['name']);
     echo("</td><td>");
     echo($row['email']);
+    echo ("</td><td>");
+    echo ($row['password']);
     echo("</td><tr>\n");
 }
 echo "</table>\n";

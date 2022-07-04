@@ -1,6 +1,5 @@
 <?php
-$pdo = new PDO('mysql:host=localhost;port=8889;dbname=misc', 
-    'fred', 'zap');
+require_once "pdo.php";
 $stmt = $pdo->query("SELECT name, email, password FROM users");
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 echo '<table border="1">'."\n";

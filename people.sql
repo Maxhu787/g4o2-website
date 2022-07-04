@@ -29,20 +29,14 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `ages` (
   `name` varchar(128) DEFAULT NULL,
-  `age` int(11) DEFAULT NULL
+  `age` int(11) DEFAULT NULL,
+  `password` CHAR(60) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `ages`
 --
 
-INSERT INTO `ages` (`name`, `age`) VALUES
-('Ada', 38),
-('Richey', 39),
-('Issiaka', 24),
-('Jayse', 16),
-('Marla', 23),
-('Meron', 22);
 
 -- --------------------------------------------------------
 
@@ -51,21 +45,32 @@ INSERT INTO `ages` (`name`, `age`) VALUES
 --
 
 CREATE TABLE `users` (
-  `user_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(128) DEFAULT NULL,
-  `email` varchar(128) DEFAULT NULL
+  `email` varchar(128) DEFAULT NULL,
+  `password` varchar(128) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `users` (`name`, `email`, `password`) VALUES
+('Chuck', 'csev@umich.edu', 2345),
+('Sally', 'sally@umich.edu', 'strongpw'),
+('Somesh', 'somesh@umich.edu', 234),
+('Caitlin', 'cait@umich.edu', 23423),
+('Ted', 'ted@umich.edu', 'bruhbruh');
+
+
+INSERT INTO `users` (`name`, `age`, `password`) VALUES
+('Ada', 38),
+('Richey', 39),
+('Issiaka', 24),
+('Jayse', 16),
+('Marla', 23),
+('Meron', 22);
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `name`, `email`) VALUES
-(1, 'Chuck', 'csev@umich.edu'),
-(2, 'Sally', 'sally@umich.edu'),
-(3, 'Somesh', 'somesh@umich.edu'),
-(4, 'Caitlin', 'cait@umich.edu'),
-(5, 'Ted', 'ted@umich.edu');
 
 --
 -- Indexes for dumped tables
