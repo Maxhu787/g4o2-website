@@ -48,8 +48,8 @@ if (isset($_POST['logout'])) {
             $failure = "Make is required";
         } else if(!isset($_POST['year'])) {
             $failure = "year must be numeric";
-        } else if(!isset($_POST['mileage']) {
-            $failure = "Mileage and year must be numeric"
+        } else if(!isset($_POST['mileage'])) {
+            $failure = "Mileage and year must be numeric";
         }
         $stmt = $pdo->query("SELECT auto_id	make, year, mileage FROM autos");
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
