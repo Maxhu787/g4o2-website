@@ -28,21 +28,24 @@ if (isset($_POST['logout'])) {
         ?>
         <?php
             require_once "pdo.php";
-
-            if (
-                isset($_POST['make']) && isset($_POST['year'])
-                && isset($_POST['mileage'])
-            ) {
-                $sql = "INSERT INTO autos (make, year, mileage) 
-              VALUES (:make, :year, :mileage)";
-                //echo ("<pre>\n" . $sql . "\n</pre>\n");
-                $stmt = $pdo->prepare($sql);
-                $stmt->execute(array(
-                    ':make' => $_POST['make'],
-                    ':year' => $_POST['year'],
-                    ':mileage' => $_POST['mileage']
-                ));
-            }
+            $failure = false;
+            if (isset($_POST['make']) && isset($_POST['year']) && isset($_POST['mileage'])) {
+                if(is_numeric($_POST['mileage']) && is_numeric($_POST['year'])) {
+                    $sql = "INSERT INTO autos (make, year, mileage) 
+                    VALUES (:make, :year, :mileage)";
+                    //echo ("<pre>\n" . $sql . "\n</pre>\n");
+                    $stmt = $pdo->prepare($sql);
+                    $stmt->execute(array(
+                        ':make' => $_POST['make'],
+                        ':year' => $_POST['year'],
+                        ':mileage' => $_POST['mileage']
+                    )); 
+                } else if(strlen($_POST['make'] < 1)) {
+                    $failure = "Make is required";
+                } else {
+                    $failure = "Mileage and year must be numeric";
+                }
+            } 
 
             if (isset($_POST['delete']) && isset($_POST['auto_id'])) {
                 $sql = "DELETE FROM autos WHERE auto_id = :zip";
@@ -55,9 +58,9 @@ if (isset($_POST['logout'])) {
         ?>
 
         <?php
-        //if ($failure !== false) {
-        //    echo ('<p style="color: red;">' . htmlentities($failure) . "</p>\n");
-        //}
+        if ($failure !== false) {
+            echo ('<p style="color: red;">' . htmlentities($failure) . "</p>\n");
+        }
         ?>
 
         <form method="post">

@@ -15,6 +15,8 @@ $failure = false;  // If we have no POST data
 if (isset($_POST['who']) && isset($_POST['pass'])) {
     if (strlen($_POST['who']) < 1 || strlen($_POST['pass']) < 1) {
         $failure = "Email and password are required";
+    } else if (!preg_match("/@/", $_POST['who'])) {
+        $failure = "Email must have an at-sign (@)";
     } else {
         $check = hash('md5', $salt . $_POST['pass']);
         if ($check == $stored_hash) {
@@ -56,11 +58,5 @@ if (isset($_POST['who']) && isset($_POST['pass'])) {
             <input type="submit" value="Log In">
             <input type="submit" name="cancel" value="Cancel">
         </form>
-        <p>
-            For a password hint, view source and find a password hint
-            in the HTML comments.
-            <!-- Hint: The password is the four character sound a cat
-makes (all lower case) followed by 123. -->
-        </p>
     </div>
 </body>
