@@ -2,28 +2,28 @@
 require_once "pdo.php";
 
 if (
-    isset($_POST['name']) && isset($_POST['email'])
-    && isset($_POST['password'])
+    isset($_POST['make']) && isset($_POST['year'])
+    && isset($_POST['mileage'])
 ) {
-    $sql = "INSERT INTO users (name, email, password) 
-              VALUES (:name, :email, :password)";
+    $sql = "INSERT INTO autos (make, year, mileage) 
+              VALUES (:make, :year, :mileage)";
     echo ("<pre>\n" . $sql . "\n</pre>\n");
     $stmt = $pdo->prepare($sql);
     $stmt->execute(array(
-        ':name' => $_POST['name'],
-        ':email' => $_POST['email'],
-        ':password' => $_POST['password']
+        ':make' => $_POST['make'],
+        ':year' => $_POST['year'],
+        ':mileage' => $_POST['mileage']
     ));
 }
 
-if (isset($_POST['delete']) && isset($_POST['user_id'])) {
-    $sql = "DELETE FROM users WHERE user_id = :zip";
+if (isset($_POST['delete']) && isset($_POST['auto_id'])) {
+    $sql = "DELETE FROM autos WHERE auto_id = :zip";
     echo "<pre>\n$sql\n</pre>\n";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute(array(':zip' => $_POST['user_id']));
+    $stmt->execute(array(':zip' => $_POST['auto_id']));
 }
 
-$stmt = $pdo->query("SELECT name, email, password, user_id FROM users");
+$stmt = $pdo->query("SELECT make, year, mileage, auto_id FROM autos");
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <html>
@@ -35,14 +35,14 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php
         foreach ($rows as $row) {
             echo "<tr><td>";
-            echo ($row['name']);
+            echo ($row['make']);
             echo ("</td><td>");
-            echo ($row['email']);
+            echo ($row['year']);
             echo ("</td><td>");
-            echo ($row['password']);
+            echo ($row['mileage']);
             echo ("</td><td>");
             echo ('<form method="post"><input type="hidden" ');
-            echo ('name="user_id" value="' . $row['user_id'] . '">' . "\n");
+            echo ('name="auto_id" value="' . $row['auto_id'] . '">' . "\n");
             echo ('<input type="submit" value="Del" name="delete">');
             echo ("\n</form>\n");
             echo ("</td></tr>\n");
@@ -51,16 +51,15 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     </table>
     <p>Add A New User</p>
     <form method="post">
-        <p>Name:
-            <input type="text" name="name" size="40">
+        <p>Make:
+            <input type="text" name="make" size="40">
         </p>
-        <p>Email:
-            <input type="text" name="email">
+        <p>Year:
+            <input type="text" name="year">
         </p>
-        <p>Password:
-            <input type="password" name="password">
+        <p>Mileage:
+            <input type="text" name="mileage">
         </p>
-        <p><input type="submit" value="Add" /></p>
-
+        <p><input type="submit" value="Add New" /></p>
     </form>
 </body>

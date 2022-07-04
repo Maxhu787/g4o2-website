@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>g4o2</title>
+    <title>6f1a4abb</title>
     <?php require_once "bootstrap.php"; ?>
 </head>
 

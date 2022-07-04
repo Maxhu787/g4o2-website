@@ -13,7 +13,7 @@ if (isset($_POST['logout'])) {
 <html>
 
 <head>
-    <title></title>
+    <title>6f1a4abb</title>
     <?php require_once "bootstrap.php"; ?>
 </head>
 
@@ -27,36 +27,37 @@ if (isset($_POST['logout'])) {
         }
         ?>
         <?php
-        $failure = false;
-        require_once "pdo.php";
-        if (
-            isset($_POST['make']) && isset($_POST['year'])
-            && isset($_POST['mileage'])
-        ) {
-            $sql = "INSERT INTO autos (make, year, mileage) 
+            require_once "pdo.php";
+
+            if (
+                isset($_POST['make']) && isset($_POST['year'])
+                && isset($_POST['mileage'])
+            ) {
+                $sql = "INSERT INTO autos (make, year, mileage) 
               VALUES (:make, :year, :mileage)";
-            $stmt = $pdo->prepare('INSERT INTO autos
-        (make, year, mileage) VALUES ( :mk, :yr, :mi)');
-            $stmt->execute(
-                array(
-                    ':mk' => $_POST['make'],
-                    ':yr' => $_POST['year'],
-                    ':mi' => $_POST['mileage']
-                )
-            );
-        } else if(!isset($_POST['make'])) {
-            $failure = "Make is required";
-        } else if(!is_numeric($_POST['year']) || !is_numeric($_POST['mileage'])) {
-            $failure = "Mileage and year must be numeric";
-        }
-        $stmt = $pdo->query("SELECT auto_id	make, year, mileage FROM autos");
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                echo ("<pre>\n" . $sql . "\n</pre>\n");
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array(
+                    ':make' => $_POST['make'],
+                    ':year' => $_POST['year'],
+                    ':mileage' => $_POST['mileage']
+                ));
+            }
+
+            if (isset($_POST['delete']) && isset($_POST['auto_id'])) {
+                $sql = "DELETE FROM autos WHERE auto_id = :zip";
+                $stmt = $pdo->prepare($sql);
+                $stmt->execute(array(':zip' => $_POST['auto_id']));
+            }
+
+            $stmt = $pdo->query("SELECT make, year, mileage, auto_id FROM autos");
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         ?>
 
         <?php
-        if ($failure !== false) {
-            echo ('<p style="color: red;">' . htmlentities($failure) . "</p>\n");
-        }
+        //if ($failure !== false) {
+        //    echo ('<p style="color: red;">' . htmlentities($failure) . "</p>\n");
+        //}
         ?>
 
         <form method="post">
