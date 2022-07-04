@@ -35,7 +35,7 @@ if (isset($_POST['logout'])) {
             ) {
                 $sql = "INSERT INTO autos (make, year, mileage) 
               VALUES (:make, :year, :mileage)";
-                echo ("<pre>\n" . $sql . "\n</pre>\n");
+                //echo ("<pre>\n" . $sql . "\n</pre>\n");
                 $stmt = $pdo->prepare($sql);
                 $stmt->execute(array(
                     ':make' => $_POST['make'],
