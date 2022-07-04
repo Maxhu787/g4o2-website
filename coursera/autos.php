@@ -61,7 +61,7 @@ if (isset($_POST['logout'])) {
 
         <form method="post">
             <p>Make:
-                <input type="text" name="make" size="40">
+                <input type="text" name="make" size="60">
             </p>
             <p>Year:
                 <input type="text" name="year">
