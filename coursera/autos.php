@@ -46,9 +46,7 @@ if (isset($_POST['logout'])) {
             );
         } else if(!isset($_POST['make'])) {
             $failure = "Make is required";
-        } else if(!isset($_POST['year'])) {
-            $failure = "year must be numeric";
-        } else if(!isset($_POST['mileage'])) {
+        } else if(!is_numeric($_POST['year'], $_POST['mileage'])) {
             $failure = "Mileage and year must be numeric";
         }
         $stmt = $pdo->query("SELECT auto_id	make, year, mileage FROM autos");
