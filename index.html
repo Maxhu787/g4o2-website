@@ -205,7 +205,7 @@
 		}
 
 		main {
-			height: 2650px;
+			height: 3000px;
 		}
 
 		#content-wrapper {
@@ -262,7 +262,7 @@
 		}
 
 		.about-img:hover {
-			color: rgb(0, 153, 204);
+			color: rgb(41, 195, 247);
 			transition: 0.35s ease-out;
 		}
 
@@ -504,6 +504,11 @@
 								onmouseover="certScroll(this)"
 								src="/g4o2-website//certifications/Introduction to HTML5.png" alt="certification"></a>
 					</div>
+					<div id="cert-8" class="cert-wrapper">
+						<a href="/g4o2-website/certifications/cert-8.html"><img class="cert-img cert-img-8"
+							    onmouseover="certScroll(this)"
+								src="/g4o2-website/certifications/Using Python to Access Web Data.png" alt="certification"></a>
+					</div>
 				</section>
 			</section>
 			<section hidden id="announcements">
@@ -662,6 +667,13 @@
 						hoverStatText.innerHTML = ('Introduction to HTML5');
 						window.scrollTo({
 							top: 2010,
+							left: 0,
+							behavior: 'smooth'
+						});
+					} else if (cert.className == "cert-img cert-img-8") {
+						hoverStatText.innerHTML = ('Using Python to Access Web Data');
+						window.scrollTo({
+							top: 2333,
 							left: 0,
 							behavior: 'smooth'
 						});
