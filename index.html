@@ -97,19 +97,19 @@
 			border: solid var(--page-theme-second) 3px;
 			margin-top: 6px;
 			transition: border 0.35s ease-out;
-			animation-name: logo-anim;
-			animation-duration: 1.5s;
+			/*animation-name: logo-anim;
+			animation-duration: 1.5s;*/
 		}
 
 		.logo:hover {
 			padding: 3px;
 			border: none;
 		}
-		@keyframes logo-anim {
+		/*@keyframes logo-anim {
 			100% {
 				transform: rotate(360deg);
 			}
-		}
+		}*/
 		nav {
 			float: right;
 			text-transform: uppercase;
@@ -415,11 +415,11 @@
 </head>
 <script type="text/javascript">
 	$(document).ready(function () {
-		let mainTheme = window.prompt("Theme (Enter color)");
+		//let mainTheme = window.prompt("Theme (Enter color)");
 		//let mainThemeSecond = window.prompt("Second theme");
 		//let backgroundTheme = window.prompt("Background color");
 		//let textColor = window.prompt("Text color");
-		document.documentElement.style.setProperty('--page-theme', mainTheme);
+		//document.documentElement.style.setProperty('--page-theme', mainTheme);
 		//document.documentElement.style.setProperty('--page-theme-second', mainThemeSecond);
 		//document.documentElement.style.setProperty('--page-bg', backgroundTheme);
 		//document.documentElement.style.setProperty('--text-color', textColor);
