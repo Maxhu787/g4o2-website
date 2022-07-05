@@ -103,13 +103,21 @@
 			border: solid var(--page-theme-second) 3px;
 			margin-top: 6px;
 			transition: border 0.35s ease-out;
+
+			animation-name: logo-anim;
+			animation-duration: 1.5s;
+			animation-iteration-count: infinite;
 		}
 
 		.logo:hover {
 			padding: 3px;
 			border: none;
 		}
-
+		@keyframes logo-anim {
+			100% {
+				transform: rotate(360deg);
+			}
+		}
 		nav {
 			float: right;
 			text-transform: uppercase;
@@ -397,7 +405,7 @@
 			font-size: 18px;
 			border: none;
 			outline: none;
-			background-color: var(--page-bg);
+			background-color: var(--page-theme);
 			color: var(--text-color);
 			cursor: pointer;
 			padding-left: 8px;
