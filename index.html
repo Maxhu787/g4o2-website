@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<!--
-	Note right here
-	plan on recreating this page using bootstrap stuff or maybe react 
-	this summber break I will try remaking this page in bootstrap or when i finished
-	learning react I can make thie page in react 
-
-	gona add when not hovering on dropdown-btn then display: block after few seconds
-	using jQuery gona do it as soon as possible
--->
 
 <head>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -202,6 +193,70 @@
 		.dropdown:hover .dropbtn {
 			background-color: var(--page-theme-second);
 			cursor: pointer;
+		}
+
+		.sideBar-container {
+			position: relative;
+			display: inline-block;
+			margin-left: -10px;
+		}
+		.sideBarItem {
+			color: black;
+			padding:8px 16px;
+			float:left;
+			border:none;
+			outline:0;
+			width:100%;
+			display:block;
+			text-align:left;
+			white-space:normal;
+			float:none;
+		}
+		.sideBar-button {
+			border:none;
+			display:inline-block;
+			padding: 8px 16px;
+			vertical-align:middle;
+			overflow:hidden;
+			text-decoration:none;
+			color:inherit;
+			background-color:inherit;
+			text-align: left;
+			cursor:pointer;
+			white-space:nowrap;
+			margin-left: 80px;
+			margin-right: -100px;
+		}
+		.sideBar-button:hover{
+			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			background-color: rgb(71, 71, 71);
+			color: orange;
+		}
+		.sideBar-content-button {
+			border:none;
+			display:inline-block;
+			padding: 8px 16px;
+			vertical-align:middle;
+			overflow:hidden;
+			text-decoration:none;
+			color:inherit;
+			background-color:inherit;
+			text-align:center;
+			cursor:pointer;
+			white-space:nowrap;
+			background-color: white;
+		}
+		.sideBar-content-button:hover {
+			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			background-color: orange;
+		}
+		.sideBar-close-button {
+			margin-left: 90%;
+			margin-top: 20px;
+		}
+		#sideBar {
+			background-color: white;
+			color: rgb(71, 71, 71);
 		}
 
 		main {
@@ -503,69 +558,7 @@
 		</div>
 	</header>
 	<style>
-		.sideBar-container {
-			position: relative;
-			display: inline-block;
-			margin-left: -10px;
-		}
-		.sideBarItem {
-			color: black;
-			padding:8px 16px;
-			float:left;
-			border:none;
-			outline:0;
-			width:100%;
-			display:block;
-			text-align:left;
-			white-space:normal;
-			float:none;
-		}
-		.sideBar-button {
-			border:none;
-			display:inline-block;
-			padding: 8px 16px;
-			vertical-align:middle;
-			overflow:hidden;
-			text-decoration:none;
-			color:inherit;
-			background-color:inherit;
-			text-align: left;
-			cursor:pointer;
-			white-space:nowrap;
-			margin-left: 80px;
-			margin-right: -100px;
-		}
-		.sideBar-button:hover{
-			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-			background-color: rgb(71, 71, 71);
-			color: orange;
-		}
-		.sideBar-content-button {
-			border:none;
-			display:inline-block;
-			padding: 8px 16px;
-			vertical-align:middle;
-			overflow:hidden;
-			text-decoration:none;
-			color:inherit;
-			background-color:inherit;
-			text-align:center;
-			cursor:pointer;
-			white-space:nowrap;
-			background-color: white;
-		}
-		.sideBar-content-button:hover {
-			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-			background-color: orange;
-		}
-		.sideBar-close-button {
-			margin-left: 90%;
-			margin-top: 20px;
-		}
-		#sideBar {
-			background-color: white;
-			color: rgb(71, 71, 71);
-		}
+		
 	</style>
 	<div id="sideBar-container">
 		<div style="display: none;" id="sideBar">
