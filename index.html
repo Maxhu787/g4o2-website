@@ -410,6 +410,25 @@
 		#topBtn:hover {
 			background-color: var(--page-theme-second);
 		}
+
+		/* width */
+		::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		/* Track */
+		::-webkit-scrollbar-track {
+			background: #f1f1f1; 
+		}
+		
+		/* Handle */
+		::-webkit-scrollbar-thumb {
+			background: #888;
+		}
+		/* Handle on hover */
+		::-webkit-scrollbar-thumb:hover {
+			background: #555; 
+		}
 	</style>
 	<title>g4o2 website</title>
 </head>
@@ -426,6 +445,29 @@
 	});
 </script>
 <body>
+	<script>
+		function sideBar_open() {
+			document.getElementById("sideBar").style.width = "100%"; //document.body.offsetHeight
+			document.getElementById("sideBar").style.display = "block";
+			document.getElementById("content-wrapper").style.display = "none";
+			document.querySelector('footer').style = 'display: none';
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			});
+			document.body.style.background = "#f3f3f3 url('/g4o2-website/media/0.jpeg') no-repeat fixed";
+			document.body.style.background = "url('/g4o2-website/media/111.jpeg') no-repeat fixed";
+			document.body.style.backgroundSize = "100% 100%";
+		}
+		function sideBar_close() {
+			document.getElementById("sideBar").style.display = "none";
+			document.getElementById("content-wrapper").style.display = "block";
+			document.querySelector('footer').style = 'display: block';
+			document.body.style.background = "url('/g4o2-website/media/0000001.jpg') no-repeat fixed";
+			document.body.style.backgroundSize = "100% 100%";
+		}
+	</script>
 	<header class="navbar-header">
 		<div class="container">
 			<div class="logo-container">
@@ -455,10 +497,84 @@
 							<a href="/g4o2-website/tables/index.html">HTML tags</a>
 						</div>
 					</div>
+					<button class="sideBar-button" onclick="sideBar_open()">☰</button>					
 				</ul>
 			</nav>
 		</div>
 	</header>
+	<style>
+		.sideBar-container {
+			position: relative;
+			display: inline-block;
+			margin-left: -10px;
+		}
+		.sideBarItem {
+			color: black;
+			padding:8px 16px;
+			float:left;
+			border:none;
+			outline:0;
+			width:100%;
+			display:block;
+			text-align:left;
+			white-space:normal;
+			float:none;
+		}
+		.sideBar-button {
+			border:none;
+			display:inline-block;
+			padding: 8px 16px;
+			vertical-align:middle;
+			overflow:hidden;
+			text-decoration:none;
+			color:inherit;
+			background-color:inherit;
+			text-align: left;
+			cursor:pointer;
+			white-space:nowrap;
+			margin-left: 80px;
+			margin-right: -100px;
+		}
+		.sideBar-button:hover{
+			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			background-color: rgb(71, 71, 71);
+			color: orange;
+		}
+		.sideBar-content-button {
+			border:none;
+			display:inline-block;
+			padding: 8px 16px;
+			vertical-align:middle;
+			overflow:hidden;
+			text-decoration:none;
+			color:inherit;
+			background-color:inherit;
+			text-align:center;
+			cursor:pointer;
+			white-space:nowrap;
+			background-color: white;
+		}
+		.sideBar-content-button:hover {
+			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			background-color: orange;
+		}
+		.sideBar-close-button {
+			margin-left: 90%;
+			margin-top: 20px;
+		}
+		#sideBar {
+			background-color: white;
+			color: rgb(71, 71, 71);
+		}
+	</style>
+	<div id="sideBar-container">
+		<div style="display: none;" id="sideBar">
+			<button class="sideBar-close-button sideBar-content-button" onclick="sideBar_close()">Close &times;</button>
+			<a href="#" class="sideBarItem sideBar-content-button">Link 1</a>
+			<a href="#" class="sideBarItem sideBar-content-button">Link 2</a>
+			<a href="#" class="sideBarItem sideBar-content-button">Link 3</a>
+		</div>
+	</div>
 	<main>
 		<div id="content-wrapper">
 			<section id="certifications">
