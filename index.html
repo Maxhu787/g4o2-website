@@ -500,29 +500,6 @@
 	});
 </script>
 <body>
-	<script>
-		function sideBar_open() {
-			document.getElementById("sideBar").style.width = "100%"; //document.body.offsetHeight
-			document.getElementById("sideBar").style.display = "block";
-			document.getElementById("content-wrapper").style.display = "none";
-			document.querySelector('footer').style = 'display: none';
-			window.scrollTo({
-				top: 0,
-				left: 0,
-				behavior: 'smooth'
-			});
-			document.body.style.background = "#f3f3f3 url('/g4o2-website/media/0.jpeg') no-repeat fixed";
-			document.body.style.background = "url('/g4o2-website/media/111.jpeg') no-repeat fixed";
-			document.body.style.backgroundSize = "100% 100%";
-		}
-		function sideBar_close() {
-			document.getElementById("sideBar").style.display = "none";
-			document.getElementById("content-wrapper").style.display = "block";
-			document.querySelector('footer').style = 'display: block';
-			document.body.style.background = "url('/g4o2-website/media/0000001.jpg') no-repeat fixed";
-			document.body.style.backgroundSize = "100% 100%";
-		}
-	</script>
 	<header class="navbar-header">
 		<div class="container">
 			<div class="logo-container">
@@ -829,8 +806,28 @@
 		function loadAnimation() {
 			copyright.className = 'classname';
 		}
+
+		function sideBar_open() {
+				document.getElementById("sideBar").style.width = "100%"; //document.body.offsetHeight
+				document.getElementById("sideBar").style.display = "block";
+				document.getElementById("content-wrapper").style.display = "none";
+				document.querySelector('footer').style = 'display: none';
+				window.scrollTo({
+					top: 0,
+					left: 0,
+					behavior: 'smooth'
+				});
+				document.body.style.background = "#f3f3f3 url('/g4o2-website/media/0.jpeg') no-repeat fixed";
+				document.body.style.background = "url('/g4o2-website/media/111.jpeg') no-repeat fixed";
+				document.body.style.backgroundSize = "100% 100%";
+			}
+			function sideBar_close() {
+				document.getElementById("sideBar").style.display = "none";
+				document.getElementById("content-wrapper").style.display = "block";
+				document.querySelector('footer').style = 'display: block';
+				document.body.style.background = "url('/g4o2-website/media/0000001.jpg') no-repeat fixed";
+				document.body.style.backgroundSize = "100% 100%";
+			}
 	</script>
 </body>
-<!--add cookies save stuff like loing shit -->
-
 </html>
