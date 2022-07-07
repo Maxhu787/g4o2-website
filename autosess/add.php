@@ -20,13 +20,13 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 
 <head>
-    <title>6f1a4abb</title>
+    <title>80c817df</title>
     <?php require_once "bootstrap.php"; ?>
 </head>
 
 <body>
     <div class="container">
-        <h1>Tracking Autos for <?= htmlentities($_SESSION['email']); ?></h1>
+        <h1>Tracking Autos for <?= htmlentities($_SESSION['account']); ?></h1>
         <?php
         require_once "pdo.php";
         $failure = false;

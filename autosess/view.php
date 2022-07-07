@@ -19,13 +19,13 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 
 <head>
-    <title>6f1a4abb</title>
+    <title>80c817df</title>
     <?php require_once "bootstrap.php"; ?>
 </head>
 
 <body>
     <div class="container">
-        <h1>Tracking Autos for <?= htmlentities($_SESSION['email']); ?></h1>
+        <h1>Tracking Autos for <?= htmlentities($_SESSION['account']); ?></h1>
         <?php
         if (isset($_SESSION["success"])) {
             echo ('<p style="color:green">' . htmlentities($_SESSION["success"]) . "</p>\n");
@@ -36,20 +36,19 @@ $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php
         foreach ($rows as $row) {
             echo "<ul><li>";
-            echo ($row['year']);
+            echo htmlentities($row['year']);
             echo " ";
-            echo ($row['make']);
+            echo htmlentities($row['make']);
             echo " ";
             echo "/";
             echo " ";
-            echo ($row['mileage']);
+            echo htmlentities($row['mileage']);
             echo "</li></ul>\n";
         }
-
         ?>
-        <p>
-            <a href="add.php">Add New</a> |
-            <a href="logout.php">Logout</a>
+        <a href="add.php">Add New</a>
+        <a href="logout.php">Logout</a>
+    </div>
 </body>
 
 </div>
