@@ -4,7 +4,7 @@ session_start();
 
 // Check if we are logged in!
 if (!isset($_SESSION['email'])) {
-	die('Not logged in');
+	die('ACCESS DENIED');
 }
 
 // If the user requested logout go back to index.php
