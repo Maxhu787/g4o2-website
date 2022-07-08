@@ -1,6 +1,9 @@
 <?php
 require_once "pdo.php";
 session_start();
+if (!isset($_SESSION['email'])) {
+    die('Not logged in');
+}
 
 if ( isset($_POST['name']) && isset($_POST['email'])
      && isset($_POST['password'])) {
