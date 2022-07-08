@@ -38,6 +38,10 @@
 			backdrop-filter: blur(5px);*/
 		}
 
+		main {
+			height: 3700px;
+		}
+
 		* {
 			box-sizing: border-box;
 		}
@@ -257,10 +261,6 @@
 		#sideBar {
 			background-color: white;
 			color: rgb(71, 71, 71);
-		}
-
-		main {
-			height: 3400px;
 		}
 
 		#content-wrapper {
@@ -511,7 +511,7 @@
 				<ul id="main-nav">
 					<li><a href="#" id="hover-stat-text">Welcome</a></li>
 					<li><a href="#" id="hover-stat">Stats</a></li>
-					<li><a href="#about">About & Contact</a></li>
+					<li><a href="#about">Social Media<!--About & Contact--></a></li>
 					<div class="dropdown">
 						<button class="dropbtn">PAGES</button>
 						<div class="dropdown-content">
@@ -523,13 +523,14 @@
 							<a href="/g4o2-website/random-word-gen/index.html">Random symbol generator</a>
 							<a href="/g4o2-website/rps/index.php">rock paper scissors</a>
 							<a href="/g4o2-website/autos/">PHP &amp; SQL</a>
+							<a href="/g4o2-website/crud/index.html">Test login</a>
 							<a href="/g4o2-website/test/yt-api.html">YouTube api</a>
 							<a href="/g4o2-website/wallee/walle.html">Wallee</a>
 							<a href="vid.html">Test vid</a>
-							<a href="/g4o2-website/tables/index.html">HTML tags</a>
+							<a href="/g4o2-website/tables/index.html">testing stuff</a>
 						</div>
 					</div>
-					<button class="sideBar-button" onclick="sideBar_open()">☰</button>					
+					<!--<button class="sideBar-button" onclick="sideBar_open()">☰</button>-->
 				</ul>
 			</nav>
 		</div>
@@ -569,43 +570,48 @@
 								src="/g4o2-website/certifications/JavaScript-Algorithms-and-Data-Structures.png"
 								alt="certification"></a>
 					</div>
-					<div id="cert-8" class="cert-wrapper">
+					<div id="cert-3" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3" 
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/Scientific Computing with Python.PNG" alt="certification"></a>
 					</div>
-					<div id="cert-3" class="cert-wrapper">
+					<div id="cert-4" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
 					</div>
-					<div id="cert-4" class="cert-wrapper">
+					<div id="cert-5" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-5.html"><img class="cert-img cert-img-5"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
 								alt="certification"></a>
 					</div>
-					<div id="cert-5" class="cert-wrapper">
+					<div id="cert-6" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-6.html"><img class="cert-img cert-img-6"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/building-web-applications-in-php.png"
 								alt="certification"></a>
 					</div>
-					<div id="cert-6" class="cert-wrapper">
+					<div id="cert-7" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-7.html"><img class="cert-img cert-img-7"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/Introduction to Structured Query Language (SQL).png"
 								alt="certification"></a>
 					</div>
-					<div id="cert-7" class="cert-wrapper">
+					<div id="cert-8" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-8.html"><img class="cert-img cert-img-8"
 								onmouseover="certScroll(this)"
 								src="/g4o2-website//certifications/Introduction to HTML5.png" alt="certification"></a>
 					</div>
-					<div id="cert-8" class="cert-wrapper">
+					<div id="cert-9" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-9.html"><img class="cert-img cert-img-9"
 							    onmouseover="certScroll(this)"
 								src="/g4o2-website/certifications/Using Python to Access Web Data.png" alt="certification"></a>
+					</div>
+					<div id="cert-10" class="cert-wrapper">
+						<a href="/g4o2-website/certifications/cert-10.html"><img class="cert-img cert-img-10"
+								onmouseover="certScroll(this)"
+								src="/g4o2-website/certifications/Building Database Applications in PHP.png" alt="certification"></a>
 					</div>
 				</section>
 			</section>
@@ -779,6 +785,13 @@
 						hoverStatText.innerHTML = ('Using Python to Access Web Data');
 						window.scrollTo({
 							top: 2658,
+							left: 0,
+							behavior: 'smooth'
+						});
+					} else if (cert.className == "cert-img cert-img-10") {
+						hoverStatText.innerHTML = ('Building Database Applications in PHP');
+						window.scrollTo({
+							top: 2982,
 							left: 0,
 							behavior: 'smooth'
 						});
