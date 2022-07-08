@@ -70,7 +70,7 @@ if (isset($_POST['email']) && isset($_POST['pass'])) {
 
   <!-- Optional theme -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-  <title>80c817df</title>
+  <title>42fde095</title>
 </head>
 
 <body>
