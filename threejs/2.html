@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
         }
     </style>
 </head>
+
 <body>
     <script src="/g4o2-website/threejs/three.js"></script>
     <script type="module" src="/g4o2-website/threejs/GLTFLoader.js"></script>
@@ -31,12 +33,12 @@
         let loader = new GLTFLoader();
         var obj;
         
-        loader.load("/g4o2-website/threejs/skull/scene.gltf", function(gltf) {
+        loader.load("/g4o2-website/threejs/x/scene.gltf", function(gltf) {
             scene.add(gltf.scene);
             obj = gltf.scene;
         }) 
         scene.background = new THREE.Color(0x000000)
-        let ambientLight = new THREE.AmbientLight(0xFFFFFF, 3)
+        let ambientLight = new THREE.AmbientLight(0xffffff, 3)
         //scene.add(ambientLight)
         
         let directionalLight = new THREE.DirectionalLight(0xFFFFFF, 8)
@@ -44,7 +46,7 @@
         scene.add(directionalLight)
         let hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.5);
         //scene.add(hemisphereLight)
-        camera.position.set(0, 0, 2)
+        camera.position.set(0, 180, 130)
         function animate() {
             requestAnimationFrame(animate)
             obj.rotation.y += 0.01
@@ -55,4 +57,5 @@
         console.log(loader)
     </script>
 </body>
+
 </html>
