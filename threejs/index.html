@@ -28,7 +28,7 @@
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement)
-
+        const controls = new OrbitControls(camera, renderer.domElement);
         let loader = new GLTFLoader();
         var obj;
         
@@ -45,7 +45,6 @@
         scene.add(directionalLight)
         let hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.5);
         //scene.add(hemisphereLight)
-        const controls = new OrbitControls(camera, renderer.domElement);
         camera.position.set(0, 0, 2)
         function animate() {
             requestAnimationFrame(animate)
