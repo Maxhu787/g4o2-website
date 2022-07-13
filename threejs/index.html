@@ -15,6 +15,7 @@
     <script src="/g4o2-website/threejs/three.js"></script>
     <script type="module" src="/g4o2-website/threejs/GLTFLoader.js"></script>
     <script type="module">
+        import { OrbitControls } from 'OrbitControls.js';
         import {GLTFLoader} from "/g4o2-website/threejs/GLTFLoader.js";
 
         let scene = new THREE.Scene();
@@ -44,6 +45,7 @@
         scene.add(directionalLight)
         let hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.5);
         //scene.add(hemisphereLight)
+        const controls = new OrbitControls(camera, renderer.domElement);
         camera.position.set(0, 0, 2)
         function animate() {
             requestAnimationFrame(animate)
