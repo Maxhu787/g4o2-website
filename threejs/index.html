@@ -12,10 +12,10 @@
     </style>
 </head>
 <body>
-    <script src="three.js"></script>
-    <script type="module" src="GLTFLoader.js"></script>
+    <script src="/g4o2-website/threejs/three.js"></script>
+    <script type="module" src="/g4o2-website/threejs/GLTFLoader.js"></script>
     <script type="module">
-        import {GLTFLoader} from "./GLTFLoader.js";
+        import {GLTFLoader} from "/g4o2-website/threejs/GLTFLoader.js";
 
         let scene = new THREE.Scene();
         let camera = new THREE.PerspectiveCamera(
@@ -31,7 +31,7 @@
         let loader = new GLTFLoader();
         var obj;
         
-        loader.load("scene.gltf", function(gltf) {
+        loader.load("/g4o2-website/threejs/scene.gltf", function(gltf) {
             scene.add(gltf.scene);
             obj = gltf.scene;
         }) 
