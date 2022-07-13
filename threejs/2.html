@@ -16,9 +16,12 @@
 <body>
     <script src="/g4o2-website/threejs/three.js"></script>
     <script type="module" src="/g4o2-website/threejs/GLTFLoader.js"></script>
+    <script type="module" src="/g4o2-website/threejs/RGBELoader.js"></script>
     <script type="module">
         import {GLTFLoader} from "/g4o2-website/threejs/GLTFLoader.js";
+        import { RGBELoader } from "/g4o2-website/threejs/RGBELoader.js";
 
+        
         let scene = new THREE.Scene();
         let camera = new THREE.PerspectiveCamera(
             75,
@@ -37,11 +40,12 @@
             scene.add(gltf.scene);
             obj = gltf.scene;
         }) 
-        scene.background = new THREE.Color(0x000000)
+
+        //scene.background = new THREE.Color(0x000000)
         let ambientLight = new THREE.AmbientLight(0xffffff, 3)
         //scene.add(ambientLight)
         
-        let directionalLight = new THREE.DirectionalLight(0xFFFFFF, 8)
+        let directionalLight = new THREE.DirectionalLight(0xff1100, 8)
         directionalLight.position.set(10, 10, 10)
         scene.add(directionalLight)
         let hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.5);
@@ -50,7 +54,6 @@
         function animate() {
             requestAnimationFrame(animate)
             obj.rotation.y += 0.01
-            obj.rotation.x = 0.1
             renderer.render(scene, camera)
         }
         animate()
