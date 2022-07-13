@@ -15,7 +15,7 @@
     <script src="/g4o2-website/threejs/three.js"></script>
     <script type="module" src="/g4o2-website/threejs/GLTFLoader.js"></script>
     <script type="module">
-        import { OrbitControls } from 'OrbitControls.js';
+        import { OrbitControls } from '/g4o2-website/threejs/OrbitControls.js';
         import {GLTFLoader} from "/g4o2-website/threejs/GLTFLoader.js";
 
         let scene = new THREE.Scene();
@@ -40,16 +40,22 @@
         let ambientLight = new THREE.AmbientLight(0xFFFFFF, 3)
         //scene.add(ambientLight)
         
-        let directionalLight = new THREE.DirectionalLight(0xFFFFFF, 8)
+        let directionalLight = new THREE.DirectionalLight(0xffffff, 1)
         directionalLight.position.set(10, 10, 10)
         scene.add(directionalLight)
+        let backLight = new THREE.DirectionalLight(0xffffff, 1)
+        backLight.position.set(10, 500, 10)
+        scene.add(backLight)
+        let secondLight = new THREE.DirectionalLight(0xffffff, 1)
+        secondLight.position.set(0, -5, 0)
+        scene.add(secondLight)
+
         let hemisphereLight = new THREE.HemisphereLight(0xffffff, 0x000000, 0.5);
         //scene.add(hemisphereLight)
         camera.position.set(0, 0, 2)
         function animate() {
             requestAnimationFrame(animate)
             obj.rotation.y += 0.01
-            obj.rotation.x = 0.1
             renderer.render(scene, camera)
         }
         animate()
