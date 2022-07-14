@@ -16,10 +16,18 @@
 		@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
 
 		:root {
-			--page-theme: orange/*orange*/;
-			--page-theme-second: #ffc200/*#ffc200*/;
-			--page-bg: rgb(71, 71, 71)/*rgb(71, 71, 71)*/;
-			--text-color: white/*white*/;
+			--page-theme: orange
+				/*orange*/
+			;
+			--page-theme-second: #ffc200
+				/*#ffc200*/
+			;
+			--page-bg: rgb(71, 71, 71)
+				/*rgb(71, 71, 71)*/
+			;
+			--text-color: white
+				/*white*/
+			;
 		}
 
 
@@ -100,6 +108,7 @@
 			padding: 3px;
 			border: none;
 		}
+
 		/*@keyframes logo-anim {
 			100% {
 				transform: rotate(360deg);
@@ -204,60 +213,67 @@
 			display: inline-block;
 			margin-left: -10px;
 		}
+
 		.sideBarItem {
 			color: black;
-			padding:8px 16px;
-			float:left;
-			border:none;
-			outline:0;
-			width:100%;
-			display:block;
-			text-align:left;
-			white-space:normal;
-			float:none;
-		}
-		.sideBar-button {
-			border:none;
-			display:inline-block;
 			padding: 8px 16px;
-			vertical-align:middle;
-			overflow:hidden;
-			text-decoration:none;
-			color:inherit;
-			background-color:inherit;
+			float: left;
+			border: none;
+			outline: 0;
+			width: 100%;
+			display: block;
 			text-align: left;
-			cursor:pointer;
-			white-space:nowrap;
+			white-space: normal;
+			float: none;
+		}
+
+		.sideBar-button {
+			border: none;
+			display: inline-block;
+			padding: 8px 16px;
+			vertical-align: middle;
+			overflow: hidden;
+			text-decoration: none;
+			color: inherit;
+			background-color: inherit;
+			text-align: left;
+			cursor: pointer;
+			white-space: nowrap;
 			margin-left: 80px;
 			margin-right: -100px;
 		}
-		.sideBar-button:hover{
-			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+
+		.sideBar-button:hover {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			background-color: rgb(71, 71, 71);
 			color: orange;
 		}
+
 		.sideBar-content-button {
-			border:none;
-			display:inline-block;
+			border: none;
+			display: inline-block;
 			padding: 8px 16px;
-			vertical-align:middle;
-			overflow:hidden;
-			text-decoration:none;
-			color:inherit;
-			background-color:inherit;
-			text-align:center;
-			cursor:pointer;
-			white-space:nowrap;
+			vertical-align: middle;
+			overflow: hidden;
+			text-decoration: none;
+			color: inherit;
+			background-color: inherit;
+			text-align: center;
+			cursor: pointer;
+			white-space: nowrap;
 			background-color: white;
 		}
+
 		.sideBar-content-button:hover {
-			box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			background-color: orange;
 		}
+
 		.sideBar-close-button {
 			margin-left: 90%;
 			margin-top: 20px;
 		}
+
 		#sideBar {
 			background-color: white;
 			color: rgb(71, 71, 71);
@@ -473,16 +489,17 @@
 
 		/* Track */
 		::-webkit-scrollbar-track {
-			background: #f1f1f1; 
+			background: #f1f1f1;
 		}
-		
+
 		/* Handle */
 		::-webkit-scrollbar-thumb {
 			background: #888;
 		}
+
 		/* Handle on hover */
 		::-webkit-scrollbar-thumb:hover {
-			background: #555; 
+			background: #555;
 		}
 	</style>
 	<title>g4o2 website</title>
@@ -499,7 +516,37 @@
 		//document.documentElement.style.setProperty('--text-color', textColor);
 	});
 </script>
+
 <body>
+	<style>
+		iframe {
+			z-index: -9999;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			position: fixed
+		}
+
+		body :not(iframe) {
+			animation-name: dim;
+			animation-duration: 3s;
+		}
+
+		@keyframes dim {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
+		}
+	</style>
+	<iframe src="http://localhost/g4o2-website/threejs/index.html"></iframe>
 	<header class="navbar-header">
 		<div class="container">
 			<div class="logo-container">
@@ -511,7 +558,9 @@
 				<ul id="main-nav">
 					<li><a href="#" id="hover-stat-text">Welcome</a></li>
 					<li><a href="#" id="hover-stat">Stats</a></li>
-					<li><a href="#about">Social Media<!--About & Contact--></a></li>
+					<li><a href="#about">Social Media
+							<!--About & Contact-->
+						</a></li>
 					<div class="dropdown">
 						<button class="dropbtn">PAGES</button>
 						<div class="dropdown-content">
@@ -533,27 +582,17 @@
 							<a href="/g4o2-website/tables/index.html">testing stuff</a>
 						</div>
 					</div>
-					<!--<button class="sideBar-button" onclick="sideBar_open()">☰</button>-->
+					<button class="sideBar-button" onclick="sideBar_open()">☰</button>
 				</ul>
 			</nav>
 		</div>
 	</header>
 	<style>
-		
+
 	</style>
 	<div id="sideBar-container">
 		<div style="display: none;" id="sideBar">
 			<button class="sideBar-close-button sideBar-content-button" onclick="sideBar_close()">Close &times;</button>
-			<a href="https://google.com" target="_blank" class="sideBarItem sideBar-content-button">Test Link 1</a>
-			<a href="https://youtube.com" target="_blank" class="sideBarItem sideBar-content-button">Test Link 2</a>
-			<a href="https://amazon.com" target="_blank" class="sideBarItem sideBar-content-button">Test Link 3</a>
-			<a href="https://discord.com" target="_blank" class="sideBarItem sideBar-content-button">Test Link 4</a>
-			<a href="https://freecodecamp.org" target="_blank" class="sideBarItem sideBar-content-button">Test Link 5</a>
-			<a href="https://codepen.io" target="_blank" class="sideBarItem sideBar-content-button">Test Link 6</a>
-			<a href="https://github.com" target="_blank" class="sideBarItem sideBar-content-button">Test Link 7</a>
-			<a href="https://protonmail.com" target="_blank" class="sideBarItem sideBar-content-button">Test Link 8</a>
-			<a href="https://gmail.com" target="_blank" class="sideBarItem sideBar-content-button">Test Link 9</a>
-			<a href="https://reactjs.org" target="_blank" class="sideBarItem sideBar-content-button">Test Link 10</a>
 		</div>
 	</div>
 	<main>
@@ -574,9 +613,10 @@
 								alt="certification"></a>
 					</div>
 					<div id="cert-3" class="cert-wrapper">
-						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3" 
+						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3"
 								onmouseover="certScroll(this)"
-								src="/g4o2-website/certifications/Scientific Computing with Python.PNG" alt="certification"></a>
+								src="/g4o2-website/certifications/Scientific Computing with Python.PNG"
+								alt="certification"></a>
 					</div>
 					<div id="cert-4" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4"
@@ -608,13 +648,15 @@
 					</div>
 					<div id="cert-9" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-9.html"><img class="cert-img cert-img-9"
-							    onmouseover="certScroll(this)"
-								src="/g4o2-website/certifications/Using Python to Access Web Data.png" alt="certification"></a>
+								onmouseover="certScroll(this)"
+								src="/g4o2-website/certifications/Using Python to Access Web Data.png"
+								alt="certification"></a>
 					</div>
 					<div id="cert-10" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-10.html"><img class="cert-img cert-img-10"
 								onmouseover="certScroll(this)"
-								src="/g4o2-website/certifications/Building Database Applications in PHP.png" alt="certification"></a>
+								src="/g4o2-website/certifications/Building Database Applications in PHP.png"
+								alt="certification"></a>
 					</div>
 				</section>
 			</section>
@@ -831,26 +873,27 @@
 		}
 
 		function sideBar_open() {
-				document.getElementById("sideBar").style.width = "100%"; //document.body.offsetHeight
-				document.getElementById("sideBar").style.display = "block";
-				document.getElementById("content-wrapper").style.display = "none";
-				document.querySelector('footer').style = 'display: none';
-				window.scrollTo({
-					top: 0,
-					left: 0,
-					behavior: 'smooth'
-				});
-				document.body.style.background = "#f3f3f3 url('/g4o2-website/media/0.jpeg') no-repeat fixed";
-				document.body.style.background = "url('/g4o2-website/media/111.jpeg') no-repeat fixed";
-				document.body.style.backgroundSize = "100% 100%";
-			}
-			function sideBar_close() {
-				document.getElementById("sideBar").style.display = "none";
-				document.getElementById("content-wrapper").style.display = "block";
-				document.querySelector('footer').style = 'display: block';
-				document.body.style.background = "url('/g4o2-website/media/0000001.jpg') no-repeat fixed";
-				document.body.style.backgroundSize = "100% 100%";
-			}
+			document.getElementById("sideBar").style.width = "100%"; //document.body.offsetHeight
+			document.getElementById("sideBar").style.display = "block";
+			document.getElementById("content-wrapper").style.display = "none";
+			document.querySelector('footer').style = 'display: none';
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			});
+			document.body.style.background = "#f3f3f3 url('/g4o2-website/media/0.jpeg') no-repeat fixed";
+			document.body.style.background = "url('/g4o2-website/media/111.jpeg') no-repeat fixed";
+			document.body.style.backgroundSize = "100% 100%";
+		}
+		function sideBar_close() {
+			document.getElementById("sideBar").style.display = "none";
+			document.getElementById("content-wrapper").style.display = "block";
+			document.querySelector('footer').style = 'display: block';
+			document.body.style.background = "url('/g4o2-website/media/0000001.jpg') no-repeat fixed";
+			document.body.style.backgroundSize = "100% 100%";
+		}
 	</script>
 </body>
+
 </html>
