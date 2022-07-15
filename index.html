@@ -30,11 +30,10 @@
 			;
 		}
 
-
 		body {
-			margin: 0;
+			margin: 0px;
 			background: rgb(71, 71, 71);
-			font-family: 'Work Sans', sans-serif;
+			font-family: 'Work Sans', Arial, Helvetica, sans-serif;
 			font-weight: 100;
 			text-align: center;
 			background: url(../g4o2-website/media/0000001.jpg);
@@ -44,6 +43,18 @@
 			/*filter: blur(8px);
 			-webkit-filter: blur(8px);
 			backdrop-filter: blur(5px);*/
+			animation-name: dim;
+			animation-duration: 4s;
+		}
+
+		@keyframes dim {
+			0% {
+				opacity: 0;
+			}
+
+			100% {
+				opacity: 1;
+			}
 		}
 
 		main {
@@ -63,12 +74,12 @@
 
 
 		::-moz-selection {
-			color: lightblue;
+			color: grey;
 			background: orange;
 		}
 
 		::selection {
-			color: lightblue;
+			color: grey;
 			background: orange;
 		}
 
@@ -279,6 +290,29 @@
 			color: rgb(71, 71, 71);
 		}
 
+		#particles {
+			height: 100%;
+			z-index: -1;
+			position: fixed;
+			width: 100%;
+			margin-top: -28px;
+			/*animation-name: particle-background-anim;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;*/
+		}
+
+		@keyframes particle-background-anim {
+			0% {
+				background-color: rgba(255,165,0, 0);
+			}
+			50% {
+				background-color: rgba(255,165,0, 0.2);
+			}
+			100% {
+				background-color: rgba(255,165,0, 0);
+			}
+		}
+
 		#content-wrapper {
 			margin-top: 95px;
 		}
@@ -407,24 +441,6 @@
 			bottom: 0;
 		}
 
-		@keyframes myAnimation {
-			0% {
-				opacity: 1;
-				transform: rotateX(90deg);
-			}
-
-			50% {
-				opacity: 0.8;
-				transform: rotateX(0deg);
-			}
-
-			100% {
-				display: none;
-				opacity: 0;
-				transform: rotateX(90deg);
-			}
-		}
-
 		.close {
 			color: var(--text-color);
 			cursor: pointer;
@@ -441,9 +457,27 @@
 		}
 
 		.classname {
-			animation-name: myAnimation;
+			animation-name: hideAnim;
 			animation-duration: 2000ms;
 			animation-fill-mode: forwards;
+		}
+
+		@keyframes hideAnim {
+			0% {
+				opacity: 1;
+				transform: rotateX(90deg);
+			}
+
+			50% {
+				opacity: 0.8;
+				transform: rotateX(0deg);
+			}
+
+			100% {
+				display: none;
+				opacity: 0;
+				transform: rotateX(90deg);
+			}
 		}
 
 		#announcement {
@@ -482,58 +516,48 @@
 			background-color: var(--page-theme-second);
 		}
 
-		/* width */
 		::-webkit-scrollbar {
 			width: 10px;
 		}
 
-		/* Track */
 		::-webkit-scrollbar-track {
 			background: #f1f1f1;
 		}
 
-		/* Handle */
 		::-webkit-scrollbar-thumb {
 			background: #888;
 		}
 
-		/* Handle on hover */
 		::-webkit-scrollbar-thumb:hover {
 			background: #555;
 		}
 	</style>
 	<title>g4o2 website</title>
 </head>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script type="text/javascript">
 	$(document).ready(function () {
-		//let mainTheme = window.prompt("Theme (Enter color)");
-		//let mainThemeSecond = window.prompt("Second theme");
-		//let backgroundTheme = window.prompt("Background color");
-		//let textColor = window.prompt("Text color");
-		//document.documentElement.style.setProperty('--page-theme', mainTheme);
-		//document.documentElement.style.setProperty('--page-theme-second', mainThemeSecond);
-		//document.documentElement.style.setProperty('--page-bg', backgroundTheme);
-		//document.documentElement.style.setProperty('--text-color', textColor);
+		//scroll to top at refresh / start
+		window.scrollTo({
+			top: 0,
+			left: 0,
+			behavior: 'smooth'
+		});
+		particlesJS.load('particles', '/g4o2-website/particles-config.json', function () {
+			console.log('working');
+		})
+		/*let mainTheme = window.prompt("Theme (Enter color)");
+		let mainThemeSecond = window.prompt("Second theme");
+		let backgroundTheme = window.prompt("Background color");
+		let textColor = window.prompt("Text color");
+		document.documentElement.style.setProperty('--page-theme', mainTheme);
+		document.documentElement.style.setProperty('--page-theme-second', mainThemeSecond);
+		document.documentElement.style.setProperty('--page-bg', backgroundTheme);
+		document.documentElement.style.setProperty('--text-color', textColor);*/
 	});
 </script>
 
 <body>
-	<style>
-		body {
-			animation-name: dim;
-			animation-duration: 4s;
-		}
-
-		@keyframes dim {
-			0% {
-				opacity: 0;
-			}
-
-			100% {
-				opacity: 1;
-			}
-		}
-	</style>
 	<header class="navbar-header">
 		<div class="container">
 			<div class="logo-container">
@@ -576,9 +600,6 @@
 			</nav>
 		</div>
 	</header>
-	<style>
-
-	</style>
 	<div id="sideBar-container">
 		<div style="display: none;" id="sideBar">
 			<button class="sideBar-close-button sideBar-content-button" onclick="sideBar_close()">Close &times;</button>
@@ -586,64 +607,67 @@
 	</div>
 	<main>
 		<div id="content-wrapper">
+			<section>
+				<div id="particles"></div>
+			</section>
 			<section id="certifications">
 				<header id="cert-header">CERTIFICATIONS I HAVE EARNED SO FAR</header>
 				<section d="certs">
 					<div id="cert-1" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(67)"
 								src="/g4o2-website/certifications/Responsive web design certification.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-2" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img cert-img-2"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(392)"
 								src="/g4o2-website/certifications/JavaScript-Algorithms-and-Data-Structures.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-3" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(714)"
 								src="/g4o2-website/certifications/Scientific Computing with Python.PNG"
 								alt="certification"></a>
 					</div>
 					<div id="cert-4" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(1036)"
 								src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
 					</div>
 					<div id="cert-5" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-5.html"><img class="cert-img cert-img-5"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(1360)"
 								src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-6" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-6.html"><img class="cert-img cert-img-6"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(1685)"
 								src="/g4o2-website/certifications/building-web-applications-in-php.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-7" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-7.html"><img class="cert-img cert-img-7"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(2010)"
 								src="/g4o2-website/certifications/Introduction to Structured Query Language (SQL).png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-8" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-8.html"><img class="cert-img cert-img-8"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(2333)"
 								src="/g4o2-website//certifications/Introduction to HTML5.png" alt="certification"></a>
 					</div>
 					<div id="cert-9" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-9.html"><img class="cert-img cert-img-9"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(2658)"
 								src="/g4o2-website/certifications/Using Python to Access Web Data.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-10" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-10.html"><img class="cert-img cert-img-10"
-								onmouseover="certScroll(this)"
+								onmouseover="certScroll(2982)"
 								src="/g4o2-website/certifications/Building Database Applications in PHP.png"
 								alt="certification"></a>
 					</div>
@@ -702,7 +726,6 @@
 					properly
 				</p>
 				<span onclick="loadAnimation()" class="close">&times;</span>
-			</div>
 		</section>
 	</footer>
 	<button onclick="topFunction()" id="topBtn" title="Go to to top">&#9995;</button>
@@ -718,7 +741,6 @@
 			console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
 			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
 				hoverStatText.innerHTML = ('Bottom');
-				/*alert ("Wallee");*/
 			} else if (window.pageYOffset <= 1) {
 				hoverStatText.innerHTML = ('Top');
 			}
@@ -730,7 +752,7 @@
 				mybutton.style.display = "none";
 			}
 		}
-		//scroll top btn onclick function
+		//top btn onclick function
 		function topFunction() {
 			window.scrollTo({
 				top: 0,
@@ -748,84 +770,79 @@
 				});
 			});
 		});
-		//scroll to top at refresh/ start 
-		window.scrollTo({
-			top: 0,
-			left: 0,
-			behavior: 'smooth'
-		});
-		//detect which img hoverd on and positions it not finished yet 
 		function certScroll(x) {
+			var particlesHeight = document.getElementById('particles').clientHeight;
+			//x = x + particlesHeight;
 			const images = document.querySelectorAll('img');
 			for (const cert of images) {
 				if (cert.matches(':hover')) {
 					if (cert.className == "cert-img cert-img-1") {
 						hoverStatText.innerHTML = ('Responsive web design certification');
 						window.scrollTo({
-							top: 67,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-2") {
 						hoverStatText.innerHTML = ('JavaScript Algorithms & Data Structures');
 						window.scrollTo({
-							top: 392,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-3") {
 						hoverStatText.innerHTML = ('Scientific Computing with Python');
 						window.scrollTo({
-							top: 714,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-4") {
 						hoverStatText.innerHTML = ('Python data structures');
 						window.scrollTo({
-							top: 1036,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-5") {
 						hoverStatText.innerHTML = ('python programming for everybody');
 						window.scrollTo({
-							top: 1360,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-6") {
 						hoverStatText.innerHTML = ('building web applications in php');
 						window.scrollTo({
-							top: 1685,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-7") {
 						hoverStatText.innerHTML = ('Introduction to SQL');
 						window.scrollTo({
-							top: 2010,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-8") {
 						hoverStatText.innerHTML = ('Introduction to HTML5');
 						window.scrollTo({
-							top: 2333,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-9") {
 						hoverStatText.innerHTML = ('Using Python to Access Web Data');
 						window.scrollTo({
-							top: 2658,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
 					} else if (cert.className == "cert-img cert-img-10") {
 						hoverStatText.innerHTML = ('Building Database Applications in PHP');
 						window.scrollTo({
-							top: 2982,
+							top: x,
 							left: 0,
 							behavior: 'smooth'
 						});
@@ -883,6 +900,7 @@
 			document.body.style.backgroundSize = "100% 100%";
 		}
 	</script>
+	</div>
 </body>
 
 </html>
