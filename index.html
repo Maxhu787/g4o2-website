@@ -58,7 +58,7 @@
 		}
 
 		main {
-			height: 3700px;
+			height: 4100px;
 		}
 
 		* {
@@ -611,7 +611,7 @@
 				<div id="particles"></div>
 			</section>
 			<section id="certifications">
-				<header id="cert-header">CERTIFICATIONS I HAVE EARNED SO FAR</header>
+				<header id="cert-header">Test website<!--CERTIFICATIONS I HAVE EARNED SO FAR--></header>
 				<section d="certs">
 					<div id="cert-1" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1"
@@ -671,6 +671,12 @@
 								src="/g4o2-website/certifications/Building Database Applications in PHP.png"
 								alt="certification"></a>
 					</div>
+					<div id="cert-11" class="cert-wrapper">
+						<a href="/g4o2-website/certifications/cert-11.html"><img class="cert-img cert-img-11"
+								onmouseover="certScroll(3314)"
+								src="/g4o2-website/certifications/Front End Development Libraries.PNG" 
+								alt="certification"></a>
+					</div>
 				</section>
 			</section>
 			<section hidden id="announcements">
@@ -694,30 +700,35 @@
 		</div>
 	</main>
 	<footer>
+		<style>
+			#contact-link {
+				pointer-events: none;
+			}
+		</style>
 		<section id="contact">
 			<header id="contact-header" class="header">Contact and Social Media</header>
-			<a href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/" target="_blank" title="Linkedin Profile">
+			<a id="contact-link" href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/" target="_blank" title="Linkedin Profile">
 				<i alt="linkedin" class="contact-img fa-brands fa-linkedin fa-3x"></i>
 			</a>
-			<a href="https://github.com/Maxhu787" target="_blank" title="GitHub Profile">
+			<a id="contact-link" href="https://github.com/Maxhu787" target="_blank" title="GitHub Profile">
 				<i alt="github" class="contact-img fa-brands fa-github-square fa-3x"></i>
 			</a>
-			<a href="https://www.instagram.com/hukaixiang1024/" target="_blank" title="Ingstagram Profile">
+			<a id="contact-link" href="https://www.instagram.com/hukaixiang1024/" target="_blank" title="Ingstagram Profile">
 				<i alt="ig" class="contact-img fa-brands fa-instagram-square fa-3x"></i>
 			</a>
-			<a href="https://twitter.com/Maxhu787" target="_blank" title="Twitter Account">
+			<a id="contact-link" href="https://twitter.com/Maxhu787" target="_blank" title="Twitter Account">
 				<i alt="twitter" class="contact-img fa-brands fa-twitter-square fa-3x"></i>
 			</a>
-			<a href="https://discord.gg/8XkBy6SRDJ" target="_blank" title="Discord Server">
+			<a id="contact-link" href="https://discord.gg/8XkBy6SRDJ" target="_blank" title="Discord Server">
 				<i alt="discord" class="contact-img fa-brands fa-discord fa-3x"></i>
 			</a>
-			<a href="https://www.freecodecamp.org/Maxhu" target="_blank" title="Freecodcamp Profile">
+			<a id="contact-link" href="https://www.freecodecamp.org/Maxhu" target="_blank" title="Freecodcamp Profile">
 				<i alt="FCC" class="contact-img fa-brands fa-free-code-camp fa-3x"></i>
 			</a>
-			<a href="https://codepen.io/g4o2" target="_blank" title="CodePen Profile">
+			<a id="contact-link" href="https://codepen.io/g4o2" target="_blank" title="CodePen Profile">
 				<i class="contact-img fa-brands fa-codepen fa-3x"></i>
 			</a>
-			<a href="https://jsfiddle.net/user/maxhu787/" target="_blank" title="Jsfiddle Profile">
+			<a id="contact-link" href="https://jsfiddle.net/user/maxhu787/" target="_blank" title="Jsfiddle Profile">
 				<i class="contact-img fa-brands fa-jsfiddle fa-3x"></i>
 			</a>
 			<div id="copyright">
@@ -841,6 +852,14 @@
 						});
 					} else if (cert.className == "cert-img cert-img-10") {
 						hoverStatText.innerHTML = ('Building Database Applications in PHP');
+						window.scrollTo({
+							top: x,
+							left: 0,
+							behavior: 'smooth'
+						});
+					}
+					else if (cert.className == "cert-img cert-img-11") {
+						hoverStatText.innerHTML = ('Front End Development Libraries');
 						window.scrollTo({
 							top: x,
 							left: 0,
