@@ -63,7 +63,7 @@
                 const loader = new GLTFLoader()
                 loader.load('/g4o2-website/threejs/mech/scene.gltf', function (gltf) {
                     var model = gltf.scene;
-                    var newMaterial = new THREE.MeshStandardMaterial({ color: 0xff0000 });
+                    var newMaterial = new THREE.MeshStandardMaterial({ color: 0xffc200 });
                     model.traverse((o) => {
                         if (o.isMesh) o.material = newMaterial;
                     });
