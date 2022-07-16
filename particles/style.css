@@ -3,9 +3,12 @@ body {
     color: #333;
     margin: 0;
 }
+
 #particles {
-    background-color: orange;
     height: 100%;
+    position: fixed;
+    width: 100%;
+    background: orange;
 }
 
 #login {
@@ -20,11 +23,14 @@ body {
     padding: 10px;
     transform: translate(-50%, -50%);
 }
-#login input[type="text"], #login input[type="password"] {
+
+#login input[type="text"],
+#login input[type="password"] {
     padding: 7px;
     margin-bottom: 10px;
     border: 1px #ccc solid;
 }
+
 #submit {
     background-color: orange;
     height: 35px;
@@ -33,6 +39,7 @@ body {
     border-radius: 3px;
     margin-left: 118px;
 }
+
 #submit:hover {
     background-color: white;
     transition: all .3s ease-in-out;
