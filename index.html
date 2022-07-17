@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="/g4o2-website/js/jquery-3.6.0.js"></script>
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+		@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 		:root {
 			--page-theme: orange
@@ -192,7 +193,7 @@
 			background-color: #f1f1f1;
 			min-width: 160px;
 			box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-			z-index: 1;
+			z-index: 999;
 			overflow-y: scroll;
 			float: left;
 			width: 50%;
@@ -533,6 +534,16 @@
 		::-webkit-scrollbar-thumb:hover {
 			background: #555;
 		}
+
+		.blink {
+			animation: blinker 1.5s linear infinite;
+		}
+
+		@keyframes blinker {
+			50% {
+				opacity: 0;
+			}
+		}
 	</style>
 	<title>g4o2 website</title>
 </head>
@@ -575,13 +586,14 @@
 							<!--About & Contact-->
 						</a></li>
 					<div class="dropdown">
-						<button class="dropbtn">PAGES</button>
+						<button class="dropbtn">PAGES &#128580;</button>
 						<div class="dropdown-content">
 							<a href="/g4o2-website/particles/index.html">Particle.js Test</a>
 							<a href="/g4o2-website/threejs/index.html">Three js Example gltf</a>
 							<a href="/g4o2-website/threejs/2.html">Three js Example 2 gltf</a>
 							<a href="/g4o2-website/threejs/3.html">Three js Example 3 gltf</a>
 							<a href="/g4o2-website/threejs/4.html">Three js Reflective sphere</a>
+							<a href="/g4o2-website/autosess-v2/index.php">db Login test</a>
 							<a href="/g4o2-website/guessing-game/guessinggame.html">guessing game</a>
 							<a href="/g4o2-website/crack/index.php" title="cracking (kind of)">MD5 cracking</a>
 							<a href="/g4o2-website/media-in-browser/video-playing.html">Video playing</a>
@@ -590,7 +602,7 @@
 							<a href="/g4o2-website/random-word-gen/index.html">Random symbol generator</a>
 							<a href="/g4o2-website/rps/index.php">rock paper scissors</a>
 							<a href="/g4o2-website/autos/">PHP &amp; SQL</a>
-							<a href="/g4o2-website/crud/index.html">Test login</a>
+							<a href="/g4o2-website/crud/index.php">Test login</a>
 							<a href="/g4o2-website/test/yt-api.html">YouTube api</a>
 							<a href="/g4o2-website/wallee/walle.html">Wallee</a>
 							<a href="vid.html">Test vid</a>
@@ -612,10 +624,17 @@
 			<section>
 				<div id="particles"></div>
 			</section>
+			<style>
+				#cert-header {
+					font-family: "Orbitron";
+				}
+			</style>
 			<section id="certifications">
-				<header id="cert-header">Test website
+				<marquee behavior="scroll" direction="left" scrollamount="12" class="blink" id="cert-header">
+					Welcome to my test website&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					This website is for testing purposes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Made by g4o2
 					<!--CERTIFICATIONS I HAVE EARNED SO FAR-->
-				</header>
+				</marquee>
 				<section d="certs">
 					<div id="cert-1" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1"
@@ -638,8 +657,7 @@
 					<div id="cert-4" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4"
 								onmouseover="certScroll(1036)"
-								src="/g4o2-website/certifications/python-data-stuctures.png" 
-								alt="certification"></a>
+								src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
 					</div>
 					<div id="cert-5" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-5.html"><img class="cert-img cert-img-5"
@@ -683,6 +701,9 @@
 								alt="certification"></a>
 					</div>
 				</section>
+				<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="0ebeaaeb-fbed-4794-b9e9-43cee08484bf"
+					data-share-badge-host="https://www.credly.com"></div>
+				<script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 			</section>
 			<section hidden id="announcements">
 				<div id="announcement">Announcements</div>
@@ -734,10 +755,12 @@
 			</a>
 			<div id="copyright">
 				<p id="copyright-text">
-					<!--g4o2 2022 &copy; Copyright--> Since php doesn't work on github pages, Most pages won't function
+					<!--g4o2 2022 &copy; Copyright-->Since php doesn't work on github pages&nbsp;&nbsp;&nbsp;Most pages
+					won't function
 					properly
 				</p>
 				<span onclick="loadAnimation()" class="close">&times;</span>
+			</div>
 		</section>
 	</footer>
 	<button onclick="topFunction()" id="topBtn" title="Go to to top">&#9995;</button>
