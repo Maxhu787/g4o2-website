@@ -676,7 +676,7 @@
 					</div>
 				</section>
 				<section id="badges">
-					<div id="badge-1" data-iframe-width="150" data-iframe-height="270"
+					<div class="badge badge-1" onmouseover="certScroll(3590)" id="badge-1" data-iframe-width="150" data-iframe-height="270"
 						data-share-badge-id="0ebeaaeb-fbed-4794-b9e9-43cee08484bf" data-share-badge-host="https://www.credly.com"></div>
 				</section>
 			</section>
@@ -804,6 +804,21 @@
 		function certScroll(x) {
 			var particlesHeight = document.getElementById('particles').clientHeight;
 			//x = x + particlesHeight;
+			x = x + 50;
+			// Add one for the badges later on when I have more badges to display :)
+			/*const badges = document.getElementsByClassName("badge");
+			for (const badge of badges) {
+				if (badge.matches(':hover')) {
+					if(badge.className == 'badge badge-1') {
+						hoverStatText.innerHTML = ('badge');
+						window.scrollTo({
+							top: x,
+							left: 0,
+							behavior: 'smooth'
+						});
+					}
+				}
+			}*/
 			const images = document.querySelectorAll('img');
 			for (const cert of images) {
 				if (cert.matches(':hover')) {
