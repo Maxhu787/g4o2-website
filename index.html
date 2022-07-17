@@ -545,35 +545,9 @@
 				opacity: 0;
 			}
 		}
-
-		body {
-			cursor: url('https://www.jorduschell.com/uploads/3/9/7/1/39719012/s695681236579368457_p112_i3_w582.jpeg'), default;
-		}
 	</style>
 	<title>g4o2 website</title>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script type="text/javascript">
-	$(document).ready(function () {
-		//scroll to top at refresh / start
-		window.scrollTo({
-			top: 0,
-			left: 0,
-			behavior: 'smooth'
-		});
-		particlesJS.load('particles', '/g4o2-website/particles-config.json', function () {
-			console.log('working');
-		})
-		/*let mainTheme = window.prompt("Theme (Enter color)");
-		let mainThemeSecond = window.prompt("Second theme");
-		let backgroundTheme = window.prompt("Background color");
-		let textColor = window.prompt("Text color");
-		document.documentElement.style.setProperty('--page-theme', mainTheme);
-		document.documentElement.style.setProperty('--page-theme-second', mainThemeSecond);
-		document.documentElement.style.setProperty('--page-bg', backgroundTheme);
-		document.documentElement.style.setProperty('--text-color', textColor);*/
-	});
-</script>
 
 <body>
 	<header class="navbar-header">
@@ -762,19 +736,40 @@
 			<div id="copyright">
 				<p id="copyright-text">
 					<!--g4o2 2022 &copy; Copyright-->Since php doesn't work on github pages&nbsp;&nbsp;&nbsp;Most pages
-					won't function
-					properly
+					won't function properly
 				</p>
 				<span onclick="loadAnimation()" class="close">&times;</span>
 			</div>
 		</section>
 	</footer>
 	<button onclick="topFunction()" id="topBtn" title="Go to to top">&#9995;</button>
+	<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			//scroll to top at refresh / start
+			window.scrollTo({
+				top: 0,
+				left: 0,
+				behavior: 'smooth'
+			});
+			particlesJS.load('particles', '/g4o2-website/particles-config.json', function () {
+				console.log('working');
+			})
+			/*let mainTheme = window.prompt("Theme (Enter color)");
+			let mainThemeSecond = window.prompt("Second theme");
+			let backgroundTheme = window.prompt("Background color");
+			let textColor = window.prompt("Text color");
+			document.documentElement.style.setProperty('--page-theme', mainTheme);
+			document.documentElement.style.setProperty('--page-theme-second', mainThemeSecond);
+			document.documentElement.style.setProperty('--page-bg', backgroundTheme);
+			document.documentElement.style.setProperty('--text-color', textColor);*/
+		});
+	</script>
 	<script>
 		const hoverText = document.getElementById('hover-stat');
 		const hoverStatText = document.getElementById('hover-stat-text');
 		//scrool to top btn
-		let mybutton = document.getElementById("topBtn");
+		let topBtn = document.getElementById("topBtn");
 		hoverStat = false;
 		//top bottom detect
 		window.onscroll = function () {
@@ -787,10 +782,10 @@
 			}
 			//top btn detects when to show and hide
 			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-				mybutton.style.display = "block"/*"block" || "none"*/; //top btn temp disabled 
+				topBtn.style.display = "block"/*"block" || "none"*/; //top btn temp disabled 
 				//enable by removing "none" ^^
 			} else {
-				mybutton.style.display = "none";
+				topBtn.style.display = "none";
 			}
 		}
 		//top btn onclick function
@@ -949,7 +944,6 @@
 			document.body.style.backgroundSize = "100% 100%";
 		}
 	</script>
-	</div>
 </body>
 
 </html>
