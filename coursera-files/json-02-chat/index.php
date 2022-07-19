@@ -14,6 +14,7 @@ if (isset($_POST['message'])) {
 ?>
 <html>
 <title>g4o2 chat</title>
+<link rel="stylesheet" href="/g4o2-website/json-02-chat/style.css">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
@@ -22,7 +23,7 @@ if (isset($_POST['message'])) {
   }
 
   h1 {
-    font-family: 'Orbitron';
+    font-family: 'Orbitron', arial;
     color: orange;
     font-size: 8vw;
     text-transform: uppercase;
@@ -36,18 +37,18 @@ if (isset($_POST['message'])) {
   }
 
   .time {
-    font-size: 14px;
+    font-size: 12px;
     color: orange;
   }
 
   .msg {
     color: black;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   #message-input {
-    height: 30px;
-    font-size: 20px;
+    height: 33px;
+    font-size: 14px;
     width: 70%;
   }
 
@@ -56,14 +57,52 @@ if (isset($_POST['message'])) {
     width: 52.4vw;
     margin-top: -6%;
     margin-left: 0.3%;
-    background-color: #999;
+    background-color: rgb(200, 200, 200);
     border-radius: 10px;
     padding: 10px;
   }
-  #submit {}
-</style>
 
-<head>
+  #submit {
+    background-color: rgb(0, 208, 255);
+  }
+
+  #submit:hover {
+    background-color: white;
+    transition: all .2s ease-in-out;
+  }
+
+  #reset {
+    background-color: rgb(255, 82, 82);
+  }
+
+  #reset:hover {
+    background-color: white;
+    transition: all .2s ease-in-out;
+  }
+
+  .button {
+    height: 35px;
+    font-size: 16px;
+    width: 10%;
+    background-color: #ffc200;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 8px;
+  }
+
+  .button:hover {
+    background-color: white;
+    transition: all .2s ease-in-out;
+  }
+
+  .spinner {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 7vh;
+    width: 10vw;
+  }
+</style>
 </head>
 
 <body>
@@ -75,14 +114,14 @@ if (isset($_POST['message'])) {
   </section>
   <section>
     <div id="chatcontent">
-      <img src="spinner.gif" alt="Loading..." />
+      <img class="spinner" src="spinner.gif" alt="Loading..." />
     </div>
     <form method="post" action="index.php">
       <p>
-        <input id='message-input' type="text" name="message" size="60" />
-        <input id="submit" type="submit" value="Chat" />
-        <input id='reset' type="submit" name="reset" value="Clean Chat" />
-        <!--<a href="chatlist.php" target="_blank">chatlist.php</a>-->
+        <input id='message-input' type="text" name="message" size="60" placeholder="Enter message and submit" />
+        <input class='button' id="submit" type="submit" value="Chat" />
+        <input class='button' id='reset' type="submit" name="reset" value="Reset" />
+        <a href="chatlist.php" target="_blank">chatlist.php</a>
       </p>
     </form>
   </section>
@@ -126,7 +165,7 @@ if (isset($_POST['message'])) {
           $('#chatcontent').append(msg)
         }
         console.log()
-        setTimeout('updateMsg()', 10000000);
+        setTimeout('updateMsg()', 100);
       });
     }
 

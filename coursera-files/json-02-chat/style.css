@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-family: 'Orbitron', arial;
+    color: orange;
+    font-size: 8vw;
+    text-transform: uppercase;
+}
+
+#chatcontent {
+    height: 40vh;
+    width: 97vw;
+    overflow: auto;
+    border: solid 5px white;
+}
+
+.time {
+    font-size: 12px;
+    color: orange;
+}
+
+.msg {
+    color: black;
+    font-size: 16px;
+}
+
+#message-input {
+    height: 33px;
+    font-size: 14px;
+    width: 70%;
+}
+
+#keys {
+    height: 20vh;
+    width: 52.4vw;
+    margin-top: -6%;
+    margin-left: 0.3%;
+    background-color: rgb(200, 200, 200);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#submit {
+    background-color: rgb(0, 208, 255);
+}
+
+#submit:hover {
+    background-color: white;
+    transition: all .2s ease-in-out;
+}
+
+#reset {
+    background-color: rgb(255, 82, 82);
+}
+
+#reset:hover {
+    background-color: white;
+    transition: all .2s ease-in-out;
+}
+
+.button {
+    height: 35px;
+    font-size: 16px;
+    width: 10%;
+    background-color: #ffc200;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 8px;
+}
+
+.button:hover {
+    background-color: white;
+    transition: all .2s ease-in-out;
+}
