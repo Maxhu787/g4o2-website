@@ -14,7 +14,6 @@ if (isset($_POST['message'])) {
 ?>
 <html>
 <title>g4o2 chat</title>
-<link rel="stylesheet" href="/g4o2-website/json-02-chat/style.css">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
@@ -35,6 +34,30 @@ if (isset($_POST['message'])) {
     overflow: auto;
     border: solid 5px white;
   }
+
+
+  #chatcontent::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #F5F5F5;
+  }
+
+  #chatcontent::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+  }
+
+  #chatcontent::-webkit-scrollbar-thumb {
+    background-color: #F90;
+    background-image: -webkit-linear-gradient(45deg,
+        rgba(255, 255, 255, .2) 25%,
+        transparent 25%,
+        transparent 50%,
+        rgba(255, 255, 255, .2) 50%,
+        rgba(255, 255, 255, .2) 75%,
+        transparent 75%,
+        transparent)
+  }
+
 
   .time {
     font-size: 12px;
@@ -116,7 +139,7 @@ if (isset($_POST['message'])) {
     <div id="chatcontent">
       <img class="spinner" src="spinner.gif" alt="Loading..." />
     </div>
-    <form method="post" action="index.php">
+    <form id='form' autocomplete="off" method="post" action="index.php">
       <p>
         <input id='message-input' type="text" name="message" size="60" placeholder="Enter message and submit" />
         <input class='button' id="submit" type="submit" value="Chat" />
@@ -150,12 +173,26 @@ if (isset($_POST['message'])) {
         }
       }
     });
+    var old_value;
 
     function updateMsg() {
-      window.console && console.log('Requesting JSON');
+      //window.console && console.log('Requesting JSON');
       $.getJSON('chatlist.php', function(rowz) {
-        window.console && console.log('JSON Received');
-        window.console && console.log(rowz);
+        //window.console && console.log('JSON Received');
+        //window.console && console.log(rowz);
+
+        if (old_value == undefined) {
+          old_value = rowz.length;
+        } else {
+          if (rowz.length != old_value) {
+            console.log("value changed");
+            old_value = rowz.length;
+          } else {
+            //console.log("value did not change");
+          }
+        }
+
+
         $('#chatcontent').empty();
         for (var i = 0; i < rowz.length; i++) {
           arow = rowz[i];
@@ -164,7 +201,6 @@ if (isset($_POST['message'])) {
           $('#chatcontent').append(time);
           $('#chatcontent').append(msg)
         }
-        console.log()
         setTimeout('updateMsg()', 100);
       });
     }
@@ -173,7 +209,9 @@ if (isset($_POST['message'])) {
       $.ajaxSetup({
         cache: false
       });
+      //let chat = document.getElementById('chatcontent')
+      //chat.scrollTop = chat.scrollHeight;
       updateMsg();
-    });
+    })
   </script>
 </body>
