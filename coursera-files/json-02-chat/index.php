@@ -14,31 +14,30 @@ if (isset($_POST['message'])) {
 ?>
 <html>
 <title>g4o2 chat</title>
-<style>
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+<style type="text/css">
   @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
   body {
     font-family: Arial, Helvetica, sans-serif;
-  }
-
-  h1 {
-    font-family: 'Orbitron', arial;
-    color: orange;
-    font-size: 8vw;
-    text-transform: uppercase;
+    background-color: #121212;
+    color: #ffffff;
+    opacity: 87%;
   }
 
   #chatcontent {
     height: 40vh;
     width: 97vw;
     overflow: auto;
-    border: solid 5px white;
+    border: solid 5px #353935;
   }
 
 
   #chatcontent::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-    background-color: #F5F5F5;
+    background-color: #353935
+      /*#F5F5F5*/
+    ;
   }
 
   #chatcontent::-webkit-scrollbar {
@@ -62,27 +61,62 @@ if (isset($_POST['message'])) {
   .time {
     font-size: 12px;
     color: orange;
+    margin-left: 10px;
   }
 
   .msg {
-    color: black;
+    color: white;
+    font-weight: 100;
     font-size: 16px;
+    margin-left: 10px;
   }
 
   #message-input {
-    height: 33px;
+    height: 36px;
     font-size: 14px;
     width: 70%;
+    margin-left: 2px;
+    padding-left: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #d1d1d1;
+    transition: all .2s ease-in-out;
   }
 
-  #keys {
+  #message-input:focus {
+    outline: none !important;
+    border: 3px solid #ffa500;
+    box-shadow: 0 0 0px #719ECE
+  }
+
+  #page-header {
+    margin-top: -1.7%;
+    margin-left: 0.3%;
+  }
+
+  h1 {
+    font-family: 'Orbitron', arial;
+    color: orange;
+    font-size: 8vw;
+    text-transform: uppercase;
+  }
+
+  #guide {
     height: 20vh;
     width: 52.4vw;
-    margin-top: -6%;
-    margin-left: 0.3%;
-    background-color: rgb(200, 200, 200);
+    margin-top: -7.3%;
+    margin-bottom: 1.5%;
+    background-color: #343434;
     border-radius: 10px;
     padding: 10px;
+  }
+
+  ::placeholder {
+    padding-left: 0px;
+  }
+
+  :-ms-input-placeholder {
+    padding-left: 0px;
   }
 
   #submit {
@@ -129,11 +163,13 @@ if (isset($_POST['message'])) {
 </head>
 
 <body>
-  <h1>g4o2&nbsp;chat</h1>
-  <section id="keys">
-    <p>Press <kbd>Enter</kbd> to submit message</p>
-    <p>Press <kbd>Esc</kbd> to deselect</p>
-    <p>Press <kbd>/</kbd> to select </p>
+  <section id="page-header">
+    <h1>g4o2&nbsp;chat</h1>
+    <section id="guide">
+      <p>Press <kbd>Enter</kbd> to submit message</p>
+      <p>Press <kbd>Esc</kbd> to deselect</p>
+      <p>Press <kbd>/</kbd> to select </p>
+    </section>
   </section>
   <section>
     <div id="chatcontent">
@@ -144,7 +180,7 @@ if (isset($_POST['message'])) {
         <input id='message-input' type="text" name="message" size="60" placeholder="Enter message and submit" />
         <input class='button' id="submit" type="submit" value="Chat" />
         <input class='button' id='reset' type="submit" name="reset" value="Reset" />
-        <a href="chatlist.php" target="_blank">chatlist.php</a>
+        <!--<a href="chatlist.php" target="_blank">chatlist.php</a>-->
       </p>
     </form>
   </section>
@@ -173,26 +209,28 @@ if (isset($_POST['message'])) {
         }
       }
     });
-    var old_value;
+    /*
+    below function just for scrolling chat to bottom on load
+    for some reason I cant get it to work the .load() way
+    so I'm using a weird solutions
+    which is to set srolling var to false on load
+    when scroll set to true
+    if scroll var is false run the chatScroll() function
+    else it will not run it and you can scroll to wherever u like 
+    without chatScroll interfering 
+    */
+    var scroll = false;
+
+    function chatScroll() {
+      let chat = document.getElementById('chatcontent')
+      chat.scrollTop = chat.scrollHeight;
+    }
 
     function updateMsg() {
       //window.console && console.log('Requesting JSON');
       $.getJSON('chatlist.php', function(rowz) {
         //window.console && console.log('JSON Received');
         //window.console && console.log(rowz);
-
-        if (old_value == undefined) {
-          old_value = rowz.length;
-        } else {
-          if (rowz.length != old_value) {
-            console.log("value changed");
-            old_value = rowz.length;
-          } else {
-            //console.log("value did not change");
-          }
-        }
-
-
         $('#chatcontent').empty();
         for (var i = 0; i < rowz.length; i++) {
           arow = rowz[i];
@@ -201,16 +239,21 @@ if (isset($_POST['message'])) {
           $('#chatcontent').append(time);
           $('#chatcontent').append(msg)
         }
+        let chat = document.getElementById('chatcontent')
+        $(chat).scroll(function() {
+          scroll = true;
+        });
+        if (!scroll) {
+          chatScroll()
+        }
         setTimeout('updateMsg()', 100);
+
       });
     }
-
     $(document).ready(function() {
       $.ajaxSetup({
         cache: false
       });
-      //let chat = document.getElementById('chatcontent')
-      //chat.scrollTop = chat.scrollHeight;
       updateMsg();
     })
   </script>
