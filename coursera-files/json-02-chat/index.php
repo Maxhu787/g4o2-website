@@ -99,6 +99,7 @@ if (isset($_POST['message'])) {
     color: orange;
     font-size: 8vw;
     text-transform: uppercase;
+    user-select: none;
   }
 
   #guide {
@@ -119,38 +120,31 @@ if (isset($_POST['message'])) {
     padding-left: 0px;
   }
 
-  #submit {
-    background-color: rgb(0, 208, 255);
+  #form {
+    margin-top: 1.3%;
   }
 
-  #submit:hover {
-    background-color: white;
-    transition: all .2s ease-in-out;
-  }
+  #submit {}
 
-  #reset {
-    background-color: rgb(255, 82, 82);
-  }
-
-  #reset:hover {
-    background-color: white;
-    transition: all .2s ease-in-out;
-  }
+  #reset {}
 
   .button {
     height: 35px;
     font-size: 16px;
     width: 10%;
-    background-color: #ffc200;
     border: none;
     cursor: pointer;
     border-radius: 3px;
     padding: 8px;
+    color: orange;
+    background-color: #343434;
+    transition: all .2s ease-in-out;
   }
 
   .button:hover {
-    background-color: white;
+    background-color: #121212;
     transition: all .2s ease-in-out;
+    color: #ffa500;
   }
 
   .spinner {
@@ -158,6 +152,16 @@ if (isset($_POST['message'])) {
     margin-right: 20%;
     margin-top: 7vh;
     width: 10vw;
+  }
+
+
+  #stats {
+    position: fixed;
+    margin-top: -67%;
+    margin-left: 74%;
+    height: 30vh;
+    width: 30vw;
+    background-color: #343434;
   }
 </style>
 </head>
@@ -176,13 +180,32 @@ if (isset($_POST['message'])) {
       <img class="spinner" src="spinner.gif" alt="Loading..." />
     </div>
     <form id='form' autocomplete="off" method="post" action="index.php">
-      <p>
+      <div>
         <input id='message-input' type="text" name="message" size="60" placeholder="Enter message and submit" />
         <input class='button' id="submit" type="submit" value="Chat" />
         <input class='button' id='reset' type="submit" name="reset" value="Reset" />
         <!--<a href="chatlist.php" target="_blank">chatlist.php</a>-->
-      </p>
+      </div>
     </form>
+  </section>
+  <section id="stats">
+    <table>
+      <tr>
+        <th>temp1</th>
+        <th>temp2</th>
+        <th>temp3</th>
+      </tr>
+      <tr>
+        <td>temp1</td>
+        <td>temp2</td>
+        <td>temp3</td>
+      </tr>
+      <tr>
+        <td>temp1</td>
+        <td>temp2</td>
+        <td>temp3</td>
+      </tr>
+    </table>
   </section>
   <script type="text/javascript" src="jquery.min.js">
   </script>
