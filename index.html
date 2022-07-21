@@ -60,7 +60,7 @@
 		}
 
 		main {
-			height: 4300px;
+			height: 4900px;
 		}
 
 		* {
@@ -613,78 +613,78 @@
 				<section d="certs">
 					<div id="cert-1" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1" 
-								onmouseover="certScroll()"
+								onmouseover="certScroll(67)"
 								src="/g4o2-website/certifications/Web Applications for Everybody Specialization.png" 
 								alt="certification"></a>
 					</div>
 					<div id="cert-2" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-2.html"><img class="cert-img cert-img-2"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(392)"
 								src="/g4o2-website/certifications/JavaScript-Algorithms-and-Data-Structures.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-3" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-3.html"><img class="cert-img cert-img-3"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(714)"
 								src="/g4o2-website/certifications/Responsive web design certification.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-4" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4" 
-								onmouseover="certScroll()"
+								onmouseover="certScroll(1036)"
 								src="/g4o2-website/certifications/Front End Development Libraries.PNG" 
 								alt="certification"></a>
 					</div>
 					<div id="cert-5" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-5.html"><img class="cert-img cert-img-5"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(1360)"
 								src="/g4o2-website/certifications/Scientific Computing with Python.PNG"
 								alt="certification"></a>
 					</div>
 					<div id="cert-6" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-6.html"><img class="cert-img cert-img-6"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(1685)"
 								src="/g4o2-website/certifications/python-data-stuctures.png" alt="certification"></a>
 					</div>
 					<div id="cert-7" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-7.html"><img class="cert-img cert-img-7"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(2010)"
 								src="/g4o2-website/certifications/programming-for-everybody(getting-started-with-python).png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-8" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-8.html"><img class="cert-img cert-img-8"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(2333)"
 								src="/g4o2-website/certifications/building-web-applications-in-php.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-9" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-9.html"><img class="cert-img cert-img-9"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(2650)"
 								src="/g4o2-website/certifications/Introduction to Structured Query Language (SQL).png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-10" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-10.html"><img class="cert-img cert-img-10"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(2982)"
 								src="/g4o2-website/certifications/Introduction to HTML5.png" alt="certification"></a>
 					</div>
 					<div id="cert-11" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-11.html"><img class="cert-img cert-img-11"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(3300)"
 								src="/g4o2-website/certifications/Using Python to Access Web Data.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-12" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-12.html"><img class="cert-img cert-img-12"
-								onmouseover="certScroll()"
+								onmouseover="certScroll(3625)"
 								src="/g4o2-website/certifications/Building Database Applications in PHP.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-13" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-13.html"><img 
 								class="cert-img cert-img-13" 
-								onmouseover="certScroll()"
+								onmouseover="certScroll(3950)"
 								src="/g4o2-website/certifications/JavaScript, jQuery, and JSON.png" alt="certification"></a>
 					</div>
 				</section>
@@ -834,7 +834,7 @@
 				}
 			}*/
 			const images = document.querySelectorAll('img');
-			/*for (const cert of images) {
+			for (const cert of images) {
 				if (cert.matches(':hover')) {
 					if (cert.className == "cert-img cert-img-1") {
 						hoverStatText.innerHTML = ('Responsive web design certification');
@@ -906,8 +906,21 @@
 							left: 0,
 							behavior: 'smooth'
 						});
-					}
-					else if (cert.className == "cert-img cert-img-11") {
+					} else if (cert.className == "cert-img cert-img-11") {
+						hoverStatText.innerHTML = ('Front End Development Libraries');
+						window.scrollTo({
+							top: x,
+							left: 0,
+							behavior: 'smooth'
+						});
+					} else if (cert.className == "cert-img cert-img-12") {
+						hoverStatText.innerHTML = ('Front End Development Libraries');
+						window.scrollTo({
+							top: x,
+							left: 0,
+							behavior: 'smooth'
+						});
+					} else if (cert.className == "cert-img cert-img-13") {
 						hoverStatText.innerHTML = ('Front End Development Libraries');
 						window.scrollTo({
 							top: x,
@@ -917,7 +930,7 @@
 					}
 				}
 			}
-		}*/
+		}
 		//change color on scroll directions
 		const copyright = document.getElementById('copyright');
 		const copyrightText = document.getElementById('copyright-text');
