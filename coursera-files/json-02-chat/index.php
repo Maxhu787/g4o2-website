@@ -153,16 +153,6 @@ if (isset($_POST['message'])) {
     margin-top: 7vh;
     width: 10vw;
   }
-
-
-  #stats {
-    position: fixed;
-    margin-top: -67%;
-    margin-left: 74%;
-    height: 30vh;
-    width: 30vw;
-    background-color: #343434;
-  }
 </style>
 </head>
 
@@ -187,25 +177,6 @@ if (isset($_POST['message'])) {
         <!--<a href="chatlist.php" target="_blank">chatlist.php</a>-->
       </div>
     </form>
-  </section>
-  <section id="stats">
-    <table>
-      <tr>
-        <th>temp1</th>
-        <th>temp2</th>
-        <th>temp3</th>
-      </tr>
-      <tr>
-        <td>temp1</td>
-        <td>temp2</td>
-        <td>temp3</td>
-      </tr>
-      <tr>
-        <td>temp1</td>
-        <td>temp2</td>
-        <td>temp3</td>
-      </tr>
-    </table>
   </section>
   <script type="text/javascript" src="jquery.min.js">
   </script>
