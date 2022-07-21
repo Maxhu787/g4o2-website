@@ -8,6 +8,7 @@
 	<link rel="icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="shortcut icon" href="/g4o2-website/media/111.jpeg">
 	<link rel="apple-touch-icon" href="/g4o2-website/media/111.jpeg">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300|Open+Sans' rel='stylesheet' type='text/css'>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -352,6 +353,17 @@
 			color: var(--page-theme);
 			font-weight: 100;
 		}
+		#cert-header-two {
+			font-family: 'orbitron', "Roboto";
+			position: fixed;
+			font-size: 25px;
+			font-weight: 600;
+			margin-left: 50px;
+			color: var(--page-theme);
+			font-weight: 100;
+			display: block;
+			transition: all .3s ease-in-out;
+		}
 
 		#about {
 			margin-top: 100px;
@@ -606,10 +618,10 @@
 			</section>
 			<section id="certifications">
 				<marquee behavior="scroll" direction="left" scrollamount="12" class="blink" id="cert-header">
-					Welcome to my test website&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					This website is for testing purposes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Made by g4o2
-					<!--CERTIFICATIONS I HAVE EARNED SO FAR-->
+					Welcome to my test portfolio website&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					This website is for testing purposes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Still working on it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Made by g4o2
 				</marquee>
+				<h3 id="cert-header-two">CERTIFICATIONS</h3>
 				<section d="certs">
 					<div id="cert-1" class="cert-wrapper">
 						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1" 
@@ -786,8 +798,11 @@
 			console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
 			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
 				hoverStatText.innerHTML = ('Bottom');
+				document.getElementById('cert-header-two').style.opacity = '0';
 			} else if (window.pageYOffset <= 1) {
 				hoverStatText.innerHTML = ('Top');
+			} else {
+				document.getElementById('cert-header-two').style.opacity = '1';
 			}
 			//top btn detects when to show and hide
 			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
