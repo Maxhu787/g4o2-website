@@ -19,7 +19,7 @@
 		@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 		:root {
-			--page-theme: orange
+			--page-theme: #ffa500;
 				/*orange*/
 			;
 			--page-theme-second: #ffc200
@@ -347,17 +347,18 @@
 		}
 
 		#cert-header {
-			font-family: "Orbitron";
+			font-family: "Orbitron", "Roboto";
 			margin-top: 30px;
 			font-size: 26px;
 			color: var(--page-theme);
-			font-weight: 100;
+			font-weight: 400;
+			transition: all .8s ease-in-out;
+			padding-top: 30px;
 		}
 		#cert-header-two {
 			font-family: 'orbitron', "Roboto";
 			position: fixed;
 			font-size: 25px;
-			font-weight: 600;
 			margin-left: 50px;
 			color: var(--page-theme);
 			font-weight: 100;
@@ -617,10 +618,10 @@
 				<div id="particles"></div>
 			</section>
 			<section id="certifications">
-				<marquee behavior="scroll" direction="left" scrollamount="12" class="blink" id="cert-header">
-					Welcome to my test portfolio website&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					This website is for testing purposes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Still working on it&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Made by g4o2
-				</marquee>
+				<p id="cert-header">
+					Welcome to my test portfolio website
+				</p>
+				<marquee style="display: none" behavior="scroll" direction="left" scrollamount="12" class="blink">hidden</marquee>
 				<h3 id="cert-header-two">CERTIFICATIONS</h3>
 				<section d="certs">
 					<div id="cert-1" class="cert-wrapper">
@@ -795,7 +796,7 @@
 		//top bottom detect
 		window.onscroll = function () {
 			hoverText.innerHTML = Math.round(window.pageYOffset);
-			console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
+			//console.log(window.innerHeight, window.pageYOffset, document.body.offsetHeight);
 			if (window.innerHeight + window.pageYOffset >= document.body.offsetHeight) {
 				hoverStatText.innerHTML = ('Bottom');
 				document.getElementById('cert-header-two').style.opacity = '0';
@@ -810,6 +811,12 @@
 				//enable by removing "none" ^^
 			} else {
 				topBtn.style.display = "none";
+			}
+			console.log()
+			if(window.pageYOffset >= 90) {
+				document.getElementById('cert-header').style.opacity = '0';
+			} else {
+				document.getElementById('cert-header').style.opacity = '1';
 			}
 		}
 		//top btn onclick function
