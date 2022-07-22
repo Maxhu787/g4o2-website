@@ -20,7 +20,7 @@
 
 		:root {
 			--page-theme: #ffa500;
-				/*orange*/
+			/*orange*/
 			;
 			--page-theme-second: #ffc200
 				/*#ffc200*/
@@ -122,6 +122,7 @@
 			padding: 3px;
 			border: none;
 		}
+
 		/*@keyframes logo-anim {
 			100% {
 				transform: rotate(360deg);
@@ -129,6 +130,7 @@
 		}*/
 
 		nav {
+			z-index: 1000;
 			float: right;
 			text-transform: uppercase;
 		}
@@ -351,10 +353,16 @@
 			margin-top: 30px;
 			font-size: 26px;
 			color: var(--page-theme);
-			font-weight: 400;
-			transition: all .8s ease-in-out;
+			font-weight: 100;
+			text-transform: uppercase;
+			transition: all .3s ease-in-out;
 			padding-top: 30px;
+			user-select: none;
+			/*background: linear-gradient(#eee, #333);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;*/
 		}
+
 		#cert-header-two {
 			font-family: 'orbitron', "Roboto";
 			position: fixed;
@@ -621,13 +629,14 @@
 				<p id="cert-header">
 					Welcome to my test portfolio website
 				</p>
-				<marquee style="display: none" behavior="scroll" direction="left" scrollamount="12" class="blink">hidden</marquee>
+				<marquee style="display: none" behavior="scroll" direction="left" scrollamount="12" class="blink">hidden
+				</marquee>
 				<h3 id="cert-header-two">CERTIFICATIONS</h3>
 				<section d="certs">
 					<div id="cert-1" class="cert-wrapper">
-						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1" 
+						<a href="/g4o2-website/certifications/cert-1.html"><img class="cert-img cert-img-1"
 								onmouseover="certScroll(67)"
-								src="/g4o2-website/certifications/Web Applications for Everybody Specialization.png" 
+								src="/g4o2-website/certifications/Web Applications for Everybody Specialization.png"
 								alt="certification"></a>
 					</div>
 					<div id="cert-2" class="cert-wrapper">
@@ -643,9 +652,9 @@
 								alt="certification"></a>
 					</div>
 					<div id="cert-4" class="cert-wrapper">
-						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4" 
+						<a href="/g4o2-website/certifications/cert-4.html"><img class="cert-img cert-img-4"
 								onmouseover="certScroll(1036)"
-								src="/g4o2-website/certifications/Front End Development Libraries.PNG" 
+								src="/g4o2-website/certifications/Front End Development Libraries.PNG"
 								alt="certification"></a>
 					</div>
 					<div id="cert-5" class="cert-wrapper">
@@ -695,15 +704,16 @@
 								alt="certification"></a>
 					</div>
 					<div id="cert-13" class="cert-wrapper">
-						<a href="/g4o2-website/certifications/cert-13.html"><img 
-								class="cert-img cert-img-13" 
+						<a href="/g4o2-website/certifications/cert-13.html"><img class="cert-img cert-img-13"
 								onmouseover="certScroll(3950)"
-								src="/g4o2-website/certifications/JavaScript, jQuery, and JSON.png" alt="certification"></a>
+								src="/g4o2-website/certifications/JavaScript, jQuery, and JSON.png"
+								alt="certification"></a>
 					</div>
 				</section>
 				<section id="badges">
-					<div class="badge badge-1" onmouseover="certScroll(3590)" id="badge-1" data-iframe-width="150" data-iframe-height="270"
-						data-share-badge-id="0ebeaaeb-fbed-4794-b9e9-43cee08484bf" data-share-badge-host="https://www.credly.com"></div>
+					<div class="badge badge-1" id="badge-1" data-iframe-width="150"
+						data-iframe-height="270" data-share-badge-id="0ebeaaeb-fbed-4794-b9e9-43cee08484bf"
+						data-share-badge-host="https://www.credly.com"></div>
 				</section>
 			</section>
 			<section hidden id="announcements">
@@ -813,7 +823,7 @@
 				topBtn.style.display = "none";
 			}
 			console.log()
-			if(window.pageYOffset >= 90) {
+			if (window.pageYOffset >= 10) {
 				document.getElementById('cert-header').style.opacity = '0';
 			} else {
 				document.getElementById('cert-header').style.opacity = '1';
