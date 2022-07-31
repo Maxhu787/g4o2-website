@@ -601,7 +601,6 @@
 							<a href="/g4o2-website/rps/index.php">rock paper scissors</a>
 							<a href="/g4o2-website/autos/">PHP &amp; SQL</a>
 							<a href="/g4o2-website/crud/index.php">Test login</a>
-
 						</div>
 					</div>
 					<button class="sideBar-button" onclick="sideBar_open()" style="display:none">☰</button>
@@ -762,7 +761,7 @@
 			</a>
 			<div id="copyright">
 				<p id="copyright-text">
-					<!--g4o2 2022 &copy; Copyright-->Since php doesn't work on github pages&nbsp;&nbsp;&nbsp;Most pages
+					Since php doesn't work on github pages&nbsp;&nbsp;&nbsp;Most pages
 					won't function properly
 				</p>
 				<span onclick="loadAnimation()" class="close">&times;</span>
@@ -771,7 +770,6 @@
 	</footer>
 	<button onclick="topFunction()" id="topBtn" title="Go to to top"><img src="/g4o2-website/media/up-arrow.svg"
 			style="height: 20px;"></button>
-	<!--<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>-->
 	<script src="/g4o2-website/js/particles.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
@@ -810,10 +808,8 @@
 			} else {
 				document.getElementById('cert-header-two').style.opacity = '1';
 			}
-			//top btn detects when to show and hide
 			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-				topBtn.style.display = "block"/*"block" || "none"*/; //top btn temp disabled 
-				//enable by removing "none" ^^
+				topBtn.style.display = "block";
 			} else {
 				topBtn.style.display = "none";
 			}
