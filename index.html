@@ -61,7 +61,7 @@
 		}
 
 		main {
-			height: 5600px;
+			height: 5900px;
 		}
 
 		* {
@@ -714,6 +714,12 @@
 								src="/g4o2-website/certifications/Getting Started with Git and GitHub.png" 
 								alt="certification"></a>
 					</div>
+					<div id="cert-16" class="cert-wrapper">
+						<a href="/g4o2-website/certifications/cert-16.html"><img class="cert-img cert-img-16" 
+								onmouseover="certScroll(4920)"
+								src="/g4o2-website/certifications/SQL for Data Science.png" 
+								alt="certification"></a>
+					</div>
 				</section>
 				<section id="badges">
 					<div class="badge badge-1" id="badge-1" data-iframe-width="150" data-iframe-height="270"
@@ -971,6 +977,13 @@
 						});
 					} else if (cert.className == "cert-img cert-img-15") {
 						hoverStatText.innerHTML = ('Getting Started with Git and GitHub');
+						window.scrollTo({
+							top: x,
+							left: 0,
+							behavior: 'smooth'
+						});
+					} else if (cert.className == "cert-img cert-img-16") {
+						hoverStatText.innerHTML = ('SQL for Data Science');
 						window.scrollTo({
 							top: x,
 							left: 0,
