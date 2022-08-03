@@ -61,7 +61,7 @@
 		}
 
 		main {
-			height: 4900px;
+			height: 5600px;
 		}
 
 		* {
@@ -702,6 +702,18 @@
 								src="/g4o2-website/certifications/JavaScript, jQuery, and JSON.png"
 								alt="certification"></a>
 					</div>
+					<div id="cert-14" class="cert-wrapper">
+						<a href="/g4o2-website/certifications/cert-14.html"><img class="cert-img cert-img-14" 
+								onmouseover="certScroll(4274)"
+								src="/g4o2-website/certifications/Introduction to CSS3.png" 
+								alt="certification"></a>
+					</div>
+					<div id="cert-15" class="cert-wrapper">
+						<a href="/g4o2-website/certifications/cert-15.html"><img class="cert-img cert-img-15" 
+								onmouseover="certScroll(4595)"
+								src="/g4o2-website/certifications/Getting Started with Git and GitHub.png" 
+								alt="certification"></a>
+					</div>
 				</section>
 				<section id="badges">
 					<div class="badge badge-1" id="badge-1" data-iframe-width="150" data-iframe-height="270"
@@ -945,6 +957,20 @@
 						});
 					} else if (cert.className == "cert-img cert-img-13") {
 						hoverStatText.innerHTML = ('JavaScript jQuery and JSON');
+						window.scrollTo({
+							top: x,
+							left: 0,
+							behavior: 'smooth'
+						});
+					} else if (cert.className == "cert-img cert-img-14") {
+						hoverStatText.innerHTML = ('Introduction to CSS3');
+						window.scrollTo({
+							top: x,
+							left: 0,
+							behavior: 'smooth'
+						});
+					} else if (cert.className == "cert-img cert-img-15") {
+						hoverStatText.innerHTML = ('Getting Started with Git and GitHub');
 						window.scrollTo({
 							top: x,
 							left: 0,
