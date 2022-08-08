@@ -606,6 +606,9 @@
 				color: red !important;
 			}
 
+			main {
+				height: 5940px;
+			}
 			nav li {
 				margin-left: 15px !important;
 			}
@@ -617,13 +620,19 @@
 			#hover-stat-text {
 				display: none;
 			}
+			
+			#cert-header-two {
+				display: none;
+			}
 		}
 
-		@media only screen and (max-width: 605px) {
+		@media only screen and (min-width: 465px) and (max-width: 605px) {
 			body {
 				color: blue !important;
 			}
-
+			main {
+				height: 4780px;
+			}
 			nav {
 				display: none;
 			}
@@ -638,6 +647,41 @@
 
 			.cert-img:hover {
 				height: 280px;
+			}
+			
+			#cert-header-two {
+				display: none;
+			}
+		}
+		@media only screen and (max-width: 465px) {
+			body {
+				color: pink !important;
+			}
+			main {
+				height: 4200;
+			}
+
+			nav {
+				display: none;
+			}
+
+			#hover-stat-text {
+				display: none;
+			}
+
+			.cert-img {
+				height: 160px;
+				transition: all .4s ease-in-out;
+			}
+
+			.cert-img:hover {
+				height: 220px;
+			}
+			.cert-wrapper {
+				padding: 30px;
+			}
+			#cert-header-two {
+				display: none;
 			}
 		}
 	</style>
@@ -664,9 +708,6 @@
 		});
 		$(window).resize(function () {
 			$("#cert-header-two").text($(window).width());
-			if ($(window).width() <= 605) {
-				console.log('605')
-			}
 		});
 	</script>
 	<header class="navbar-header">
@@ -919,7 +960,7 @@
 				behavior: 'smooth'
 			});
 			particlesJS.load('particles', '/g4o2-website/particles-config.json', function () {
-				console.log('working');
+				//console.log('working');
 			})
 			/*let mainTheme = window.prompt("Theme (Enter color)");
 			let mainThemeSecond = window.prompt("Second theme");
@@ -994,122 +1035,126 @@
 						});
 					}
 				}
-			}*/
+			}*/ 
 			const images = document.querySelectorAll('img');
-			for (const cert of images) {
-				if (cert.matches(':hover')) {
-					if (cert.className == "cert-img cert-img-1") {
-						hoverStatText.innerHTML = ('Web Applications for Everybody Specialization');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-2") {
-						hoverStatText.innerHTML = ('JavaScript Algorithms & Data Structures');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-3") {
-						hoverStatText.innerHTML = ('Responsive web design certification');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-4") {
-						hoverStatText.innerHTML = ('Front End Development Libraries');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-5") {
-						hoverStatText.innerHTML = ('Scientific Computing with Python');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-6") {
-						hoverStatText.innerHTML = ('python data stuctures');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-7") {
-						hoverStatText.innerHTML = ('programming for everybody (py)');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-8") {
-						hoverStatText.innerHTML = ('building web applications in php');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-9") {
-						hoverStatText.innerHTML = ('Introduction to SQL');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-10") {
-						hoverStatText.innerHTML = ('Introduction to HTML5');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-11") {
-						hoverStatText.innerHTML = ('Using Python to Access Web Data');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-12") {
-						hoverStatText.innerHTML = ('Building Database Applications in PHP');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-13") {
-						hoverStatText.innerHTML = ('JavaScript jQuery and JSON');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-14") {
-						hoverStatText.innerHTML = ('Introduction to CSS3');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-15") {
-						hoverStatText.innerHTML = ('Getting Started with Git and GitHub');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
-					} else if (cert.className == "cert-img cert-img-16") {
-						hoverStatText.innerHTML = ('SQL for Data Science');
-						window.scrollTo({
-							top: x,
-							left: 0,
-							behavior: 'smooth'
-						});
+			if (document.documentElement.clientWidth <= 605) {
+				//console.log("auto-scroll-disabled")
+			} else {
+				for (const cert of images) {
+					if (cert.matches(':hover')) {
+						if (cert.className == "cert-img cert-img-1") {
+							hoverStatText.innerHTML = ('Web Applications for Everybody Specialization');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-2") {
+							hoverStatText.innerHTML = ('JavaScript Algorithms & Data Structures');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-3") {
+							hoverStatText.innerHTML = ('Responsive web design certification');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-4") {
+							hoverStatText.innerHTML = ('Front End Development Libraries');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-5") {
+							hoverStatText.innerHTML = ('Scientific Computing with Python');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-6") {
+							hoverStatText.innerHTML = ('python data stuctures');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-7") {
+							hoverStatText.innerHTML = ('programming for everybody (py)');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-8") {
+							hoverStatText.innerHTML = ('building web applications in php');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-9") {
+							hoverStatText.innerHTML = ('Introduction to SQL');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-10") {
+							hoverStatText.innerHTML = ('Introduction to HTML5');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-11") {
+							hoverStatText.innerHTML = ('Using Python to Access Web Data');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-12") {
+							hoverStatText.innerHTML = ('Building Database Applications in PHP');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-13") {
+							hoverStatText.innerHTML = ('JavaScript jQuery and JSON');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-14") {
+							hoverStatText.innerHTML = ('Introduction to CSS3');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-15") {
+							hoverStatText.innerHTML = ('Getting Started with Git and GitHub');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						} else if (cert.className == "cert-img cert-img-16") {
+							hoverStatText.innerHTML = ('SQL for Data Science');
+							window.scrollTo({
+								top: x,
+								left: 0,
+								behavior: 'smooth'
+							});
+						}
 					}
 				}
 			}
@@ -1122,12 +1167,12 @@
 		window.addEventListener('scroll', (e) => {
 			newValue = window.pageYOffset;
 			if (oldValue < newValue) {
-				console.log("Up");
-				/*copyright.style.backgroundColor = "white";
-				/*copyright.style.visibility = "visible";*/
+				/*console.log("Up");
+				copyright.style.backgroundColor = "white";
+				copyright.style.visibility = "visible";*/
 			} else if (oldValue > newValue) {
-				console.log("Down");
-				/*copyrightText.style.fontSize = "30px";*/
+				/*console.log("Down");
+				copyrightText.style.fontSize = "30px";*/
 			}
 			oldValue = newValue;
 		});
