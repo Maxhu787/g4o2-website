@@ -260,56 +260,27 @@
 			float: none;
 		}
 
-		.sideBar-button {
+		#sideBar-button {
+			z-index: 10;
 			border: none;
 			display: inline-block;
 			padding: 8px 16px;
 			vertical-align: middle;
 			overflow: hidden;
 			text-decoration: none;
-			color: inherit;
-			background-color: inherit;
+			color: #000;
+			background-color: var(--page-theme);
 			text-align: left;
 			cursor: pointer;
 			white-space: nowrap;
-			margin-left: 80px;
-			margin-right: -100px;
+			margin-right: -35px;
+			margin-top: 14px;
 		}
 
-		.sideBar-button:hover {
+		#sideBar-button:hover {
 			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 			background-color: rgb(71, 71, 71);
 			color: orange;
-		}
-
-		.sideBar-content-button {
-			border: none;
-			display: inline-block;
-			padding: 8px 16px;
-			vertical-align: middle;
-			overflow: hidden;
-			text-decoration: none;
-			color: inherit;
-			background-color: inherit;
-			text-align: center;
-			cursor: pointer;
-			white-space: nowrap;
-			background-color: white;
-		}
-
-		.sideBar-content-button:hover {
-			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			background-color: orange;
-		}
-
-		.sideBar-close-button {
-			margin-left: 90%;
-			margin-top: 20px;
-		}
-
-		#sideBar {
-			background-color: white;
-			color: rgb(71, 71, 71);
 		}
 
 		#particles {
@@ -633,12 +604,21 @@
 			main {
 				height: 4780px;
 			}
-			nav {
+			
+			nav ul li{
+				display: none;
+			}
+			nav .dropdown {
 				display: none;
 			}
 
+
 			#hover-stat-text {
 				display: none;
+			}
+
+			#sideBar-button {
+				display: inline-block;
 			}
 
 			.cert-img {
@@ -661,12 +641,20 @@
 				height: 4200;
 			}
 
-			nav {
+			nav ul li{
+				display: none;
+			}
+			nav .dropdown {
 				display: none;
 			}
 
 			#hover-stat-text {
 				display: none;
+			}
+
+			#sideBar-button {
+				display: inline-block;
+				margin-right: -25px;
 			}
 
 			.cert-img {
@@ -675,7 +663,7 @@
 			}
 
 			.cert-img:hover {
-				height: 220px;
+				height: 200px;
 			}
 			.cert-wrapper {
 				padding: 30px;
@@ -753,16 +741,11 @@
 							<a href="/g4o2-website/crud/index.php">Test login</a>
 						</div>
 					</div>
-					<button class="sideBar-button" onclick="sideBar_open()" style="display:none">☰</button>
+					<button id="sideBar-button">☰</button>
 				</ul>
 			</nav>
 		</div>
 	</header>
-	<div id="sideBar-container">
-		<div style="display: none;" id="sideBar">
-			<button class="sideBar-close-button sideBar-content-button" onclick="sideBar_close()">Close &times;</button>
-		</div>
-	</div>
 	<main>
 		<div id="content-wrapper">
 			<section>
