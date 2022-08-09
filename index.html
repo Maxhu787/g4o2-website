@@ -240,7 +240,7 @@
 			background-color: var(--page-theme-second);
 			cursor: pointer;
 		}
-
+	
 		.sideBar-container {
 			position: relative;
 			display: inline-block;
@@ -543,7 +543,7 @@
 				opacity: 0;
 			}
 		}
-		
+
 		/*------------sideBar------------*/
 		.sidenav {
             height: 100%;
@@ -638,7 +638,7 @@
 				color: blue !important;
 			}
 			main {
-				height: 4780px;
+				height: 5080px;
 			}
 			
 			nav ul li{
@@ -647,7 +647,6 @@
 			nav .dropdown {
 				display: none;
 			}
-
 
 			#hover-stat-text {
 				display: none;
@@ -674,7 +673,7 @@
 				color: pink !important;
 			}
 			main {
-				height: 4200;
+				height: 4500px;
 			}
 
 			nav ul li{
@@ -746,7 +745,7 @@
 				<ul id="main-nav">
 					<li><a href="#" id="hover-stat-text">Welcome</a></li>
 					<li><a href="#" id="hover-stat">Stats</a></li>
-					<li><a href="#about">Social Media
+					<li><a href="#contact">Social Media
 							<!--About & Contact-->
 						</a></li>
 					<div class="dropdown">
@@ -784,20 +783,39 @@
 	</header>
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="#">About</a>
-		<a href="#">Services</a>
-		<a href="#">Clients</a>
-		<a href="#">Contact</a>
+		<a href="#about">About</a>
+		<a href="#contact">Contact & Social&nbsp;Media</a>
+		<a href="#">Test</a>
+		<a href="#">Test</a>
+		<!--<div class="dropdown">
+			<button class="sideNav-btn">PAGES</button>
+			<div class="dropdown-content">
+				<p>HTML pages</p>
+				<a href="/Planet">Planet launcher website</a>
+				<a href="/g4o2-react-website">React JS version (not&nbsp;finished)</a>
+				<a href="/g4o2-website/threejs/4.html">Three js Reflective sphere</a>
+				<a href="/g4o2-website/particles/index.html">Particle js Test</a>
+				<a href="/g4o2-website/threejs/index.html">ThreeJS test 1</a>
+				<a href="/g4o2-website/threejs/2.html">Three js test 2</a>
+				<a href="/g4o2-website/threejs/3.html">Three js test 3</a>
+				<a href="/g4o2-website/guessing-game/guessinggame.html">guessing game</a>
+				<a href="/g4o2-website/media-in-browser/video-playing.html">Video player</a>
+				<a href="/g4o2-website/media-in-browser/index.html">media test</a>
+				<a href="/g4o2-website/random-word-gen/index.html">Random symbol generator</a>
+				<a href="/g4o2-website/test/yt-api.html">YouTube api</a>
+				<a href="/g4o2-website/wallee/walle.html">Wallee</a>
+				<a href="/g4o2-website/tables/index.html">testing stuff</a>
+				<p>PHP pages (won't work)</p>
+				<a href="/g4o2-website/crud/index.php">Database</a>
+				<a href="/g4o2-website/autosess-v2/index.php">db Login test</a>
+				<a href="/g4o2-website/crack/index.php" title="cracking (kind of)">MD5 cracking</a>
+				<a href="/g4o2-website/php-stuff/random.php">Random stuff</a>
+				<a href="/g4o2-website/rps/index.php">rock paper scissors</a>
+				<a href="/g4o2-website/autos/">PHP &amp; SQL</a>
+				<a href="/g4o2-website/crud/index.php">Test login</a>
+			</div>
+		</div>-->
 	</div>
-	<script>
-		function openNav() {
-			document.getElementById("mySidenav").style.width = "100%"/*"250px"*/;
-		}
-
-		function closeNav() {
-			document.getElementById("mySidenav").style.width = "0";
-		}
-	</script>
 	<main>
 		<div id="content-wrapper">
 			<section>
@@ -1220,6 +1238,14 @@
 		}
 		function loadAnimation() {
 			copyright.className = 'classname';
+		}
+
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "100%"/*"250px"*/;
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
 		}
 	</script>
 	</div>
