@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursor test</title>
+    <style>
+        html {
+            cursor: none;
+            background: #666;
+        }
+        #follower {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            user-select: none;
+        }
+        #follower #circle1 {
+            position: absolute;
+            -webkit-animation: pulse 2s infinite; /* Chrome, Safari, Opera */
+            animation: pulse 2s infinite;
+            background: #fff;
+            border-radius: 50%;
+            height: 0em;
+            width: 0em;
+            margin-top: 0em;
+            margin-left: 0em;
+        }
+        #follower #circle2 {
+            position: absolute;
+            -webkit-animation: pulse 4s infinite; /* Chrome, Safari, Opera */
+            animation: pulse 4s infinite;
+            background: rgba(200,0,0,0.8);
+            border-radius: 50%;
+            height: 0em;
+            width: 0em;
+            margin-top: 0em;
+            margin-left: 0em;
+        }
+        @-moz-keyframes pulse {
+        0% {
+            opacity: 0.2;
+            height: 1em;
+            width: 1em;
+            margin-top: -0.5em;
+            margin-left: -0.5em;
+        }
+        50% {
+            opacity: 0.9;
+            height: 3em;
+            width: 3em;
+            margin-top: -1.5em;
+            margin-left: -1.5em;
+        }
+        100% {
+            opacity: 0.2;
+            height: 1em;
+            width: 1em;
+            margin-top: -0.5em;
+            margin-left: -0.5em;
+        }
+        }
+        @-webkit-keyframes pulse {
+        0% {
+            opacity: 0.2;
+            height: 1em;
+            width: 1em;
+            margin-top: -0.5em;
+            margin-left: -0.5em;
+        }
+        50% {
+            opacity: 0.9;
+            height: 3em;
+            width: 3em;
+            margin-top: -1.5em;
+            margin-left: -1.5em;
+        }
+        100% {
+            opacity: 0.2;
+            height: 1em;
+            width: 1em;
+            margin-top: -0.5em;
+            margin-left: -0.5em;
+        }
+        }
+        @-o-keyframes pulse {
+        0% {
+            opacity: 0.2;
+            height: 1em;
+            width: 1em;
+            margin-top: -0.5em;
+            margin-left: -0.5em;
+        }
+        50% {
+            opacity: 0.9;
+            height: 3em;
+            width: 3em;
+            margin-top: -1.5em;
+            margin-left: -1.5em;
+        }
+        100% {
+            opacity: 0.2;
+            height: 1em;
+            width: 1em;
+            margin-top: -0.5em;
+            margin-left: -0.5em;
+        }
+        }
+        @keyframes pulse {
+        0% {
+            opacity: 0.2;
+            height: 1em;
+            width: 1em;
+            margin-top: -0.5em;
+            margin-left: -0.5em;
+        }
+        50% {
+            opacity: 0.9;
+            height: 3em;
+            width: 3em;
+            margin-top: -1.5em;
+            margin-left: -1.5em;
+        }
+        100% {
+            opacity: 0.2;
+            height: 1em;
+            width: 1em;
+            margin-top: -0.5em;
+            margin-left: -0.5em;
+        }
+        }
+        #g4o2 {
+            height: 41px;
+            width: 40px;
+            border-radius: 100px;
+            animation-name: g4o2-anim;
+            animation-iteration-count: infinite;
+            animation-duration: 3s;
+        }
+        @keyframes g4o2-anim {
+            0% {
+                border: solid 2px transparent;
+            }
+            50% {
+                border: solid 2px #ffa500;
+            }
+            100% {
+                border: solid 2px transparent;
+            }
+        }
+
+        .mouseDown {
+            animation-name: spin;
+            animation-duration: 2s;
+        }
+        @keyframes spin {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <main>
+        <div id="follower">
+            <img id="g4o2" src="./111.jpeg" alt="g4o2">
+            <!--<div id="circle1"></div>
+            <div id="circle2"></div>-->
+        </div>
+    </main>
+    <script>
+        (function () {
+            var follower, init, mouseX, mouseY, positionElement, printout, timer;
+            follower = document.getElementById('follower');
+            printout = document.getElementById('printout');
+            mouseX = (function (_this) {
+                return function (event) {
+                    return event.clientX;
+                };
+            })(this);
+
+            mouseY = (function (_this) {
+                return function (event) {
+                    return event.clientY;
+                };
+            })(this);
+
+            positionElement = (function (_this) {
+                return function (event) {
+                    var mouse;
+                    mouse = {
+                        x: mouseX(event),
+                        y: mouseY(event)
+                    };
+                    follower.style.top = mouse.y + 'px';
+                    return follower.style.left = mouse.x + 'px';
+                };
+            })(this);
+            timer = false;
+            window.onmousemove = init = (function (_this) {
+                return function (event) {
+                    var _event;
+                    _event = event;
+                    return timer = setTimeout(function () {
+                        return positionElement(_event);
+                    }, 1);
+                };
+            })(this);
+        }).call(this);
+
+        document.body.onmousedown = function () {
+            document.getElementById("follower").classList.add('mouseDown');
+        }
+        document.body.onmouseup = function () {
+            document.getElementById("follower").classList.remove("mouseDown")   
+        }
+    </script>
+</body>
+</html>
