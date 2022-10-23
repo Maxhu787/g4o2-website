@@ -847,8 +847,8 @@
 			</div>
 			<nav>
 				<ul id="main-nav">
-					<li><a href="#" id="hover-stat-text">Welcome</a></li>
-					<li><a href="#" id="hover-stat">Stats</a></li>
+					<!--<li><a href="#" id="hover-stat-text">Welcome</a></li>-->
+					<li><a href="#main" id="hover-stat">Welcome</a></li>
 					<li><a href="#contact">Social Media
 							<!--About & Contact-->
 						</a></li>
@@ -925,12 +925,13 @@
 			</div>
 		</div>-->
 	</div>
-	<main>
+	<main id="main">
 		<div id="content-wrapper">
 			<section>
 				<div id="particles"></div>
 			</section>
-			<section
+			<section id="certifications">
+				<p id="cert-header">
 					Welcome to my test portfolio website
 				</p>
 				<script>
@@ -1168,7 +1169,7 @@
 				behavior: 'smooth'
 			});
 			particlesJS.load('particles', '/g4o2-website/particles-config.json', function () {
-				//console.log('working');
+				console.log('particlesJS loaded');
 			})
 			/*let mainTheme = window.prompt("Theme (Enter color)");
 			let mainThemeSecond = window.prompt("Second theme");
@@ -1208,7 +1209,7 @@
 				document.getElementById('cert-header').style.opacity = '1';
 			}
 		}
-		//top btn onclick function
+		//top btn
 		function topFunction() {
 			window.scrollTo({
 				top: 0,
@@ -1226,8 +1227,6 @@
 				});
 			});
 		});
-
-		//change color on scroll directions
 		const copyright = document.getElementById('copyright');
 		const copyrightText = document.getElementById('copyright-text');
 		let oldValue = 0
@@ -1244,7 +1243,7 @@
 			}
 			oldValue = newValue;
 		});
-		//detect close button click and loads animation
+		//load animation btn
 		var closebtns = document.getElementsByClassName("close");
 		for (let i = 0; i < closebtns.length; i++) {
 			closebtns[i].addEventListener("click", function () {
