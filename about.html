@@ -47,7 +47,7 @@
 </head>
 <body>
     <main>
-        <header>Welcome to page 2</header><br>
+        <!--<header>Welcome to page 2</header><br>-->
         <a href="index.html">Go back to main page</a><br>
         <div id="myAge"></div>
         <script>
@@ -60,7 +60,7 @@
             };
 
             age = function () {
-                $('#myAge').text((daysBetweenDates('Feb 7, 2008 00:00:00', new Date()) / 365).toFixed(8) + " years old");
+                $('#myAge').text((daysBetweenDates('Feb 7, 2008 00:00:00', new Date()) / 365).toFixed(8));
             };
             setInterval(age, 500);
         </script>
