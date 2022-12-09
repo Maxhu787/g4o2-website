@@ -94,6 +94,7 @@
 			position: fixed;
 			width: 100%;
 			margin-top: -95.5px;
+			z-index: 9999;
 		}
 
 		.navbar-header::after {
@@ -199,6 +200,19 @@
 			margin-right: -60px;
 		}
 
+		.dropbtn {
+			background-color: var(--page-theme);
+			padding: 16px;
+			font-size: 12px;
+			font-weight: 100;
+			border: none;
+			margin-left: 28px;
+			height: 67px;
+			width: 95px;
+			margin-right: -60px;
+		}
+
+
 		.dropdown {
 			position: relative;
 			display: inline-block;
@@ -215,6 +229,9 @@
 			float: left;
 			width: 50%;
 			height: calc(100vh - 75px);
+		}
+		.dropdown-content p {
+			font-size: 14px;
 		}
 
 		.dropdown-content a {
@@ -691,7 +708,7 @@
 		.sidenav .closebtn {
 			position: absolute;
 			top: 0;
-			right: 25px;
+			right: 8px;
 			font-size: 36px;
 			margin-left: 50px;
 		}
@@ -889,9 +906,9 @@
 							<a href="https://discord.com/invite/UxNjRrT6RY/">discord server</a>
 							<a href="https://www.facebook.com/profile.php?id=100075737822439">facebook</a>
 							<a href="https://www.instagram.com/hukaixiang1024/">instagram</a>
-							<a href="https://www.freecodecamp.org/maxhu">freecodecamp</a>
 							<a href="https://www.youtube.com/channel/UCWXyRHqr9zS5oqzmR2tVHtQ">youtube</a>
 							<a href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/">linkedin</a>
+							<a href="https://www.freecodecamp.org/maxhu">freecodecamp</a>
 							<a href="mailto:maxhu787@gmail.com">Email (main)</a>
 							<a href="mailto:g4o2@protonmail.com">Email (2)</a>
 							<a href="mailto:g4o3@protonmail.com">Email (3)</a>
@@ -932,19 +949,19 @@
 			</nav>
 		</div>
 	</header>
-	<div id="mySidenav" class="sidenav">
+	<div id="mySidenav" style="z-index: 999999;" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		<a href="#about">About</a>
-		<a href="#contact">Social&nbsp;Media</a>
+		<a class="rainbow_text_animated" href="#about">About</a>
+		<a class="rainbow_text_animated" href="#contact">Social&nbsp;Media</a>
 		<p>Social Media</p>
 		<a href="https://github.com/maxhu787">github</a>
 		<a href="https://github.com/g4o2-chat">g4o2-chat organization</a>
 		<a href="https://discord.com/invite/UxNjRrT6RY/">discord server</a>
 		<a href="https://www.facebook.com/profile.php?id=100075737822439">facebook</a>
 		<a href="https://www.instagram.com/hukaixiang1024/">instagram</a>
-		<a href="https://www.freecodecamp.org/maxhu">freecodecamp</a>
 		<a href="https://www.youtube.com/channel/UCWXyRHqr9zS5oqzmR2tVHtQ">youtube</a>
 		<a href="https://www.linkedin.com/in/kaixiang-hu-6ab83a237/">linkedin</a>
+		<a href="https://www.freecodecamp.org/maxhu">freecodecamp</a>
 		<a href="mailto:maxhu787@gmail.com">Email (main)</a>
 		<a href="mailto:g4o2@protonmail.com">Email (2)</a>
 		<a href="mailto:g4o3@protonmail.com">Email (3)</a>
@@ -964,39 +981,20 @@
 		<a href="/g4o2-website/threejs/3.html">ThreeJS test 3</a>
 		<a href="/g4o2-website/g4o2_ascii.html">g4o2_ascii</a>
 		<!--<a href="/g4o2-website/guessing-game/guessinggame.html">guessing game</a>
-									<a href="/g4o2-website/media-in-browser/video-playing.html">Video player</a>
-									<a href="/g4o2-website/media-in-browser/index.html">media test</a>-->
+		<a href="/g4o2-website/media-in-browser/video-playing.html">Video player</a>
+		<a href="/g4o2-website/media-in-browser/index.html">media test</a>-->
 		<a href="/g4o2-website/random-word-gen/index.html">test</a>
 		<!--<a href="/g4o2-website/test/yt-api.html">YouTube api</a>
-									
-		<!--<div class="dropdown">
-			<button class="sideNav-btn">PAGES</button>
-			<div class="dropdown-content">
-				<p>HTML pages</p>
-				<a href="/Planet">Planet launcher website</a>
-				<a href="/g4o2-react-website">React JS version (not&nbsp;finished)</a>
-				<a href="/g4o2-website/threejs/4.html">Three js Reflective sphere</a>
-				<a href="/g4o2-website/particles/index.html">Particle js Test</a>
-				<a href="/g4o2-website/threejs/index.html">ThreeJS test 1</a>
-				<a href="/g4o2-website/threejs/2.html">Three js test 2</a>
-				<a href="/g4o2-website/threejs/3.html">Three js test 3</a>
-				<a href="/g4o2-website/guessing-game/guessinggame.html">guessing game</a>
-				<a href="/g4o2-website/media-in-browser/video-playing.html">Video player</a>
-				<a href="/g4o2-website/media-in-browser/index.html">media test</a>
-				<a href="/g4o2-website/random-word-gen/index.html">Random symbol generator</a>
-				<a href="/g4o2-website/test/yt-api.html">YouTube api</a>
-				<a href="/g4o2-website/wallee/walle.html">Wallee</a>
-				<a href="/g4o2-website/tables/index.html">testing stuff</a>
-				<p>PHP pages (won't work)</p>
-				<a href="/g4o2-website/crud/index.php">Database</a>
-				<a href="/g4o2-website/autosess-v2/index.php">db Login test</a>
-				<a href="/g4o2-website/crack/index.php" title="cracking (kind of)">MD5 cracking</a>
-				<a href="/g4o2-website/php-stuff/random.php">Random stuff</a>
-				<a href="/g4o2-website/rps/index.php">rock paper scissors</a>
-				<a href="/g4o2-website/autos/">PHP &amp; SQL</a>
-				<a href="/g4o2-website/crud/index.php">Test login</a>
-			</div>
-		</div>-->
+		<a href="/g4o2-website/wallee/walle.html">Wallee</a>-->
+		<!--<a href="/g4o2-website/tables/index.html">testing stuff</a>
+		<p>PHP pages (won't work)</p>
+		<a href="/g4o2-website/crud/index.php">Database</a>
+		<a href="/g4o2-website/autosess-v2/index.php">db Login test</a>
+		<a href="/g4o2-website/crack/index.php" title="cracking (kind of)">MD5 cracking</a>
+		<a href="/g4o2-website/php-stuff/random.php">Random stuff</a>
+		<a href="/g4o2-website/rps/index.php">rock paper scissors</a>
+		<a href="/g4o2-website/autos/">PHP &amp; SQL</a>
+		<a href="/g4o2-website/crud/index.php">Test login</a>-->
 	</div>
 	<main id="main">
 		<div id="content-wrapper">
@@ -1005,7 +1003,7 @@
 			</section>
 			<section id="certifications">
 				<p id="cert-header">
-					Welcome to my test website
+					test website
 				</p>
 				<script>
 					/*autoplay = true
@@ -1162,13 +1160,11 @@
 					<i class="about-img fa-brands fa-react fa-2x"></i>
 					<i class="about-img fa-brands fa-node-js fa-2x"></i>
 					<i class="about-img fa-brands fa-python fa-2x"></i>
-					<i class="about-img fa-brands fa-php fa-2x"></i>
-					<i class="about-img fa-brands fa-bootstrap fa-2x"></i><br />
+					<i class="about-img fa-brands fa-php fa-2x"></i><br />
 					<object id="sql-logo" data="/g4o2-website/media/graphql.svg"></object>
 					<object id="sql-logo" data="/g4o2-website/media/vscode.svg"></object>
 					<object id="sql-logo" data="/g4o2-website/media/mysql.svg"></object>
 					<object id="sql-logo" data="/g4o2-website/media/jquery.svg"></object>
-					<object id="sql-logo" data="/g4o2-website/media/ruby-lang.svg"></object>
 					<object id="sql-logo" data="/g4o2-website/media/postgresql.svg"></object>
 				</p>
 				
@@ -1211,12 +1207,6 @@
 			</a>
 			<a id="contact-link" href="https://www.freecodecamp.org/Maxhu" target="_blank" title="Freecodcamp Profile">
 				<i alt="FCC" class="contact-img fa-brands fa-free-code-camp fa-3x"></i>
-			</a>
-			<a id="contact-link" href="https://codepen.io/g4o2" target="_blank" title="CodePen Profile">
-				<i class="contact-img fa-brands fa-codepen fa-3x"></i>
-			</a>
-			<a id="contact-link" href="https://jsfiddle.net/user/maxhu787/" target="_blank" title="Jsfiddle Profile">
-				<i class="contact-img fa-brands fa-jsfiddle fa-3x"></i>
 			</a>
 			<div id="copyright">
 				<p id="copyright-text">
