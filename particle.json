@@ -1,7 +1,7 @@
 {
     "particles": {
         "number": {
-            "value": 40
+            "value": 20
         },
         "color": {
             "value": "#fff"
@@ -13,7 +13,7 @@
                 "color": "#ccc"
             },
             "image": {
-                "src": "/g4o2-website/111.jpeg"
+                "src": "/g4o2-website/media/111-round.png"
             }
         },
         "opacity": {
